@@ -283,13 +283,30 @@ func (s *parserState) processBlock(queue *[]struct{ path string; sys *M1_Public_
 
 	case "SubSystem":
 		// Create subsystem
-		subSystem := M1_Public_Data.NewSystemFromBlock(
-			s.currentBlock.Name,
-			s.currentBlock.SID,
-			s.currentBlock.PortCounts.In,
-			s.currentBlock.PortCounts.Out,
-			true,   
-		)
+		// === 修复 portSubsysIO 统计为 0 的问题 ===
+// 如果当前 block 的 portCounts 为 0，尝试手动统计
+inCount := s.currentBlock.PortCounts.In
+outCount := s.currentBlock.PortCounts.Out
+
+if inCount == 0 && outCount == 0 {
+	for _, port := range s.currentSystem.Port {
+		if port.SID == s.currentBlock.SID {
+			if port.IO == "In" {
+				inCount++
+			} else if port.IO == "Out" {
+				outCount++
+			}
+		}
+	}
+}
+
+subSystem := M1_Public_Data.NewSystemFromBlock(
+	s.currentBlock.Name,
+	s.currentBlock.SID,
+	inCount,
+	outCount,
+	true,
+)
 		
 
 		// No longer distinguish between System and Class
