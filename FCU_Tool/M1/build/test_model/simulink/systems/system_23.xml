@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1, -8, 2561, 1393]</P>
+  <P Name="ZoomFactor">300</P>
+  <Block BlockType="Inport" Name="In1" SID="24">
+    <P Name="Position">[110, 103, 140, 117]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Inport" Name="In2" SID="25">
+    <P Name="Position">[110, 123, 140, 137]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="lv3-2" SID="26">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[205, 99, 305, 141]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_26"/>
+  </Block>
+  <Block BlockType="Outport" Name="Out1" SID="33">
+    <P Name="Position">[355, 113, 385, 127]</P>
+    <P Name="ZOrder">-2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">24#out:1</P>
+    <P Name="Dst">26#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">25#out:1</P>
+    <P Name="Dst">26#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">26#out:1</P>
+    <P Name="Dst">33#in:1</P>
+  </Line>
+</System>

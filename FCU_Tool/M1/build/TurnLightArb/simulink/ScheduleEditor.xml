@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sltp_editor version="1.1" packageUris="http://schema.mathworks.com/mf0/DiagramEditor/R2019a_20181107 http://schema.mathworks.com/mf0/SltpSyntax/R2020b_202005081148">
+  <diagram.editor.model.Diagram type="diagram.editor.model.Diagram" uuid="9bfad677-5179-47d2-ab7e-7777d99f330c">
+    <connections type="diagram.editor.model.Connection" uuid="2606c86c-d8fd-4108-b4f7-375879ecda2d">
+      <dstElement type="diagram.editor.model.Entity" uuid="c8126d5a-7437-4f34-a441-39dccfd7e7ee"/>
+      <srcElement type="diagram.editor.model.Entity" uuid="5c3bc6ea-79fb-4646-a983-f252cd9d9f02"/>
+      <position>0,0</position>
+      <size>0,0,0,0</size>
+      <syntaxElement type="sltp.mm.syntax.Edge" uuid="cc14df92-5789-4708-8440-69f44bcf3309"/>
+      <type>graph.Edge</type>
+    </connections>
+    <entities type="diagram.editor.model.Entity" uuid="c8126d5a-7437-4f34-a441-39dccfd7e7ee">
+      <inConnections type="diagram.editor.model.Connection" uuid="2606c86c-d8fd-4108-b4f7-375879ecda2d"/>
+      <position>0,0</position>
+      <size>0,0,0,0</size>
+      <syntaxElement type="sltp.mm.syntax.Node" uuid="ee69bfe6-0613-4e43-bdb5-eabdcbdf001a"/>
+      <title>Runnable_10ms</title>
+      <type>aperiodic</type>
+      <subDiagram type="diagram.editor.model.Diagram" uuid="d95fd20a-ae20-419b-b182-15aaa62f063e">
+        <position>0,0</position>
+        <syntaxElement type="sltp.mm.syntax.Graph" uuid="a278b3af-0849-4f2f-87b8-0b8c74b91fa5"/>
+        <title>Runnable_10ms</title>
+        <type>graph.Graph</type>
+      </subDiagram>
+    </entities>
+    <entities type="diagram.editor.model.Entity" uuid="5c3bc6ea-79fb-4646-a983-f252cd9d9f02">
+      <outConnections type="diagram.editor.model.Connection" uuid="2606c86c-d8fd-4108-b4f7-375879ecda2d"/>
+      <position>0,0</position>
+      <size>0,0,0,0</size>
+      <syntaxElement type="sltp.mm.syntax.Node" uuid="123999ac-511b-4f6e-aeab-d0580277e22b"/>
+      <title>TurnLightService_TurnLightControl_Operation</title>
+      <type>simulink-function</type>
+      <subDiagram type="diagram.editor.model.Diagram" uuid="14df007c-5dfc-4f58-abcc-12af4aee2957">
+        <position>0,0</position>
+        <syntaxElement type="sltp.mm.syntax.Graph" uuid="985c472f-54c2-45eb-82b9-2aed90c4298a"/>
+        <title>TurnLightService_TurnLightControl_Operation</title>
+        <type>graph.Graph</type>
+      </subDiagram>
+    </entities>
+    <syntaxElement type="sltp.mm.syntax.Graph" uuid="258ac966-390c-4cbc-b0c0-4676c91cbe69"/>
+    <title>Default</title>
+    <type>graph.Graph</type>
+  </diagram.editor.model.Diagram>
+  <sltp.mm.syntax.Context type="sltp.mm.syntax.Context" uuid="68552750-db36-4885-ba3b-f9cd82fd48c7">
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="1786051c-aa0e-4ab2-a64f-a78e5444ea96">
+      <dataName>portRunnable_10ms</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="01db8022-a41c-4c1e-927a-97377ac5caab">
+      <dataName>portTurnLamp_FL_Out_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="f6fb1c72-7ee0-4ab4-a9a3-7ba513936e39">
+      <dataName>portTurnLamp_RL_Out_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="1e62570e-5011-4ae6-924b-e9eeec595d03">
+      <dataName>portTurnLapm_FR_Out_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="14645570-0dbf-42fd-8b7b-0fa0f72ceccb">
+      <dataName>portTurnLapme_RR_Out_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <rootGraph type="sltp.mm.syntax.Graph" uuid="258ac966-390c-4cbc-b0c0-4676c91cbe69">
+      <children type="sltp.mm.syntax.Node" uuid="ee69bfe6-0613-4e43-bdb5-eabdcbdf001a">
+        <inEdges type="sltp.mm.syntax.Edge" uuid="cc14df92-5789-4708-8440-69f44bcf3309"/>
+        <orderIndex>1</orderIndex>
+        <priority>-2147483648</priority>
+        <rates type="sltp.mm.syntax.RateData">
+          <color>#e60000</color>
+          <hasBlocks>true</hasBlocks>
+          <rate>0.01</rate>
+          <title>F0</title>
+        </rates>
+        <title>Runnable_10ms</title>
+        <type>aperiodic</type>
+        <diagramElement type="diagram.editor.model.Entity" uuid="c8126d5a-7437-4f34-a441-39dccfd7e7ee"/>
+        <subgraph type="sltp.mm.syntax.Graph" uuid="a278b3af-0849-4f2f-87b8-0b8c74b91fa5">
+          <title>Runnable_10ms</title>
+          <diagramElement type="diagram.editor.model.Diagram" uuid="d95fd20a-ae20-419b-b182-15aaa62f063e"/>
+        </subgraph>
+      </children>
+      <children type="sltp.mm.syntax.Node" uuid="123999ac-511b-4f6e-aeab-d0580277e22b">
+        <outEdges type="sltp.mm.syntax.Edge" uuid="cc14df92-5789-4708-8440-69f44bcf3309"/>
+        <priority>-2147483648</priority>
+        <rates type="sltp.mm.syntax.RateData">
+          <color>#14614e</color>
+          <hasBlocks>true</hasBlocks>
+          <rate>A</rate>
+          <title>F1</title>
+        </rates>
+        <title>TurnLightService_TurnLightControl_Operation</title>
+        <type>simulink-function</type>
+        <diagramElement type="diagram.editor.model.Entity" uuid="5c3bc6ea-79fb-4646-a983-f252cd9d9f02"/>
+        <subgraph type="sltp.mm.syntax.Graph" uuid="985c472f-54c2-45eb-82b9-2aed90c4298a">
+          <title>TurnLightService_TurnLightControl_Operation</title>
+          <diagramElement type="diagram.editor.model.Diagram" uuid="14df007c-5dfc-4f58-abcc-12af4aee2957"/>
+        </subgraph>
+      </children>
+      <edges type="sltp.mm.syntax.Edge" uuid="cc14df92-5789-4708-8440-69f44bcf3309">
+        <dst type="sltp.mm.syntax.Node" uuid="ee69bfe6-0613-4e43-bdb5-eabdcbdf001a"/>
+        <src type="sltp.mm.syntax.Node" uuid="123999ac-511b-4f6e-aeab-d0580277e22b"/>
+        <type>Dependency</type>
+        <diagramElement type="diagram.editor.model.Connection" uuid="2606c86c-d8fd-4108-b4f7-375879ecda2d"/>
+      </edges>
+      <title>Default</title>
+      <diagramElement type="diagram.editor.model.Diagram" uuid="9bfad677-5179-47d2-ab7e-7777d99f330c"/>
+    </rootGraph>
+  </sltp.mm.syntax.Context>
+</sltp_editor>

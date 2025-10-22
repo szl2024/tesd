@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[69, 292, 1973, 1315]</P>
+  <P Name="ZoomFactor">81</P>
+  <Block BlockType="Inport" Name="IGN_Status_u8_signal_read" SID="232">
+    <P Name="Position">[-255, -232, -225, -218]</P>
+    <P Name="ZOrder">48</P>
+  </Block>
+  <Block BlockType="TriggerPort" Name="function" SID="137">
+    <PortCounts/>
+    <P Name="Position">[110, -130, 130, -110]</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="TriggerType">function-call</P>
+    <P Name="VariantControl">Variant</P>
+    <P Name="StatesWhenEnabling">held</P>
+  </Block>
+  <Block BlockType="BusCreator" Name="Bus&#xA;Creator" SID="138">
+    <PortCounts in="7" out="1"/>
+    <P Name="Position">[-145, -83, -135, 213]</P>
+    <P Name="ZOrder">39</P>
+    <P Name="Inputs">7</P>
+    <P Name="DisplayOption">bar</P>
+    <P Name="OutDataTypeStr">Bus: TurnLightService</P>
+    <P Name="NonVirtualBus">on</P>
+    <P Name="InheritFromInputs">on</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant" SID="139">
+    <P Name="Position">[-540, -76, -330, -54]</P>
+    <P Name="ZOrder">40</P>
+    <P Name="Value">ComplexTurnLightPositionType.LEFT</P>
+    <P Name="OutDataTypeStr">Enum: ComplexTurnLightPositionType</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">TurnLightPosition</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Constant1" SID="140">
+    <P Name="Position">[-540, -36, -330, -14]</P>
+    <P Name="ZOrder">41</P>
+    <P Name="Value">ComplexTurnLightONOFFType.ON</P>
+    <P Name="OutDataTypeStr">Enum: ComplexTurnLightONOFFType</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">TurnLightOnOff</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Constant2" SID="141">
+    <P Name="Position">[-500, -3, -430, 23]</P>
+    <P Name="ZOrder">42</P>
+    <P Name="Value">0</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">TurnLightDutyCycle</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Constant3" SID="142">
+    <P Name="Position">[-500, 37, -430, 63]</P>
+    <P Name="ZOrder">43</P>
+    <P Name="Value">8</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">TurnLightCycle</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Constant4" SID="143">
+    <P Name="Position">[-500, 77, -430, 103]</P>
+    <P Name="ZOrder">44</P>
+    <P Name="Value">0</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">TurnLightTimes</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Constant5" SID="144">
+    <P Name="Position">[-500, 117, -430, 143]</P>
+    <P Name="ZOrder">45</P>
+    <P Name="Value">0</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">TurnLightNumber</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Constant6" SID="145">
+    <P Name="Position">[-500, 167, -430, 193]</P>
+    <P Name="ZOrder">46</P>
+    <P Name="Value">3</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">TurnLightPriority</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="FunctionCaller" Name="TurnLightService_TurnLightControl_Operation" SID="146">
+    <PortCounts in="1"/>
+    <P Name="Position">[30, 15, 455, 55]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="ShowName">off</P>
+    <Object Reference="true" PropName="Mappings" ObjectID="/simulink/blockdiagram.xml:55"/>
+    <P Name="FunctionPrototype">TurnLightService_TurnLightControl_Operation(TurnLightCtrlPara)</P>
+    <P Name="InputArgumentSpecifications">P_TurnLightService</P>
+  </Block>
+  <Block BlockType="Outport" Name="Out1" SID="231">
+    <P Name="Position">[400, -172, 430, -158]</P>
+    <P Name="ZOrder">47</P>
+  </Block>
+  <Line>
+    <P Name="Name">TurnLightPriority</P>
+    <P Name="ZOrder">1</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">145#out:1</P>
+    <P Name="Points">[121, 0; 0, 5]</P>
+    <P Name="Dst">138#in:7</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLightNumber</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">144#out:1</P>
+    <P Name="Points">[146, 0; 0, 15]</P>
+    <P Name="Dst">138#in:6</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLightTimes</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">143#out:1</P>
+    <P Name="Points">[166, 0; 0, 15]</P>
+    <P Name="Dst">138#in:5</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLightCycle</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">142#out:1</P>
+    <P Name="Points">[186, 0; 0, 15]</P>
+    <P Name="Dst">138#in:4</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLightDutyCycle</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">141#out:1</P>
+    <P Name="Points">[206, 0; 0, 15]</P>
+    <P Name="Dst">138#in:3</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLightOnOff</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Labels">[1, 0]</P>
+    <P Name="Src">140#out:1</P>
+    <P Name="Points">[124, 0; 0, 10]</P>
+    <P Name="Dst">138#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLightPosition</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Labels">[2, 0]</P>
+    <P Name="Src">139#out:1</P>
+    <P Name="Points">[144, 0; 0, 10]</P>
+    <P Name="Dst">138#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">138#out:1</P>
+    <P Name="Points">[72, 0; 0, -30]</P>
+    <P Name="Dst">146#in:1</P>
+  </Line>
+</System>

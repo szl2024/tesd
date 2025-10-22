@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1928, -8, 8, 1048]</P>
+  <P Name="SystemRect">[0.000000, 0.000000, 0.000000, 0.000000]</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="ZoomFactor">200</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="TriggerPort" Name="function" SID="16">
+    <P Name="Ports">[]</P>
+    <P Name="Position">[335, 10, 345, 20]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="TriggerType">function-call</P>
+    <P Name="IsSimulinkFunction">on</P>
+    <P Name="FunctionName">TurnLightService_TurnLightControl_Operation</P>
+    <P Name="VariantControl">(inherit)</P>
+    <P Name="StatesWhenEnabling">held</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant" SID="28">
+    <P Name="Position">[75, 165, 105, 195]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="Value">true</P>
+    <P Name="OutDataTypeStr">boolean</P>
+  </Block>
+  <Block BlockType="DataStoreWrite" Name="Data Store&#xA;Write" SID="25">
+    <P Name="Ports">[1]</P>
+    <P Name="Position">[180, 82, 295, 108]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="DataStoreName">TurnLightCtrlCmd</P>
+  </Block>
+  <Block BlockType="DataStoreWrite" Name="Data Store&#xA;Write1" SID="27">
+    <P Name="Ports">[1]</P>
+    <P Name="Position">[180, 160, 295, 200]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="DataStoreName">IsFunctionCall</P>
+  </Block>
+  <Block BlockType="ArgIn" Name="TurnLightCtrlPara" SID="17">
+    <P Name="Position">[-60, 80, 100, 110]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="ShowName">off</P>
+    <P Name="OutDataTypeStr">Bus: TurnLightService</P>
+    <P Name="ArgumentName">TurnLightCtrlPara</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">17#out:1</P>
+    <P Name="Dst">25#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">28#out:1</P>
+    <P Name="Dst">27#in:1</P>
+  </Line>
+</System>

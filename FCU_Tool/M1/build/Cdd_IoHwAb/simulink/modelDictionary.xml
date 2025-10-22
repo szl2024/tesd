@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2023a_20220628">
+  <System type="System" uuid="34e06e9e-2266-40fc-9a86-782905d07fbc">
+    <Block type="Block" uuid="ef04ecbd-4728-4950-9795-fcd67a3a941b">
+      <Sid>7</Sid>
+      <Function type="Function" uuid="eee892ad-f864-4771-8930-c6a779df4457">
+        <Argument type="Signal" uuid="264d5b20-c53c-460c-a4bc-53d3c1a88493">
+          <Identifier>CtrlCmd</Identifier>
+          <Name>CtrlCmd</Name>
+          <Type type="DataType" uuid="b9a2099b-2012-4a4b-9eb4-6ff7d4787812">
+            <Dimensions>1</Dimensions>
+            <NumericType>uint8</NumericType>
+          </Type>
+        </Argument>
+        <Visibility>global</Visibility>
+        <Identifier>IoHwAb_TurnLightCtrlCmd_FL_Operation</Identifier>
+        <Name>IoHwAb_TurnLightCtrlCmd_FL_Operation</Name>
+      </Function>
+    </Block>
+    <Block type="Block" uuid="b3696fa2-c2da-45de-bb68-7fa832078b8d">
+      <Sid>19</Sid>
+      <Function type="Function" uuid="ed73436a-82fb-4a2c-b37c-ada4e9fae5af">
+        <Argument type="Signal" uuid="b8824ae7-fb03-4142-82c5-ed5ddc808b2f">
+          <Identifier>CtrlCmd</Identifier>
+          <Name>CtrlCmd</Name>
+          <Type type="DataType" uuid="3d219ca0-9d18-47ea-baa7-71f8b5b7f4c6">
+            <Dimensions>1</Dimensions>
+            <NumericType>uint8</NumericType>
+          </Type>
+        </Argument>
+        <Visibility>global</Visibility>
+        <Identifier>IoHwAb_TurnLightCtrlCmd_RR_Operation</Identifier>
+        <Name>IoHwAb_TurnLightCtrlCmd_RR_Operation</Name>
+      </Function>
+    </Block>
+    <Block type="Block" uuid="bf727bb0-8938-4977-b872-e02f5f170e1a">
+      <Sid>11</Sid>
+      <Function type="Function" uuid="51d97ba7-040a-41fd-afd6-1cb21528fccb">
+        <Argument type="Signal" uuid="2499285b-c74b-4a99-8a40-80e348a6385c">
+          <Identifier>CtrlCmd</Identifier>
+          <Name>CtrlCmd</Name>
+          <Type type="DataType" uuid="048f18c9-ddd7-4ca1-96ea-d433f8fe29aa">
+            <Dimensions>1</Dimensions>
+            <NumericType>uint8</NumericType>
+          </Type>
+        </Argument>
+        <Visibility>global</Visibility>
+        <Identifier>IoHwAb_TurnLightCtrlCmd_FR_Operation</Identifier>
+        <Name>IoHwAb_TurnLightCtrlCmd_FR_Operation</Name>
+      </Function>
+    </Block>
+    <Block type="Block" uuid="4e0ff021-cb20-4692-a8bf-bfa51abf79df">
+      <Sid>15</Sid>
+      <Function type="Function" uuid="02dc0ba7-4834-474c-ac50-5c2a57fee308">
+        <Argument type="Signal" uuid="97ba0b5b-1139-4e09-ae61-dbb45d938689">
+          <Identifier>CtrlCmd</Identifier>
+          <Name>CtrlCmd</Name>
+          <Type type="DataType" uuid="721a4965-9191-4000-952e-40590beb80c8">
+            <Dimensions>1</Dimensions>
+            <NumericType>uint8</NumericType>
+          </Type>
+        </Argument>
+        <Visibility>global</Visibility>
+        <Identifier>IoHwAb_TurnLightCtrlCmd_RL_Operation</Identifier>
+        <Name>IoHwAb_TurnLightCtrlCmd_RL_Operation</Name>
+      </Function>
+    </Block>
+    <Interface type="Interface" uuid="3886b0ca-69a3-4de2-88d0-b4ba33bf046a">
+      <Function type="Function" uuid="eee892ad-f864-4771-8930-c6a779df4457"/>
+      <Function type="Function" uuid="51d97ba7-040a-41fd-afd6-1cb21528fccb"/>
+      <Function type="Function" uuid="02dc0ba7-4834-474c-ac50-5c2a57fee308"/>
+      <Function type="Function" uuid="ed73436a-82fb-4a2c-b37c-ada4e9fae5af"/>
+    </Interface>
+  </System>
+</MF0>

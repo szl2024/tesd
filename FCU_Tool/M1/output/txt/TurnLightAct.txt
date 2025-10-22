@@ -1,0 +1,42 @@
+[L1] System: Runnable_10ms_sys    (Model=TurnLightAct, SID=4)
+	[L1 Port] Port: Name=Runnable_10ms                               , SID=3      , IO=IN , Type=S-R
+	[L1 Port] Port: Name=TurnLamp_FL_Out_u8_Signal                   , SID=6      , IO=IN , Type=S-R
+	[L1 Port] Port: Name=TurnLamp_RL_Out_u8_Signal                   , SID=8      , IO=IN , Type=S-R
+	[L1 Port] Port: Name=TurnLapm_FR_Out_u8_Signal                   , SID=10     , IO=IN , Type=S-R
+	[L1 Port] Port: Name=TurnLapme_RR_Out_u8_Signal                  , SID=12     , IO=IN , Type=S-R
+	[L1 Port] Port: Name=CountSignal_Left_u8_Signal                  , SID=14     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=CountSignal_Right_u8_Signal                 , SID=16     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=TurnLampCtrlCmd_FL_u8_signal                , SID=18     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=TurnLampCtrlCmd_FR_u8_signa                 , SID=20     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=TurnLampCtrlCmd_RL_u8_signal                , SID=22     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=TurnLampCtrlCmd_RR_u8_signal                , SID=24     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=Com_CAN_LA_St_DirectionLampL_u8_signal      , SID=36     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=Com_CAN_LA_St_DirectionLampR_u8_signal      , SID=38     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=IoHwAb_TurnLightCtrlCmd_FL_Operation        , SID=unknown, IO=IN , Type=C-S
+	[L1 Port] Port: Name=IoHwAb_TurnLightCtrlCmd_FR_Operation        , SID=unknown, IO=IN , Type=C-S
+	[L1 Port] Port: Name=IoHwAb_TurnLightCtrlCmd_RL_Operation        , SID=unknown, IO=IN , Type=C-S
+	[L1 Port] Port: Name=IoHwAb_TurnLightCtrlCmd_RR_Operation        , SID=unknown, IO=IN , Type=C-S
+[L2] System: FL_TurnLightActuator (Model=TurnLightAct, SID=46)
+	[L2 Port] Port: Name=TurnLamp_FL_Out_u8_Signal_read              , SID=7      , IO=IN 
+	[L2 Port] Port: Name=TurnLampCtrlCmd_FL_u8_signal_write          , SID=19     , IO=OUT
+	[L2 Port] Port: Name=Com_CAN_LA_St_DirectionLampL_u8_signal_write, SID=37     , IO=OUT
+	[L2 Port] Port: Name=CountSignal_Left_u8_Signal_write            , SID=15     , IO=OUT
+[L2] System: FR_TurnLightActuator (Model=TurnLightAct, SID=52)
+	[L2 Port] Port: Name=TurnLampCtrlCmd_FR_u8_signa_write           , SID=21     , IO=OUT
+	[L2 Port] Port: Name=TurnLapm_FR_Out_u8_Signal_read              , SID=11     , IO=IN 
+[L2] System: RL_TurnLightActuator (Model=TurnLightAct, SID=58)
+	[L2 Port] Port: Name=TurnLamp_RL_Out_u8_Signal_read              , SID=9      , IO=IN 
+	[L2 Port] Port: Name=Com_CAN_LA_St_DirectionLampR_u8_signal_write, SID=39     , IO=OUT
+	[L2 Port] Port: Name=CountSignal_Right_u8_Signal_write           , SID=17     , IO=OUT
+	[L2 Port] Port: Name=TurnLampCtrlCmd_RL_u8_signal_write          , SID=23     , IO=OUT
+[L2] System: RR_TurnLightActuator (Model=TurnLightAct, SID=64)
+	[L2 Port] Port: Name=TurnLampCtrlCmd_RR_u8_signal_write          , SID=25     , IO=OUT
+	[L2 Port] Port: Name=TurnLapme_RR_Out_u8_Signal_read             , SID=13     , IO=IN 
+
+----- 统计摘要 --------------------------------------------------
+[L1 Port] 总数 = 17（IN=9, OUT=8；Type：C-S=4, S-R=13）
+[L2]      总数 = 4
+[L2 Port] 总数 = 12（IN=4, OUT=8）
+----- M1 结果 --------------------------------------------------
+portasr = 17.8, class = 4, portsim = 12
+M1 = portasr * class * portsim = 854.4

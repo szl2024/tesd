@@ -1,0 +1,3246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chart id="452">
+  <P Name="name">Runnable_10ms_sys/TurnLightOutArb</P>
+  <P Name="windowPosition">[-1928 -8 1936 1056]</P>
+  <P Name="viewLimits">[458.776 2308.776 -7.503 807.497]</P>
+  <P Name="zoomFactor">1.333</P>
+  <P Name="screen">[1 1 3200 1200 1.25]</P>
+  <P Name="viewObj">452</P>
+  <P Name="visible">1</P>
+  <subviewS/>
+  <P Name="ssIdHighWaterMark">450</P>
+  <P Name="decomposition">CLUSTER_CHART</P>
+  <P Name="chartFileNumber">3</P>
+  <P Name="allowGlobalAccessToExportedFunctions">0</P>
+  <P Name="saturateOnIntegerOverflow">1</P>
+  <P Name="userSpecifiedStateTransitionExecutionOrder">1</P>
+  <P Name="disableImplicitCasting">1</P>
+  <Children>
+    <state SSID="17">
+      <P Name="labelString">CheckPriority
+en:
+CheckPriority_flow();</P>
+      <P Name="position">[1031 157 475 371]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">452</P>
+      <P Name="type">OR_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+    </state>
+    <state SSID="33">
+      <P Name="labelString">JurgeOutputMode</P>
+      <P Name="position">[1675.9042 223.3525 172.2 123.8]</P>
+      <P Name="fontSize">12</P>
+      <P Name="superState">SUBCHART</P>
+      <P Name="subviewer">452</P>
+      <subviewS>
+        <P Name="panLimits">[-4339.802 7993.531 -2555.006 5250.147]</P>
+        <P Name="pos">[0 0 2562.6 3004]</P>
+      </subviewS>
+      <P Name="type">FUNC_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+      <truthTable>
+        <P Name="isTruthTable">1</P>
+        <Array PropName="predicateArray" Type="Cell" Dimension="16*16">
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char">TurnLightPosition ==ComplexTurnLightPositionType.LEFT</Cell>
+          <Cell Class="char">TurnLightPosition ==ComplexTurnLightPositionType.RIGHT</Cell>
+          <Cell Class="char">TurnLightPosition ==ComplexTurnLightPositionType.ALL</Cell>
+          <Cell Class="char">TurnLightPosition ==ComplexTurnLightPositionType.FRONT_LEFT</Cell>
+          <Cell Class="char">TurnLightPosition ==ComplexTurnLightPositionType.FRONT_RIGHT</Cell>
+          <Cell Class="char">TurnLightPosition ==ComplexTurnLightPositionType.REAR_LEFT</Cell>
+          <Cell Class="char">TurnLightPosition ==ComplexTurnLightPositionType.REAR_RIGHT</Cell>
+          <Cell Class="char">TurnLightOnOff==ComplexTurnLightONOFFType.OFF</Cell>
+          <Cell Class="char">TurnLightOnOff==ComplexTurnLightONOFFType.ON</Cell>
+          <Cell Class="char">TurnLightDutyCycle ==0</Cell>
+          <Cell Class="char">TurnLightCycle==8</Cell>
+          <Cell Class="char">TurnLightCycle==4</Cell>
+          <Cell Class="char">TurnLightTime ==0</Cell>
+          <Cell Class="char">TurnLightNumber==0</Cell>
+          <Cell Class="char">TurnLightNumber==3</Cell>
+          <Cell Class="char">Actions</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">ALL_OFF</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">FL_OFF</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">FR_OFF</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">RL_OFF</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">RR_OFF</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">LEFT_NORMAL_ON</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">RIGHT_NORMAL_ON</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">ALL_NORMAL_ON</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">LEFT_SHORT_ON</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">RIGHT_SHORT_ON</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">FL_DOUBLE</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">FR_DOUBLE</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">RL_DOUBLE</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">F</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">T</Cell>
+          <Cell Class="char">-</Cell>
+          <Cell Class="char">RR_DOUBLE</Cell>
+        </Array>
+        <Array PropName="actionArray" Type="Cell" Dimension="14*2">
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char"/>
+          <Cell Class="char">ALL_OFF:
+TurnLight_FL_Out = TLOUT_OFF;TurnLight_FR_Out = TLOUT_OFF;TurnLight_RL_Out = TLOUT_OFF;TurnLight_RR_Out = TLOUT_OFF;</Cell>
+          <Cell Class="char">FL_OFF:
+TurnLight_FL_Out  = TLOUT_OFF;</Cell>
+          <Cell Class="char">FR_OFF:
+TurnLight_FR_Out  = TLOUT_OFF;</Cell>
+          <Cell Class="char">RL_OFF:
+TurnLight_RL_Out  = TLOUT_OFF;</Cell>
+          <Cell Class="char">RR_OFF:
+TurnLight_RR_Out   = TLOUT_OFF;</Cell>
+          <Cell Class="char">LEFT_NORMAL_ON:
+TurnLight_FL_Out = TLOUT_NORMAL_ON;TurnLight_RL_Out = TLOUT_NORMAL_ON;</Cell>
+          <Cell Class="char">RIGHT_NORMAL_ON:
+TurnLight_FR_Out = TLOUT_NORMAL_ON;TurnLight_RR_Out = TLOUT_NORMAL_ON;</Cell>
+          <Cell Class="char">ALL_NORMAL_ON:
+TurnLight_FL_Out = TLOUT_NORMAL_ON;TurnLight_RL_Out = TLOUT_NORMAL_ON;
+TurnLight_FR_Out = TLOUT_NORMAL_ON;TurnLight_RR_Out = TLOUT_NORMAL_ON;</Cell>
+          <Cell Class="char">LEFT_SHORT_ON:
+TurnLight_FL_Out = TLOUT_SHORT_ON;TurnLight_RL_Out = TLOUT_SHORT_ON;</Cell>
+          <Cell Class="char">RIGHT_SHORT_ON:
+TurnLight_FR_Out = TLOUT_SHORT_ON;TurnLight_RR_Out = TLOUT_SHORT_ON;</Cell>
+          <Cell Class="char">FL_DOUBLE:
+TurnLight_FL_Out  = TLOUT_DOUBLE_ON;</Cell>
+          <Cell Class="char">FR_DOUBLE:
+TurnLight_FR_Out  = TLOUT_DOUBLE_ON;</Cell>
+          <Cell Class="char">RL_DOUBLE:
+TurnLight_RL_Out  = TLOUT_DOUBLE_ON;</Cell>
+          <Cell Class="char">RR_DOUBLE:
+TurnLight_RR_Out  = TLOUT_DOUBLE_ON;</Cell>
+        </Array>
+        <P Name="checksum">[277350076 473032286 715543237 2882206735]</P>
+        <diagnostic>
+          <P Name="underSpecification">2</P>
+        </diagnostic>
+        <Array PropName="editorLayout" Type="Struct" Dimension="1*1">
+          <MATStruct>
+            <Field Name="pcw" Class="double">Matrix(17,1)
+[30.0, 160.0, 510.14703369140625, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 30.0, 37.0, 37.0, 37.0, 37.0, 37.0]</Field>
+            <Field Name="prh" Class="double">Matrix(16,1)
+[50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0]</Field>
+            <Field Name="acw" Class="double">Matrix(3,1)
+[30.0, 160.0, 1199.0]</Field>
+            <Field Name="arh" Class="double">Matrix(14,1)
+[50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0]</Field>
+            <Field Name="zoomFactor" Class="double">1.0</Field>
+            <Field Name="div" Class="double">545.0</Field>
+          </MATStruct>
+        </Array>
+      </truthTable>
+      <Children>
+        <data SSID="315" name="aVarTruthTableCondition_1">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">1.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="316" name="aVarTruthTableCondition_2">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">2.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="317" name="aVarTruthTableCondition_3">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">3.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="318" name="aVarTruthTableCondition_4">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">4.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="319" name="aVarTruthTableCondition_5">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">5.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="320" name="aVarTruthTableCondition_6">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">6.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="321" name="aVarTruthTableCondition_7">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">7.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="322" name="aVarTruthTableCondition_8">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">8.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="323" name="aVarTruthTableCondition_9">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">9.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="324" name="aVarTruthTableCondition_10">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">10.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="325" name="aVarTruthTableCondition_11">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">11.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="326" name="aVarTruthTableCondition_12">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">12.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="327" name="aVarTruthTableCondition_13">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">13.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="328" name="aVarTruthTableCondition_14">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">14.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <data SSID="329" name="aVarTruthTableCondition_15">
+          <P Name="scope">TEMPORARY_DATA</P>
+          <props>
+            <P Name="initialValue">0</P>
+            <type>
+              <P Name="primitive">SF_BOOLEAN_TYPE</P>
+              <P Name="isSigned">1</P>
+              <P Name="wordLength">16</P>
+            </type>
+            <unit>
+              <P Name="name">inherit</P>
+            </unit>
+          </props>
+          <P Name="dataType">boolean</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">15.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </data>
+        <transition SSID="331">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[150 80 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="intersection">[0 0 1 0 150 65 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">330</P>
+            <P Name="intersection">[1 0 -1 0 150 95 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 80]</P>
+          <P Name="dataLimits">[147.6 152.4 65 95]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="333">
+          <P Name="labelString">{ aVarTruthTableCondition_1 = (TurnLightPosition ==ComplexTurnLightPositionType.LEFT); }</P>
+          <P Name="labelPosition">[160 150 495.328 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">330</P>
+            <P Name="intersection">[3 0 1 0 150 105 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">332</P>
+            <P Name="intersection">[1 0 -1 0 150 195 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 150]</P>
+          <P Name="dataLimits">[147.6 152.4 105 195]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">1.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="335">
+          <P Name="labelString">{ aVarTruthTableCondition_2 = (TurnLightPosition ==ComplexTurnLightPositionType.RIGHT); }</P>
+          <P Name="labelPosition">[160 250 503.297 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">332</P>
+            <P Name="intersection">[3 0 1 0 150 205 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">334</P>
+            <P Name="intersection">[1 0 -1 0 150 295 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 250]</P>
+          <P Name="dataLimits">[147.6 152.4 205 295]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">2.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="337">
+          <P Name="labelString">{ aVarTruthTableCondition_3 = (TurnLightPosition ==ComplexTurnLightPositionType.ALL); }</P>
+          <P Name="labelPosition">[160 350 487.344 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">334</P>
+            <P Name="intersection">[3 0 1 0 150 305 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">336</P>
+            <P Name="intersection">[1 0 -1 0 150 395 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 350]</P>
+          <P Name="dataLimits">[147.6 152.4 305 395]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">3.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="339">
+          <P Name="labelString">{ aVarTruthTableCondition_4 = (TurnLightPosition ==ComplexTurnLightPositionType.FRONT_LEFT); }</P>
+          <P Name="labelPosition">[160 450 543.297 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">336</P>
+            <P Name="intersection">[3 0 1 0 150 405 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">338</P>
+            <P Name="intersection">[1 0 -1 0 150 495 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 450]</P>
+          <P Name="dataLimits">[147.6 152.4 405 495]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">4.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="341">
+          <P Name="labelString">{ aVarTruthTableCondition_5 = (TurnLightPosition ==ComplexTurnLightPositionType.FRONT_RIGHT); }</P>
+          <P Name="labelPosition">[160 550 551.266 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">338</P>
+            <P Name="intersection">[3 0 1 0 150 505 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">340</P>
+            <P Name="intersection">[1 0 -1 0 150 595 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 550]</P>
+          <P Name="dataLimits">[147.6 152.4 505 595]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">5.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="343">
+          <P Name="labelString">{ aVarTruthTableCondition_6 = (TurnLightPosition ==ComplexTurnLightPositionType.REAR_LEFT); }</P>
+          <P Name="labelPosition">[160 650 535.313 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">340</P>
+            <P Name="intersection">[3 0 1 0 150 605 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">342</P>
+            <P Name="intersection">[1 0 -1 0 150 695 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 650]</P>
+          <P Name="dataLimits">[147.6 152.4 605 695]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">6.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="345">
+          <P Name="labelString">{ aVarTruthTableCondition_7 = (TurnLightPosition ==ComplexTurnLightPositionType.REAR_RIGHT); }</P>
+          <P Name="labelPosition">[160 750 543.281 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">342</P>
+            <P Name="intersection">[3 0 1 0 150 705 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">344</P>
+            <P Name="intersection">[1 0 -1 0 150 795 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 750]</P>
+          <P Name="dataLimits">[147.6 152.4 705 795]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">7.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="347">
+          <P Name="labelString">{ aVarTruthTableCondition_8 = (TurnLightOnOff==ComplexTurnLightONOFFType.OFF); }</P>
+          <P Name="labelPosition">[160 850 475.094 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">344</P>
+            <P Name="intersection">[3 0 1 0 150 805 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">346</P>
+            <P Name="intersection">[1 0 -1 0 150 895 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 850]</P>
+          <P Name="dataLimits">[147.6 152.4 805 895]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">8.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="349">
+          <P Name="labelString">{ aVarTruthTableCondition_9 = (TurnLightOnOff==ComplexTurnLightONOFFType.ON); }</P>
+          <P Name="labelPosition">[160 950 469.094 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">346</P>
+            <P Name="intersection">[3 0 1 0 150 905 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">348</P>
+            <P Name="intersection">[1 0 -1 0 150 995 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 950]</P>
+          <P Name="dataLimits">[147.6 152.4 905 995]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">9.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="351">
+          <P Name="labelString">{ aVarTruthTableCondition_10 = (TurnLightDutyCycle ==0); }</P>
+          <P Name="labelPosition">[160 1050 321.797 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">348</P>
+            <P Name="intersection">[3 0 1 0 150 1005 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">350</P>
+            <P Name="intersection">[1 0 -1 0 150 1095 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1050]</P>
+          <P Name="dataLimits">[147.6 152.4 1005 1095]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">10.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="353">
+          <P Name="labelString">{ aVarTruthTableCondition_11 = (TurnLightCycle==8); }</P>
+          <P Name="labelPosition">[160 1150 292.922 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">350</P>
+            <P Name="intersection">[3 0 1 0 150 1105 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">352</P>
+            <P Name="intersection">[1 0 -1 0 150 1195 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1150]</P>
+          <P Name="dataLimits">[147.6 152.4 1105 1195]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">11.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="355">
+          <P Name="labelString">{ aVarTruthTableCondition_12 = (TurnLightCycle==4); }</P>
+          <P Name="labelPosition">[160 1250 293.813 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">352</P>
+            <P Name="intersection">[3 0 1 0 150 1205 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">354</P>
+            <P Name="intersection">[1 0 -1 0 150 1295 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1250]</P>
+          <P Name="dataLimits">[147.6 152.4 1205 1295]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">12.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="357">
+          <P Name="labelString">{ aVarTruthTableCondition_13 = (TurnLightTime ==0); }</P>
+          <P Name="labelPosition">[160 1350 293.359 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">354</P>
+            <P Name="intersection">[3 0 1 0 150 1305 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">356</P>
+            <P Name="intersection">[1 0 -1 0 150 1395 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1350]</P>
+          <P Name="dataLimits">[147.6 152.4 1305 1395]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">13.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="359">
+          <P Name="labelString">{ aVarTruthTableCondition_14 = (TurnLightNumber==0); }</P>
+          <P Name="labelPosition">[160 1450 306.469 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">356</P>
+            <P Name="intersection">[3 0 1 0 150 1405 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">358</P>
+            <P Name="intersection">[1 0 -1 0 150 1495 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1450]</P>
+          <P Name="dataLimits">[147.6 152.4 1405 1495]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">14.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="361">
+          <P Name="labelString">{ aVarTruthTableCondition_15 = (TurnLightNumber==3); }</P>
+          <P Name="labelPosition">[160 1550 306.469 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">358</P>
+            <P Name="intersection">[3 0 1 0 150 1505 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">360</P>
+            <P Name="intersection">[1 0 -1 0 150 1595 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1550]</P>
+          <P Name="dataLimits">[147.6 152.4 1505 1595]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">0.0</Field>
+                <Field Name="index" Class="double">15.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="363">
+          <P Name="labelString">[aVarTruthTableCondition_3 &amp;&amp; aVarTruthTableCondition_8]</P>
+          <P Name="labelPosition">[683.336 1603 320.625 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">360</P>
+            <P Name="intersection">[2 1 0 0 155 1600 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">362</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 1600 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 1600]</P>
+          <P Name="dataLimits">[155 1532.297 1597.6 1602.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">1.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="365">
+          <P Name="labelString">{
+/* &apos;ALL_OFF&apos;: */
+TurnLight_FL_Out = TLOUT_OFF;TurnLight_FR_Out = TLOUT_OFF;TurnLight_RL_Out = TLOUT_OFF;TurnLight_RR_Out = TLOUT_OFF;
+}</P>
+          <P Name="labelPosition">[1545.797 1603 743.188 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">362</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 1600 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">364</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 1600 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 1600]</P>
+          <P Name="dataLimits">[1542.297 2292.484 1597.6 1602.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">1.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="367">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 1650 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">360</P>
+            <P Name="intersection">[3 0 1 0 150 1605 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">366</P>
+            <P Name="intersection">[1 0 -1 0 150 1695 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1650]</P>
+          <P Name="dataLimits">[147.6 152.4 1605 1695]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="369">
+          <P Name="labelString">[aVarTruthTableCondition_4 &amp;&amp; aVarTruthTableCondition_8]</P>
+          <P Name="labelPosition">[683.336 1703 320.625 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">366</P>
+            <P Name="intersection">[2 1 0 0 155 1700 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">368</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 1700 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 1700]</P>
+          <P Name="dataLimits">[155 1532.297 1697.6 1702.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">2.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="371">
+          <P Name="labelString">{
+/* &apos;FL_OFF&apos;: */
+TurnLight_FL_Out  = TLOUT_OFF;
+}</P>
+          <P Name="labelPosition">[1822.906 1703 188.969 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">368</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 1700 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">370</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 1700 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 1700]</P>
+          <P Name="dataLimits">[1542.297 2292.484 1697.6 1702.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">2.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="373">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 1750 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">366</P>
+            <P Name="intersection">[3 0 1 0 150 1705 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">372</P>
+            <P Name="intersection">[1 0 -1 0 150 1795 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1750]</P>
+          <P Name="dataLimits">[147.6 152.4 1705 1795]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="375">
+          <P Name="labelString">[aVarTruthTableCondition_5 &amp;&amp; aVarTruthTableCondition_8]</P>
+          <P Name="labelPosition">[683.336 1803 320.625 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">372</P>
+            <P Name="intersection">[2 1 0 0 155 1800 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">374</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 1800 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 1800]</P>
+          <P Name="dataLimits">[155 1532.297 1797.6 1802.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">3.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="377">
+          <P Name="labelString">{
+/* &apos;FR_OFF&apos;: */
+TurnLight_FR_Out  = TLOUT_OFF;
+}</P>
+          <P Name="labelPosition">[1821.914 1803 190.953 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">374</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 1800 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">376</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 1800 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 1800]</P>
+          <P Name="dataLimits">[1542.297 2292.484 1797.6 1802.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">3.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="379">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 1850 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">372</P>
+            <P Name="intersection">[3 0 1 0 150 1805 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">378</P>
+            <P Name="intersection">[1 0 -1 0 150 1895 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1850]</P>
+          <P Name="dataLimits">[147.6 152.4 1805 1895]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="381">
+          <P Name="labelString">[aVarTruthTableCondition_6 &amp;&amp; aVarTruthTableCondition_8]</P>
+          <P Name="labelPosition">[683.336 1903 320.625 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">378</P>
+            <P Name="intersection">[2 1 0 0 155 1900 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">380</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 1900 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 1900]</P>
+          <P Name="dataLimits">[155 1532.297 1897.6 1902.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">4.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="383">
+          <P Name="labelString">{
+/* &apos;RL_OFF&apos;: */
+TurnLight_RL_Out  = TLOUT_OFF;
+}</P>
+          <P Name="labelPosition">[1822.242 1903 190.297 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">380</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 1900 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">382</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 1900 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 1900]</P>
+          <P Name="dataLimits">[1542.297 2292.484 1897.6 1902.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">4.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="385">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 1950 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">378</P>
+            <P Name="intersection">[3 0 1 0 150 1905 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">384</P>
+            <P Name="intersection">[1 0 -1 0 150 1995 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 1950]</P>
+          <P Name="dataLimits">[147.6 152.4 1905 1995]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="387">
+          <P Name="labelString">[aVarTruthTableCondition_7 &amp;&amp; aVarTruthTableCondition_8]</P>
+          <P Name="labelPosition">[683.336 2003 320.625 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">384</P>
+            <P Name="intersection">[2 1 0 0 155 2000 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">386</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2000 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2000]</P>
+          <P Name="dataLimits">[155 1532.297 1997.6 2002.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">5.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="389">
+          <P Name="labelString">{
+/* &apos;RR_OFF&apos;: */
+TurnLight_RR_Out   = TLOUT_OFF;
+}</P>
+          <P Name="labelPosition">[1819.586 2003 195.609 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">386</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2000 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">388</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2000 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2000]</P>
+          <P Name="dataLimits">[1542.297 2292.484 1997.6 2002.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">5.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="391">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 2050 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">384</P>
+            <P Name="intersection">[3 0 1 0 150 2005 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">390</P>
+            <P Name="intersection">[1 0 -1 0 150 2095 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 2050]</P>
+          <P Name="dataLimits">[147.6 152.4 2005 2095]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="393">
+          <P Name="labelString">[aVarTruthTableCondition_1 &amp;&amp; aVarTruthTableCondition_9 &amp;&amp; aVarTruthTableCondition_10 &amp;&amp; aVarTruthTableCondition_11 &amp;&amp; !aVarTruthTableCondition_12 &amp;&amp; aVarTruthTableCondition_13 &amp;&amp; aVarTruthTableCondition_14 &amp;&amp; !aVarTruthTableCondition_15]</P>
+          <P Name="labelPosition">[158.5 2103 1370.297 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">390</P>
+            <P Name="intersection">[2 1 0 0 155 2100 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">392</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2100 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2100]</P>
+          <P Name="dataLimits">[155 1532.297 2097.6 2102.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">6.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="395">
+          <P Name="labelString">{
+/* &apos;LEFT_NORMAL_ON&apos;: */
+TurnLight_FL_Out = TLOUT_NORMAL_ON;TurnLight_RL_Out = TLOUT_NORMAL_ON;
+}</P>
+          <P Name="labelPosition">[1680.117 2103 474.547 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">392</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2100 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">394</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2100 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2100]</P>
+          <P Name="dataLimits">[1542.297 2292.484 2097.6 2102.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">6.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="397">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 2150 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">390</P>
+            <P Name="intersection">[3 0 1 0 150 2105 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">396</P>
+            <P Name="intersection">[1 0 -1 0 150 2195 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 2150]</P>
+          <P Name="dataLimits">[147.6 152.4 2105 2195]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="399">
+          <P Name="labelString">[aVarTruthTableCondition_2 &amp;&amp; aVarTruthTableCondition_9 &amp;&amp; aVarTruthTableCondition_10 &amp;&amp; aVarTruthTableCondition_11 &amp;&amp; !aVarTruthTableCondition_12 &amp;&amp; aVarTruthTableCondition_13 &amp;&amp; aVarTruthTableCondition_14 &amp;&amp; !aVarTruthTableCondition_15]</P>
+          <P Name="labelPosition">[158.5 2203 1370.297 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">396</P>
+            <P Name="intersection">[2 1 0 0 155 2200 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">398</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2200 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2200]</P>
+          <P Name="dataLimits">[155 1532.297 2197.6 2202.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">7.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="401">
+          <P Name="labelString">{
+/* &apos;RIGHT_NORMAL_ON&apos;: */
+TurnLight_FR_Out = TLOUT_NORMAL_ON;TurnLight_RR_Out = TLOUT_NORMAL_ON;
+}</P>
+          <P Name="labelPosition">[1678.133 2203 478.516 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">398</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2200 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">400</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2200 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2200]</P>
+          <P Name="dataLimits">[1542.297 2292.484 2197.6 2202.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">7.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="403">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 2250 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">396</P>
+            <P Name="intersection">[3 0 1 0 150 2205 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">402</P>
+            <P Name="intersection">[1 0 -1 0 150 2295 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 2250]</P>
+          <P Name="dataLimits">[147.6 152.4 2205 2295]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="405">
+          <P Name="labelString">[aVarTruthTableCondition_3 &amp;&amp; aVarTruthTableCondition_9 &amp;&amp; aVarTruthTableCondition_10 &amp;&amp; aVarTruthTableCondition_11 &amp;&amp; !aVarTruthTableCondition_12 &amp;&amp; aVarTruthTableCondition_13 &amp;&amp; aVarTruthTableCondition_14 &amp;&amp; !aVarTruthTableCondition_15]</P>
+          <P Name="labelPosition">[158.5 2303 1370.297 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">402</P>
+            <P Name="intersection">[2 1 0 0 155 2300 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">404</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2300 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2300]</P>
+          <P Name="dataLimits">[155 1532.297 2297.6 2302.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">8.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="407">
+          <P Name="labelString">{
+/* &apos;ALL_NORMAL_ON&apos;: */
+TurnLight_FL_Out = TLOUT_NORMAL_ON;TurnLight_RL_Out = TLOUT_NORMAL_ON;
+TurnLight_FR_Out = TLOUT_NORMAL_ON;TurnLight_RR_Out = TLOUT_NORMAL_ON;
+}</P>
+          <P Name="labelPosition">[1678.133 2303 478.516 72]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">404</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2300 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">406</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2300 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2300]</P>
+          <P Name="dataLimits">[1542.297 2292.484 2297.6 2302.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">8.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="409">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 2350 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">402</P>
+            <P Name="intersection">[3 0 1 0 150 2305 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">408</P>
+            <P Name="intersection">[1 0 -1 0 150 2395 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 2350]</P>
+          <P Name="dataLimits">[147.6 152.4 2305 2395]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="411">
+          <P Name="labelString">[aVarTruthTableCondition_1 &amp;&amp; aVarTruthTableCondition_9 &amp;&amp; aVarTruthTableCondition_10 &amp;&amp; aVarTruthTableCondition_11 &amp;&amp; !aVarTruthTableCondition_12 &amp;&amp; aVarTruthTableCondition_13 &amp;&amp; !aVarTruthTableCondition_14 &amp;&amp; aVarTruthTableCondition_15]</P>
+          <P Name="labelPosition">[158.5 2403 1370.297 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">408</P>
+            <P Name="intersection">[2 1 0 0 155 2400 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">410</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2400 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2400]</P>
+          <P Name="dataLimits">[155 1532.297 2397.6 2402.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">9.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="413">
+          <P Name="labelString">{
+/* &apos;LEFT_SHORT_ON&apos;: */
+TurnLight_FL_Out = TLOUT_SHORT_ON;TurnLight_RL_Out = TLOUT_SHORT_ON;
+}</P>
+          <P Name="labelPosition">[1689.648 2403 455.484 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">410</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2400 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">412</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2400 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2400]</P>
+          <P Name="dataLimits">[1542.297 2292.484 2397.6 2402.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">9.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="415">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 2450 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">408</P>
+            <P Name="intersection">[3 0 1 0 150 2405 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">414</P>
+            <P Name="intersection">[1 0 -1 0 150 2495 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 2450]</P>
+          <P Name="dataLimits">[147.6 152.4 2405 2495]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="417">
+          <P Name="labelString">[aVarTruthTableCondition_2 &amp;&amp; aVarTruthTableCondition_9 &amp;&amp; aVarTruthTableCondition_10 &amp;&amp; aVarTruthTableCondition_11 &amp;&amp; !aVarTruthTableCondition_12 &amp;&amp; aVarTruthTableCondition_13 &amp;&amp; !aVarTruthTableCondition_14 &amp;&amp; aVarTruthTableCondition_15]</P>
+          <P Name="labelPosition">[158.5 2503 1370.297 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">414</P>
+            <P Name="intersection">[2 1 0 0 155 2500 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">416</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2500 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2500]</P>
+          <P Name="dataLimits">[155 1532.297 2497.6 2502.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">10.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="419">
+          <P Name="labelString">{
+/* &apos;RIGHT_SHORT_ON&apos;: */
+TurnLight_FR_Out = TLOUT_SHORT_ON;TurnLight_RR_Out = TLOUT_SHORT_ON;
+}</P>
+          <P Name="labelPosition">[1687.664 2503 459.453 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">416</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2500 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">418</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2500 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2500]</P>
+          <P Name="dataLimits">[1542.297 2292.484 2497.6 2502.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">10.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="421">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 2550 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">414</P>
+            <P Name="intersection">[3 0 1 0 150 2505 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">420</P>
+            <P Name="intersection">[1 0 -1 0 150 2595 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 2550]</P>
+          <P Name="dataLimits">[147.6 152.4 2505 2595]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="423">
+          <P Name="labelString">[aVarTruthTableCondition_4 &amp;&amp; aVarTruthTableCondition_9 &amp;&amp; aVarTruthTableCondition_10 &amp;&amp; !aVarTruthTableCondition_11 &amp;&amp; aVarTruthTableCondition_12 &amp;&amp; aVarTruthTableCondition_13 &amp;&amp; aVarTruthTableCondition_14 &amp;&amp; !aVarTruthTableCondition_15]</P>
+          <P Name="labelPosition">[158.5 2603 1370.297 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">420</P>
+            <P Name="intersection">[2 1 0 0 155 2600 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">422</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2600 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2600]</P>
+          <P Name="dataLimits">[155 1532.297 2597.6 2602.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">11.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="425">
+          <P Name="labelString">{
+/* &apos;FL_DOUBLE&apos;: */
+TurnLight_FL_Out  = TLOUT_DOUBLE_ON;
+}</P>
+          <P Name="labelPosition">[1797.914 2603 238.953 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">422</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2600 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">424</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2600 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2600]</P>
+          <P Name="dataLimits">[1542.297 2292.484 2597.6 2602.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">11.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="427">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 2650 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">420</P>
+            <P Name="intersection">[3 0 1 0 150 2605 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">426</P>
+            <P Name="intersection">[1 0 -1 0 150 2695 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 2650]</P>
+          <P Name="dataLimits">[147.6 152.4 2605 2695]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="429">
+          <P Name="labelString">[aVarTruthTableCondition_5 &amp;&amp; aVarTruthTableCondition_9 &amp;&amp; aVarTruthTableCondition_10 &amp;&amp; !aVarTruthTableCondition_11 &amp;&amp; aVarTruthTableCondition_12 &amp;&amp; aVarTruthTableCondition_13 &amp;&amp; aVarTruthTableCondition_14 &amp;&amp; !aVarTruthTableCondition_15]</P>
+          <P Name="labelPosition">[158.5 2703 1370.297 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">426</P>
+            <P Name="intersection">[2 1 0 0 155 2700 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">428</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2700 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2700]</P>
+          <P Name="dataLimits">[155 1532.297 2697.6 2702.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">12.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="431">
+          <P Name="labelString">{
+/* &apos;FR_DOUBLE&apos;: */
+TurnLight_FR_Out  = TLOUT_DOUBLE_ON;
+}</P>
+          <P Name="labelPosition">[1796.922 2703 240.938 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">428</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2700 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">430</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2700 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2700]</P>
+          <P Name="dataLimits">[1542.297 2292.484 2697.6 2702.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">12.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="433">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 2750 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">426</P>
+            <P Name="intersection">[3 0 1 0 150 2705 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">432</P>
+            <P Name="intersection">[1 0 -1 0 150 2795 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 2750]</P>
+          <P Name="dataLimits">[147.6 152.4 2705 2795]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="435">
+          <P Name="labelString">[aVarTruthTableCondition_6 &amp;&amp; aVarTruthTableCondition_9 &amp;&amp; aVarTruthTableCondition_10 &amp;&amp; !aVarTruthTableCondition_11 &amp;&amp; aVarTruthTableCondition_12 &amp;&amp; aVarTruthTableCondition_13 &amp;&amp; aVarTruthTableCondition_14]</P>
+          <P Name="labelPosition">[158.5 2803 1192.984 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">432</P>
+            <P Name="intersection">[2 1 0 0 155 2800 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">434</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2800 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2800]</P>
+          <P Name="dataLimits">[155 1532.297 2797.6 2802.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">13.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="437">
+          <P Name="labelString">{
+/* &apos;RL_DOUBLE&apos;: */
+TurnLight_RL_Out  = TLOUT_DOUBLE_ON;
+}</P>
+          <P Name="labelPosition">[1797.25 2803 240.281 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">434</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2800 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">436</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2800 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2800]</P>
+          <P Name="dataLimits">[1542.297 2292.484 2797.6 2802.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">13.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="439">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[160 2850 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">432</P>
+            <P Name="intersection">[3 0 1 0 150 2805 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">438</P>
+            <P Name="intersection">[1 0 -1 0 150 2895 0 0]</P>
+          </dst>
+          <P Name="midPoint">[150 2850]</P>
+          <P Name="dataLimits">[147.6 152.4 2805 2895]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="441">
+          <P Name="labelString">[aVarTruthTableCondition_7 &amp;&amp; aVarTruthTableCondition_9 &amp;&amp; aVarTruthTableCondition_10 &amp;&amp; !aVarTruthTableCondition_11 &amp;&amp; aVarTruthTableCondition_12 &amp;&amp; aVarTruthTableCondition_13 &amp;&amp; aVarTruthTableCondition_14]</P>
+          <P Name="labelPosition">[158.5 2903 1192.984 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">438</P>
+            <P Name="intersection">[2 1 0 0 155 2900 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">440</P>
+            <P Name="intersection">[4 -1 0 0 1532.2969 2900 0 0]</P>
+          </dst>
+          <P Name="midPoint">[839.6484 2900]</P>
+          <P Name="dataLimits">[155 1532.297 2897.6 2902.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">2.0</Field>
+                <Field Name="index" Class="double">14.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <transition SSID="443">
+          <P Name="labelString">{
+/* &apos;RR_DOUBLE&apos;: */
+TurnLight_RR_Out  = TLOUT_DOUBLE_ON;
+}</P>
+          <P Name="labelPosition">[1796.258 2903 242.266 58]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">440</P>
+            <P Name="intersection">[2 1 0 0 1542.2969 2900 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">442</P>
+            <P Name="intersection">[4 -1 0 0 2292.4844 2900 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1913.3906 2900]</P>
+          <P Name="dataLimits">[1542.297 2292.484 2897.6 2902.4]</P>
+          <P Name="subviewer">33</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+          <autogen>
+            <P Name="isAutoCreated">1</P>
+            <P Name="source">33</P>
+            <Array PropName="mapping" Type="Struct" Dimension="1*1">
+              <MATStruct>
+                <Field Name="type" Class="double">1.0</Field>
+                <Field Name="index" Class="double">14.0</Field>
+              </MATStruct>
+            </Array>
+          </autogen>
+        </transition>
+        <junction SSID="330">
+          <P Name="position">[150 100 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="332">
+          <P Name="position">[150 200 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="334">
+          <P Name="position">[150 300 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="336">
+          <P Name="position">[150 400 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="338">
+          <P Name="position">[150 500 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="340">
+          <P Name="position">[150 600 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="342">
+          <P Name="position">[150 700 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="344">
+          <P Name="position">[150 800 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="346">
+          <P Name="position">[150 900 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="348">
+          <P Name="position">[150 1000 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="350">
+          <P Name="position">[150 1100 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="352">
+          <P Name="position">[150 1200 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="354">
+          <P Name="position">[150 1300 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="356">
+          <P Name="position">[150 1400 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="358">
+          <P Name="position">[150 1500 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="360">
+          <P Name="position">[150 1600 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="362">
+          <P Name="position">[1537.2969 1600 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="364">
+          <P Name="position">[2297.4844 1600 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="366">
+          <P Name="position">[150 1700 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="368">
+          <P Name="position">[1537.2969 1700 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="370">
+          <P Name="position">[2297.4844 1700 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="372">
+          <P Name="position">[150 1800 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="374">
+          <P Name="position">[1537.2969 1800 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="376">
+          <P Name="position">[2297.4844 1800 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="378">
+          <P Name="position">[150 1900 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="380">
+          <P Name="position">[1537.2969 1900 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="382">
+          <P Name="position">[2297.4844 1900 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="384">
+          <P Name="position">[150 2000 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="386">
+          <P Name="position">[1537.2969 2000 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="388">
+          <P Name="position">[2297.4844 2000 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="390">
+          <P Name="position">[150 2100 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="392">
+          <P Name="position">[1537.2969 2100 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="394">
+          <P Name="position">[2297.4844 2100 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="396">
+          <P Name="position">[150 2200 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="398">
+          <P Name="position">[1537.2969 2200 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="400">
+          <P Name="position">[2297.4844 2200 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="402">
+          <P Name="position">[150 2300 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="404">
+          <P Name="position">[1537.2969 2300 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="406">
+          <P Name="position">[2297.4844 2300 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="408">
+          <P Name="position">[150 2400 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="410">
+          <P Name="position">[1537.2969 2400 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="412">
+          <P Name="position">[2297.4844 2400 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="414">
+          <P Name="position">[150 2500 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="416">
+          <P Name="position">[1537.2969 2500 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="418">
+          <P Name="position">[2297.4844 2500 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="420">
+          <P Name="position">[150 2600 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="422">
+          <P Name="position">[1537.2969 2600 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="424">
+          <P Name="position">[2297.4844 2600 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="426">
+          <P Name="position">[150 2700 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="428">
+          <P Name="position">[1537.2969 2700 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="430">
+          <P Name="position">[2297.4844 2700 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="432">
+          <P Name="position">[150 2800 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="434">
+          <P Name="position">[1537.2969 2800 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="436">
+          <P Name="position">[2297.4844 2800 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="438">
+          <P Name="position">[150 2900 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="440">
+          <P Name="position">[1537.2969 2900 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="442">
+          <P Name="position">[2297.4844 2900 5]</P>
+          <P Name="subviewer">33</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+      </Children>
+    </state>
+    <state SSID="15">
+      <P Name="labelString">Idle</P>
+      <P Name="position">[378 227 213 231]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">452</P>
+      <P Name="type">OR_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+    </state>
+    <state SSID="448">
+      <P Name="labelString">CheckPriority_flow</P>
+      <P Name="position">[1675.9042 404.2115 382 299.3875]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">452</P>
+      <P Name="type">FUNC_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+      <Children>
+        <transition SSID="444">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[1741.526 455.477 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="intersection">[0 0 1 0 1741.5257 446.9709 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">28</P>
+            <P Name="intersection">[1 -0 -1 0 1741.5257 477.6525 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1741.5257 455.4765]</P>
+          <P Name="dataLimits">[1739.126 1743.926 446.971 477.652]</P>
+          <P Name="subviewer">452</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="23">
+          <P Name="labelString">[NewPriority &gt;=CurrentPriority]</P>
+          <P Name="labelPosition">[1769.199 465.153 164.5 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">28</P>
+            <P Name="intersection">[2 1 0 0 1748.5257 484.6525 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">29</P>
+            <P Name="intersection">[4 -1 0 0 1842.2757 484.6525 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1793.178 484.6525]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[1748.526 1842.276 482.252 487.052]</P>
+          <P Name="subviewer">452</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="24">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[1741.585 550.94 2 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">28</P>
+            <P Name="intersection">[3 0.0009 1 0 1741.5319 491.6525 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">30</P>
+            <P Name="intersection">[1 -0.0009 -1 0 1741.6445 618.2276 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1741.5846 550.9401]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[1739.237 1744.037 491.652 618.228]</P>
+          <P Name="subviewer">452</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="25">
+          <P Name="labelString">{
+CurrentPriority = NewPriority;
+IsFunctionCall = false;
+JurgeOutputMode();
+}</P>
+          <P Name="labelPosition">[1851.401 535.505 157.5 72]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">29</P>
+            <P Name="intersection">[3 0 1 0 1849.2757 491.6525 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">31</P>
+            <P Name="intersection">[1 0 -1 0 1849.2757 618.2275 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1849.2757 550.94]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[1846.876 1851.676 491.652 618.227]</P>
+          <P Name="subviewer">452</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="26">
+          <P Name="labelPosition">[1797.689 607.227 8 15.24]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">31</P>
+            <P Name="intersection">[4 -1 0 0 1842.2757 625.2275 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">30</P>
+            <P Name="intersection">[2 1 0 0 1748.6507 625.2275 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1797.6886 625.2275]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[1748.651 1842.276 622.827 627.627]</P>
+          <P Name="subviewer">452</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="446">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[1741.651 643.766 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">30</P>
+            <P Name="intersection">[3 0 1 0 1741.6507 632.2275 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">445</P>
+            <P Name="intersection">[1 0 -1 0 1741.6507 663.3042 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1741.6507 643.7659]</P>
+          <P Name="dataLimits">[1739.251 1744.051 632.227 663.304]</P>
+          <P Name="subviewer">452</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <junction SSID="28">
+          <P Name="position">[1741.5257 484.6525 7]</P>
+          <P Name="visible">0</P>
+          <P Name="subviewer">452</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="29">
+          <P Name="position">[1849.2757 484.6525 7]</P>
+          <P Name="visible">0</P>
+          <P Name="subviewer">452</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="30">
+          <P Name="position">[1741.6507 625.2275 7]</P>
+          <P Name="visible">0</P>
+          <P Name="subviewer">452</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="31">
+          <P Name="position">[1849.2757 625.2275 7]</P>
+          <P Name="visible">0</P>
+          <P Name="subviewer">452</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+        <junction SSID="445">
+          <P Name="position">[1741.6507 670.3042 7]</P>
+          <P Name="subviewer">452</P>
+          <P Name="type">CONNECTIVE_JUNCTION</P>
+        </junction>
+      </Children>
+    </state>
+    <data SSID="3" name="NewPriority">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="4" name="TurnLightPosition">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="5" name="TurnLightOnOff">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="6" name="TurnLightDutyCycle">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="7" name="TurnLightCycle">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="8" name="TurnLightTime">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="9" name="TurnLightNumber">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="11" name="TurnLight_FL_Out">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <P Name="initialValue">0</P>
+        <array>
+          <P Name="size">1</P>
+        </array>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="12" name="TurnLight_FR_Out">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <P Name="initialValue">0</P>
+        <array>
+          <P Name="size">1</P>
+        </array>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="13" name="TurnLight_RL_Out">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <P Name="initialValue">0</P>
+        <array>
+          <P Name="size">1</P>
+        </array>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="14" name="TurnLight_RR_Out">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <P Name="initialValue">0</P>
+        <array>
+          <P Name="size">1</P>
+        </array>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="1" name="IsFunctionCall">
+      <P Name="scope">DATA_STORE_MEMORY_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="176" name="TLOUT_OFF">
+      <P Name="scope">CONSTANT_DATA</P>
+      <props>
+        <P Name="initialValue">0</P>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="177" name="TLOUT_NORMAL_ON">
+      <P Name="scope">CONSTANT_DATA</P>
+      <props>
+        <P Name="initialValue">1</P>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="178" name="TLOUT_DOUBLE_ON">
+      <P Name="scope">CONSTANT_DATA</P>
+      <props>
+        <P Name="initialValue">2</P>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="179" name="TLOUT_SHORT_ON">
+      <P Name="scope">CONSTANT_DATA</P>
+      <props>
+        <P Name="initialValue">3</P>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="2" name="CurrentPriority">
+      <P Name="scope">DATA_STORE_MEMORY_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <transition SSID="16">
+      <P Name="labelString"/>
+      <P Name="labelPosition">[426.635 212 0 0]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="intersection">[0 0 1 0 426.635 197 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">15</P>
+        <P Name="intersection">[1 0 -1 0.2283 426.635 227 0 0]</P>
+      </dst>
+      <P Name="midPoint">[426.635 212]</P>
+      <P Name="dataLimits">[424.235 429.035 197 227]</P>
+      <P Name="subviewer">452</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+    <transition SSID="18">
+      <P Name="labelString">[IsFunctionCall == true]</P>
+      <P Name="labelPosition">[735.035 279.285 125.938 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">15</P>
+        <P Name="intersection">[2 1 0 0.3166 591 300.1429 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">17</P>
+        <P Name="intersection">[4 -1 -0 0.6142 1031 300.1429 0 0]</P>
+      </dst>
+      <P Name="midPoint">[807 300.1429]</P>
+      <P Name="dataLimits">[591 1031 297.743 302.543]</P>
+      <P Name="subviewer">452</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+    <transition SSID="19">
+      <P Name="labelString">[IsFunctionCall == false]</P>
+      <P Name="labelPosition">[728.747 344.604 130.609 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">17</P>
+        <P Name="intersection">[4 -1 0 0.4374 1031 365.7429 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">15</P>
+        <P Name="intersection">[2 1 -0 0.6006 591 365.7429 0 0]</P>
+      </dst>
+      <P Name="midPoint">[815 365.7429]</P>
+      <P Name="dataLimits">[591 1031 363.343 368.143]</P>
+      <P Name="subviewer">452</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+  </Children>
+</chart>

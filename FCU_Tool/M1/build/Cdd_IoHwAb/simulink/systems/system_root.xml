@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[371, 148, 1353, 900]</P>
+  <P Name="Open">on</P>
+  <P Name="SetExecutionDomain">on</P>
+  <P Name="ExecutionDomainType">ExportFunction</P>
+  <P Name="ZoomFactor">150</P>
+  <P Name="ReportName">simulink-default.rpt</P>
+  <P Name="SIDHighWatermark">25</P>
+  <Block BlockType="Inport" Name="IoHwAbRunnable" SID="3">
+    <P Name="Position">[530, 443, 560, 457]</P>
+    <P Name="ZOrder">2</P>
+    <Object Reference="true" PropName="Mappings" ObjectID="/simulink/blockdiagram.xml:5"/>
+    <P Name="OutputFunctionCall">on</P>
+    <P Name="SampleTime">0.01</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Cdd_IoHwAb_Init" SID="1">
+    <PortCounts/>
+    <P Name="Position">[500, 280, 700, 380]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_1"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="IoHwAbRunnable_sys" SID="4">
+    <PortCounts trigger="1"/>
+    <P Name="Position">[500, 500, 700, 600]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_4"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="IoHwAb_TurnLightCtrlCmd_FL" SID="6">
+    <PortCounts/>
+    <P Name="Position">[500, 720, 700, 820]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_6"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="IoHwAb_TurnLightCtrlCmd_FR" SID="10">
+    <PortCounts/>
+    <P Name="Position">[500, 940, 700, 1040]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_10"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="IoHwAb_TurnLightCtrlCmd_RL" SID="14">
+    <PortCounts/>
+    <P Name="Position">[500, 1160, 700, 1260]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_14"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="IoHwAb_TurnLightCtrlCmd_RR" SID="18">
+    <PortCounts/>
+    <P Name="Position">[500, 1380, 700, 1480]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_18"/>
+  </Block>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">3#out:1</P>
+    <P Name="Points">[35, 0]</P>
+    <P Name="Dst">4#trigger</P>
+  </Line>
+</System>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <ldi>
+      <element name="CL1CM1">
+          <property name="coverage.m2">6</property>
+      </element>
+      <element name="CL1CM2">
+          <property name="coverage.m2">3</property>
+      </element>
+      <element name="CL1MGR">
+          <property name="coverage.m2">15</property>
+      </element>
+      <element name="CL2CM1">
+          <property name="coverage.m2">9</property>
+      </element>
+      <element name="CL2MGR">
+          <property name="coverage.m2">8</property>
+      </element>
+  </ldi>

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chart id="115">
+  <P Name="name">TurnLight_Runnable_10ms_sys/HazardCtrlLogic</P>
+  <P Name="windowPosition">[-1928 -8 1936 1056]</P>
+  <P Name="viewLimits">[-556.629 1247.371 140.706 899.706]</P>
+  <P Name="zoomFactor">1.333</P>
+  <P Name="screen">[1 1 3200 1200 1.25]</P>
+  <P Name="viewObj">115</P>
+  <P Name="ssIdHighWaterMark">33</P>
+  <P Name="decomposition">CLUSTER_CHART</P>
+  <P Name="chartFileNumber">1</P>
+  <P Name="allowGlobalAccessToExportedFunctions">0</P>
+  <P Name="saturateOnIntegerOverflow">1</P>
+  <P Name="userSpecifiedStateTransitionExecutionOrder">1</P>
+  <P Name="disableImplicitCasting">1</P>
+  <Children>
+    <state SSID="7">
+      <P Name="labelString">OFF
+en:
+HazardRqst = HAZARDRQ_OFF;</P>
+      <P Name="position">[332 214.8497 249.75 644.5]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">115</P>
+      <P Name="type">OR_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+    </state>
+    <state SSID="9">
+      <P Name="labelString">ON_Crash
+en:
+HazardRqst = HAZARDRQ_ON;</P>
+      <P Name="position">[1211.7664 218.3497 272.5 172.5]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">115</P>
+      <P Name="type">OR_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+    </state>
+    <state SSID="11">
+      <P Name="labelString">On_EmergencyBrake
+en:
+HazardRqst = HAZARDRQ_ON;</P>
+      <P Name="position">[1211.7664 473.3497 276.5 199.5]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">115</P>
+      <P Name="type">OR_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+    </state>
+    <state SSID="10">
+      <P Name="labelString">ON_SW
+en:
+HazardRqst = HAZARDRQ_ON;</P>
+      <P Name="position">[1211.7664 701.8497 272.5 172.5]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">115</P>
+      <P Name="type">OR_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+    </state>
+    <data SSID="1" name="HazardSw">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="2" name="CrashIntensity">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="3" name="EmergencyBrakeLight">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="4" name="VehicleSpeed">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="5" name="VehicleSpeed_Valid">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="6" name="HazardRqst">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <P Name="initialValue">0</P>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="24" name="NO_CRASH">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">8</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="25" name="EBL_NO_REQ">
+      <P Name="scope">PARAMETER_DATA</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="26" name="EBL_REQ">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">1</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="27" name="VS_VALID">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">9</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="28" name="HAZARDSW_OFF">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">6</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="29" name="HAZARDSW_ON">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">7</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="30" name="HAZARDQR_OFF">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">2</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="31" name="HAZARDQR_ON">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">3</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="32" name="HAZARDRQ_OFF">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">4</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="33" name="HAZARDRQ_ON">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">5</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <transition SSID="8">
+      <P Name="labelString"/>
+      <P Name="labelPosition">[389.026 199.85 0 0]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="intersection">[0 0 1 0 389.0262 184.8497 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">7</P>
+        <P Name="intersection">[1 0 -1 0.2283 389.0262 214.8497 0 0]</P>
+      </dst>
+      <P Name="midPoint">[389.0262 199.8497]</P>
+      <P Name="dataLimits">[386.626 391.426 184.85 214.85]</P>
+      <P Name="subviewer">115</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+    <transition SSID="12">
+      <P Name="labelString">[hasChangedFrom(CrashIntensity,NO_CRASH)]</P>
+      <P Name="labelPosition">[689.291 238.043 258.328 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">7</P>
+        <P Name="intersection">[2 1 0 0.0675 581.75 258.3497 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">9</P>
+        <P Name="intersection">[4 -1 -0 0.7681 1211.7664 258.3497 0 0]</P>
+      </dst>
+      <P Name="midPoint">[892.7582 258.3497]</P>
+      <P Name="dataLimits">[581.75 1211.766 255.95 260.75]</P>
+      <P Name="subviewer">115</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+    <transition SSID="13">
+      <P Name="labelString">[CrashIntensity~=NO_CRASH &amp;&amp;after(500,tick)&amp;&amp;hasChangedTo(HazardSw,HAZARDSW_ON)]</P>
+      <P Name="labelPosition">[678.304 297.111 514.453 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">9</P>
+        <P Name="intersection">[4 -1 0 0.424 1211.7664 317.7165 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">7</P>
+        <P Name="intersection">[2 1 -0 0.1596 581.75 317.7165 0 0]</P>
+      </dst>
+      <P Name="midPoint">[900.7582 317.7165]</P>
+      <P Name="dataLimits">[581.75 1211.766 315.317 320.116]</P>
+      <P Name="subviewer">115</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+    <transition SSID="23">
+      <P Name="labelString">[CrashIntensity~=NO_CRASH &amp;&amp; after(90000,tick)]</P>
+      <P Name="labelPosition">[677.241 344.983 275.203 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">9</P>
+        <P Name="intersection">[4 -1 0 0.1411 1211.7664 366.5165 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">7</P>
+        <P Name="intersection">[2 1 -0 0.2353 581.75 366.5165 0 0]</P>
+      </dst>
+      <P Name="midPoint">[900.7582 366.5165]</P>
+      <P Name="dataLimits">[581.75 1211.766 364.117 368.916]</P>
+      <P Name="subviewer">115</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">2</P>
+    </transition>
+    <transition SSID="18">
+      <P Name="labelString">[hasChangedTo(EmergencyBrakeLight,EBL_REQ)]</P>
+      <P Name="labelPosition">[692.334 492.012 273.969 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">7</P>
+        <P Name="intersection">[2 1 0 0.4642 581.75 514.0119 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">11</P>
+        <P Name="intersection">[4 -1 -0 0.7962 1211.7664 514.0119 0 0]</P>
+      </dst>
+      <P Name="midPoint">[892.7582 514.0119]</P>
+      <P Name="dataLimits">[581.75 1211.766 511.612 516.412]</P>
+      <P Name="subviewer">115</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">2</P>
+    </transition>
+    <transition SSID="19">
+      <P Name="labelString">[EmergencyBrakeLight == EBL_REQ&amp;&amp;hasChangedTo(HazardSw,HAZARDSW_ON)]</P>
+      <P Name="labelPosition">[637.084 556.877 458.547 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">11</P>
+        <P Name="intersection">[4 -1 0 0.448 1211.7664 583.4694 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">7</P>
+        <P Name="intersection">[2 1 -0 0.5719 581.75 583.4694 0 0]</P>
+      </dst>
+      <P Name="midPoint">[900.7582 583.4694]</P>
+      <P Name="dataLimits">[581.75 1211.766 581.069 585.869]</P>
+      <P Name="subviewer">115</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+    <transition SSID="22">
+      <P Name="labelString">[EmergencyBrakeLight ==EBL_REQ&amp;&amp;VehicleSpeed&gt;15&amp;&amp;VehicleSpeed_Valid ==VS_VALID]</P>
+      <P Name="labelPosition">[638.425 632.136 504.563 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">11</P>
+        <P Name="intersection">[4 -1 0 0.0971 1211.7664 653.4694 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">7</P>
+        <P Name="intersection">[2 1 -0 0.6806 581.75 653.4694 0 0]</P>
+      </dst>
+      <P Name="midPoint">[900.7582 653.4694]</P>
+      <P Name="dataLimits">[581.75 1211.766 651.069 655.869]</P>
+      <P Name="subviewer">115</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">2</P>
+    </transition>
+    <transition SSID="20">
+      <P Name="labelString">[hasChangedTo(HazardSw,HAZARDSW_ON)]</P>
+      <P Name="labelPosition">[704.263 705 248.578 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">7</P>
+        <P Name="intersection">[2 1 0 0.7869 581.75 722.0119 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">10</P>
+        <P Name="intersection">[4 -1 -0 0.8831 1211.7664 722.0119 0 0]</P>
+      </dst>
+      <P Name="midPoint">[892.7582 722.0119]</P>
+      <P Name="dataLimits">[581.75 1211.766 719.612 724.412]</P>
+      <P Name="subviewer">115</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">3</P>
+    </transition>
+    <transition SSID="21">
+      <P Name="labelString">[hasChangedTo(HazardSw,HAZARDSW_ON)]</P>
+      <P Name="labelPosition">[697.289 793.33 248.578 16]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="SSID">10</P>
+        <P Name="intersection">[4 -1 0 0.3324 1211.7664 817.0119 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">7</P>
+        <P Name="intersection">[2 1 -0 0.9343 581.75 817.0119 0 0]</P>
+      </dst>
+      <P Name="midPoint">[900.7582 817.0119]</P>
+      <P Name="dataLimits">[581.75 1211.766 814.612 819.412]</P>
+      <P Name="subviewer">115</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+  </Children>
+</chart>

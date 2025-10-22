@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1928, -8, 8, 1048]</P>
+  <P Name="SystemRect">[0.000000, 0.000000, 0.000000, 0.000000]</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="ZoomFactor">80</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="Inport" Name="TurnLamp_RL_Output" SID="59">
+    <P Name="Position">[-265, 133, -235, 147]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Function-Call&#xA;Subsystem2" SID="115">
+    <P Name="Ports">[1, 0, 0, 1]</P>
+    <P Name="Position">[655, 366, 830, 434]</P>
+    <P Name="ZOrder">282</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_115"/>
+  </Block>
+  <Block BlockType="Reference" Name="TurnLampActuator" SID="74">
+    <P Name="Ports">[1, 4]</P>
+    <P Name="Position">[-150, -5, 145, 290]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="LibraryVersion">1.13</P>
+    <P Name="SourceBlock">TurnLightActLib/TurnLampActuator</P>
+    <P Name="SourceType">SubSystem</P>
+    <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLampCtrlCmd_RL" SID="61">
+    <P Name="Position">[240, 23, 270, 37]</P>
+    <P Name="ZOrder">-2</P>
+  </Block>
+  <Block BlockType="Outport" Name="Counter_RL" SID="62">
+    <P Name="Position">[240, 98, 270, 112]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="Com_CAN_LA_St_DirectionLampR" SID="63">
+    <P Name="Position">[240, 173, 270, 187]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">59#out:1</P>
+    <P Name="Points">[65, 0]</P>
+    <P Name="Dst">74#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">74#out:1</P>
+    <P Name="Points">[75, 0]</P>
+    <Branch>
+      <P Name="ZOrder">28</P>
+      <P Name="Points">[0, -31; 268, 0; 0, 401]</P>
+      <P Name="Dst">115#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">27</P>
+      <P Name="Dst">61#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">74#out:2</P>
+    <P Name="Dst">62#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">74#out:3</P>
+    <P Name="Dst">63#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">18</P>
+    <P Name="Src">74#out:4</P>
+    <P Name="Points">[590, 0]</P>
+    <P Name="Dst">115#trigger</P>
+  </Line>
+</System>

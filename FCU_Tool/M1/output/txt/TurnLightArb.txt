@@ -1,0 +1,20 @@
+[L1] System: Runnable_10ms_sys (Model=TurnLightArb, SID=4)
+	[L1 Port] Port: Name=Runnable_10ms                              , SID=3      , IO=IN , Type=S-R
+	[L1 Port] Port: Name=TurnLamp_FL_Out_u8_Signal                  , SID=6      , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=TurnLamp_RL_Out_u8_Signal                  , SID=8      , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=TurnLapm_FR_Out_u8_Signal                  , SID=10     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=TurnLapme_RR_Out_u8_Signal                 , SID=12     , IO=OUT, Type=S-R
+	[L1 Port] Port: Name=TurnLightService_TurnLightControl_Operation, SID=unknown, IO=OUT, Type=C-S
+[L2] System: TurnLightOutArb   (Model=TurnLightArb, SID=33)
+	[L2 Port] Port: Name=TurnLamp_FL_Out_u8_Signal_write            , SID=7      , IO=OUT
+	[L2 Port] Port: Name=TurnLamp_RL_Out_u8_Signal_write            , SID=9      , IO=OUT
+	[L2 Port] Port: Name=TurnLapm_FR_Out_u8_Signal_write            , SID=11     , IO=OUT
+	[L2 Port] Port: Name=TurnLapme_RR_Out_u8_Signal_write           , SID=13     , IO=OUT
+
+----- 统计摘要 --------------------------------------------------
+[L1 Port] 总数 = 6（IN=1, OUT=5；Type：C-S=1, S-R=5）
+[L2]      总数 = 1
+[L2 Port] 总数 = 4（IN=0, OUT=4）
+----- M1 结果 --------------------------------------------------
+portasr = 6.2, class = 1, portsim = 4
+M1 = portasr * class * portsim = 24.8

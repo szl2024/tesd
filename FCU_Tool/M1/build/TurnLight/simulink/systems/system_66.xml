@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[680, 245, 2584, 1268]</P>
+  <P Name="SIDHighWatermark">109</P>
+  <Block BlockType="Inport" Name="HazardSw" SID="66::101">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">81</P>
+  </Block>
+  <Block BlockType="Inport" Name="CrashIntensity" SID="66::102">
+    <P Name="Position">[20, 136, 40, 154]</P>
+    <P Name="ZOrder">82</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="EmergencyBrakeLight" SID="66::103">
+    <P Name="Position">[20, 171, 40, 189]</P>
+    <P Name="ZOrder">83</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="VehicleSpeed" SID="66::104">
+    <P Name="Position">[20, 206, 40, 224]</P>
+    <P Name="ZOrder">84</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="VehicleSpeed_Valid" SID="66::105">
+    <P Name="Position">[20, 246, 40, 264]</P>
+    <P Name="ZOrder">85</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="66::108">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[270, 230, 320, 270]</P>
+    <P Name="ZOrder">88</P>
+    <P Name="Outputs">1</P>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="66::107">
+    <P Name="Tag">Stateflow S-Function 1</P>
+    <PortCounts in="5" out="2"/>
+    <P Name="Position">[180, 100, 230, 220]</P>
+    <P Name="ZOrder">87</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="Parameters">EBL_NO_REQ,EBL_REQ,HAZARDQR_OFF,HAZARDQR_ON,HAZARDRQ_OFF,HAZARDRQ_ON,HAZARDSW_OFF,HAZARDSW_ON,NO_CRASH,VS_VALID</P>
+    <P Name="PortCounts">[5 2]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">on</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+    <PortProperties>
+      <Port Type="out" Index="2">
+        <P Name="Name">HazardRqst</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Terminator" Name=" Terminator " SID="66::109">
+    <P Name="Position">[460, 241, 480, 259]</P>
+    <P Name="ZOrder">89</P>
+  </Block>
+  <Block BlockType="Outport" Name="HazardRqst" SID="66::106">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">86</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">66::101#out:1</P>
+    <P Name="Dst">66::107#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">66::102#out:1</P>
+    <P Name="Dst">66::107#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">66::103#out:1</P>
+    <P Name="Dst">66::107#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">66::104#out:1</P>
+    <P Name="Dst">66::107#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">66::105#out:1</P>
+    <P Name="Dst">66::107#in:5</P>
+  </Line>
+  <Line>
+    <P Name="Name">HazardRqst</P>
+    <P Name="ZOrder">14</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">66::107#out:2</P>
+    <P Name="Dst">66::106#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">66::108#out:1</P>
+    <P Name="Dst">66::109#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">66::107#out:1</P>
+    <P Name="Dst">66::108#in:1</P>
+  </Line>
+</System>

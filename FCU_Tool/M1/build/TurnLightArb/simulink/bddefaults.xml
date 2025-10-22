@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BlockDiagramDefaults>
+  <SystemDefaults>
+    <P Name="PaperOrientation">landscape</P>
+    <P Name="PaperPositionMode">auto</P>
+    <P Name="PaperType">usletter</P>
+    <P Name="PaperUnits">inches</P>
+    <P Name="TiledPaperMargins">[0.500000, 0.500000, 0.500000, 0.500000]</P>
+    <P Name="TiledPageScale">1</P>
+    <P Name="ShowPageBoundaries">off</P>
+    <P Name="ModelBrowserVisibility">off</P>
+    <P Name="ModelBrowserWidth">200</P>
+    <P Name="ScreenColor">white</P>
+    <P Name="ZoomFactor">100</P>
+    <P Name="PortBlocksUseCompactNotation">off</P>
+    <P Name="Open">off</P>
+  </SystemDefaults>
+  <BlockDefaults>
+    <P Name="ForegroundColor">black</P>
+    <P Name="BackgroundColor">white</P>
+    <P Name="DropShadow">off</P>
+    <P Name="NameLocation">bottom</P>
+    <P Name="FontName">Helvetica</P>
+    <P Name="FontSize">10</P>
+    <P Name="FontWeight">normal</P>
+    <P Name="FontAngle">normal</P>
+    <P Name="ShowName">on</P>
+    <P Name="HideAutomaticName">on</P>
+    <P Name="BlockRotation">0</P>
+    <P Name="BlockMirror">off</P>
+  </BlockDefaults>
+  <AnnotationDefaults>
+    <P Name="HorizontalAlignment">left</P>
+    <P Name="VerticalAlignment">top</P>
+    <P Name="ForegroundColor">black</P>
+    <P Name="BackgroundColor">white</P>
+    <P Name="DropShadow">off</P>
+    <P Name="FontName">Helvetica</P>
+    <P Name="FontSize">10</P>
+    <P Name="FontWeight">normal</P>
+    <P Name="FontAngle">normal</P>
+    <P Name="MarkupType">model</P>
+    <P Name="UseDisplayTextAsClickCallback">off</P>
+    <P Name="AnnotationType">note_annotation</P>
+    <P Name="FixedHeight">off</P>
+    <P Name="FixedWidth">off</P>
+    <P Name="Interpreter">off</P>
+  </AnnotationDefaults>
+  <LineDefaults>
+    <P Name="FontName">Helvetica</P>
+    <P Name="FontSize">9</P>
+    <P Name="FontWeight">normal</P>
+    <P Name="FontAngle">normal</P>
+  </LineDefaults>
+  <MaskDefaults SelfModifiable="off">
+    <Display IconFrame="on" IconOpaque="opaque" RunInitForIconRedraw="analyze" IconRotate="none" PortRotate="default" IconUnits="autoscale"/>
+    <MaskParameter Evaluate="on" Tunable="on" NeverSave="off" Internal="off" ReadOnly="off" Enabled="on" Visible="on" ToolTip="on"/>
+    <DialogControl>
+      <ControlOptions Visible="on" Enabled="on" Row="new" HorizontalStretch="on" PromptLocation="top" Orientation="horizontal" Scale="linear" TextType="Plain Text" Expand="off" ShowFilter="on" ShowParameterName="on" WordWrap="on" AlignPrompts="off"/>
+    </DialogControl>
+  </MaskDefaults>
+  <BlockParameterDefaults>
+    <Block BlockType="ArgIn">
+      <P Name="Port">1</P>
+      <P Name="OutMin">[]</P>
+      <P Name="OutMax">[]</P>
+      <P Name="OutDataTypeStr">double</P>
+      <P Name="LockScale">off</P>
+      <P Name="PortDimensions">1</P>
+      <P Name="SignalType">real</P>
+    </Block>
+    <Block BlockType="BusSelector">
+      <P Name="OutputAsBus">off</P>
+    </Block>
+    <Block BlockType="Constant">
+      <P Name="Value">1</P>
+      <P Name="VectorParams1D">on</P>
+      <P Name="SamplingMode">Sample based</P>
+      <P Name="OutMin">[]</P>
+      <P Name="OutMax">[]</P>
+      <P Name="OutDataTypeStr">Inherit: Inherit from &apos;Constant value&apos;</P>
+      <P Name="LockScale">off</P>
+      <P Name="SampleTime">inf</P>
+      <P Name="FramePeriod">inf</P>
+      <P Name="PreserveConstantTs">off</P>
+    </Block>
+    <Block BlockType="DataStoreMemory">
+      <P Name="DataStoreName">A</P>
+      <P Name="ReadBeforeWriteMsg">none</P>
+      <P Name="WriteAfterWriteMsg">none</P>
+      <P Name="WriteAfterReadMsg">none</P>
+      <P Name="InitialValue">0</P>
+      <P Name="ShareAcrossModelInstances">off</P>
+      <P Name="StateMustResolveToSignalObject">off</P>
+      <P Name="VectorParams1D">on</P>
+      <P Name="OutMin">[]</P>
+      <P Name="OutMax">[]</P>
+      <P Name="OutDataTypeStr">Inherit: auto</P>
+      <P Name="LockScale">off</P>
+      <P Name="SignalType">auto</P>
+      <P Name="Dimensions">-1</P>
+      <P Name="DataLogging">off</P>
+      <P Name="DataLoggingLimitDataPoints">off</P>
+      <P Name="DataLoggingMaxPoints">5000</P>
+      <P Name="DataLoggingDecimateData">off</P>
+      <P Name="DataLoggingDecimation">2</P>
+      <P Name="DataLoggingNameMode">SignalName</P>
+    </Block>
+    <Block BlockType="DataStoreRead">
+      <P Name="DataStoreName">A</P>
+      <P Name="SampleTime">-1</P>
+    </Block>
+    <Block BlockType="DataStoreWrite">
+      <P Name="DataStoreName">A</P>
+      <P Name="SampleTime">-1</P>
+    </Block>
+    <Block BlockType="DataTypeConversion">
+      <P Name="OutMin">[]</P>
+      <P Name="OutMax">[]</P>
+      <P Name="OutDataTypeStr">Inherit: Inherit via back propagation</P>
+      <P Name="LockScale">off</P>
+      <P Name="ConvertRealWorld">Real World Value (RWV)</P>
+      <P Name="RndMeth">Zero</P>
+      <P Name="SaturateOnIntegerOverflow">on</P>
+      <P Name="SampleTime">-1</P>
+    </Block>
+    <Block BlockType="Demux">
+      <P Name="Outputs">4</P>
+      <P Name="DisplayOption">bar</P>
+      <P Name="BusSelectionMode">off</P>
+    </Block>
+    <Block BlockType="EventListener">
+      <P Name="EventType">Initialize</P>
+      <P Name="Variant">off</P>
+      <P Name="VariantControl">Variant</P>
+      <P Name="GeneratePreprocessorConditionals">off</P>
+    </Block>
+    <Block BlockType="From">
+      <P Name="GotoTag">A</P>
+      <P Name="IconDisplay">Tag</P>
+      <P Name="TagVisibility">local</P>
+    </Block>
+    <Block BlockType="Goto">
+      <P Name="GotoTag">A</P>
+      <P Name="IconDisplay">Tag</P>
+      <P Name="TagVisibility">local</P>
+    </Block>
+    <Block BlockType="Inport">
+      <P Name="Port">1</P>
+      <P Name="IconDisplay">Port number</P>
+      <P Name="OutputFunctionCall">off</P>
+      <P Name="OutMin">[]</P>
+      <P Name="OutMax">[]</P>
+      <P Name="OutDataTypeStr">Inherit: auto</P>
+      <P Name="LockScale">off</P>
+      <P Name="BusOutputAsStruct">off</P>
+      <P Name="Unit">inherit</P>
+      <P Name="PortDimensions">-1</P>
+      <P Name="VarSizeSig">Inherit</P>
+      <P Name="SampleTime">-1</P>
+      <P Name="SignalType">auto</P>
+      <P Name="SamplingMode">auto</P>
+      <P Name="LatchByDelayingOutsideSignal">off</P>
+      <P Name="LatchInputForFeedbackSignals">off</P>
+      <P Name="Interpolate">on</P>
+    </Block>
+    <Block BlockType="Outport">
+      <P Name="Port">1</P>
+      <P Name="IconDisplay">Port number</P>
+      <P Name="OutMin">[]</P>
+      <P Name="OutMax">[]</P>
+      <P Name="OutDataTypeStr">Inherit: auto</P>
+      <P Name="LockScale">off</P>
+      <P Name="BusOutputAsStruct">off</P>
+      <P Name="Unit">inherit</P>
+      <P Name="PortDimensions">-1</P>
+      <P Name="VarSizeSig">Inherit</P>
+      <P Name="SampleTime">-1</P>
+      <P Name="SignalType">auto</P>
+      <P Name="SamplingMode">auto</P>
+      <P Name="EnsureOutportIsVirtual">off</P>
+      <P Name="SourceOfInitialOutputValue">Dialog</P>
+      <P Name="OutputWhenDisabled">held</P>
+      <P Name="InitialOutput">[]</P>
+      <P Name="MustResolveToSignalObject">off</P>
+      <P Name="OutputWhenUnConnected">off</P>
+      <P Name="OutputWhenUnconnectedValue">0</P>
+      <P Name="VectorParamsAs1DForOutWhenUnconnected">on</P>
+    </Block>
+    <Block BlockType="S-Function">
+      <P Name="FunctionName">system</P>
+      <P Name="SFunctionModules">&apos;&apos;</P>
+      <P Name="PortCounts">[]</P>
+      <P Name="MultiThreadCoSim">auto</P>
+    </Block>
+    <Block BlockType="SubSystem">
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="Permissions">ReadWrite</P>
+      <P Name="PermitHierarchicalResolution">All</P>
+      <P Name="TreatAsAtomicUnit">off</P>
+      <P Name="MinAlgLoopOccurrences">off</P>
+      <P Name="ScheduleAs">Sample time</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWSystemCode">Auto</P>
+      <P Name="RTWFcnNameOpts">Auto</P>
+      <P Name="RTWFileNameOpts">Auto</P>
+      <P Name="FunctionInterfaceSpec">void_void</P>
+      <P Name="FunctionWithSeparateData">off</P>
+      <P Name="MatchGraphicalInterface">off</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="SimViewingDevice">off</P>
+      <P Name="ActiveForDiff">off</P>
+      <P Name="DataTypeOverride">UseLocalSettings</P>
+      <P Name="DataTypeOverrideAppliesTo">AllNumericTypes</P>
+      <P Name="MinMaxOverflowLogging">UseLocalSettings</P>
+      <P Name="Opaque">off</P>
+      <P Name="MaskHideContents">off</P>
+      <P Name="SFBlockType">NONE</P>
+      <P Name="Variant">off</P>
+      <P Name="VariantControlMode">expression</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
+      <P Name="TreatAsGroupedWhenPropagatingVariantConditions">on</P>
+      <P Name="ContentPreviewEnabled">off</P>
+      <P Name="IsWebBlock">off</P>
+      <P Name="IsInjectorSS">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
+      <P Name="IsWebBlockPanel">off</P>
+    </Block>
+    <Block BlockType="Terminator"/>
+    <Block BlockType="TriggerPort">
+      <P Name="TriggerType">rising</P>
+      <P Name="IsSimulinkFunction">off</P>
+      <P Name="FunctionVisibility">global</P>
+      <P Name="Variant">off</P>
+      <P Name="GeneratePreprocessorConditionals">off</P>
+      <P Name="StatesWhenEnabling">inherit</P>
+      <P Name="PropagateVarSize">During execution</P>
+      <P Name="ShowOutputPort">off</P>
+      <P Name="OutputDataType">auto</P>
+      <P Name="SampleTimeType">triggered</P>
+      <P Name="SampleTime">1</P>
+      <P Name="ZeroCross">on</P>
+      <P Name="DisallowConstTsAndPrmTs">off</P>
+      <P Name="InitialTriggerSignalState">compatibility (no trigger on first evaluation)</P>
+      <P Name="PortDimensions">-1</P>
+      <P Name="TriggerSignalSampleTime">-1</P>
+      <P Name="OutMin">[]</P>
+      <P Name="OutMax">[]</P>
+      <P Name="OutDataTypeStr">Inherit: auto</P>
+      <P Name="Interpolate">on</P>
+    </Block>
+  </BlockParameterDefaults>
+</BlockDiagramDefaults>

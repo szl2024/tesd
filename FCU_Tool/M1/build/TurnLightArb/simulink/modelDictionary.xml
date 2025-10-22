@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2020b_20191110">
+  <System type="System" uuid="07664c75-0c26-4b44-9687-db5b933159a9">
+    <Block type="Block" uuid="47c73a67-73e4-4261-b324-c3290494899e">
+      <Sid>15</Sid>
+      <Function type="Function" uuid="5df20d87-86df-4ef4-8641-e2ef430919ac">
+        <Argument type="Signal" uuid="e4462f9a-e9a9-4c87-9146-e2a0d2d5c6da">
+          <Identifier>TurnLightCtrlPara</Identifier>
+          <Name>TurnLightCtrlPara</Name>
+          <Type type="DataType" uuid="54c74700-08b2-492a-a922-52a1d41f03a9">
+            <Complexity>real</Complexity>
+            <Dimensions>1</Dimensions>
+            <NumericType>Bus: TurnLightService</NumericType>
+          </Type>
+        </Argument>
+        <Visibility>global</Visibility>
+        <Identifier>TurnLightService_TurnLightControl_Operation</Identifier>
+        <Name>TurnLightService_TurnLightControl_Operation</Name>
+      </Function>
+    </Block>
+    <Interface type="Interface" uuid="51df6172-9329-43cd-af0d-dc2c6f810e7c">
+      <Function type="Function" uuid="5df20d87-86df-4ef4-8641-e2ef430919ac"/>
+    </Interface>
+  </System>
+</MF0>

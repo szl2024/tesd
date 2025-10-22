@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sltp_editor version="1.1" packageUris="http://schema.mathworks.com/mf0/DiagramEditor/R2019a_20181107 http://schema.mathworks.com/mf0/SltpSyntax/R2020b_202005081148">
+  <diagram.editor.model.Diagram type="diagram.editor.model.Diagram" uuid="b718e511-8b02-46cb-9e11-2317ea77aa9d">
+    <entities type="diagram.editor.model.Entity" uuid="aae94436-81c9-466e-a8b6-28ab2f6fcd4d">
+      <position>0,0</position>
+      <size>0,0,0,0</size>
+      <syntaxElement type="sltp.mm.syntax.Node" uuid="3fe529cc-e2ca-4519-91d2-0216f951bc8d"/>
+      <title>Runnable_10ms</title>
+      <type>aperiodic</type>
+      <subDiagram type="diagram.editor.model.Diagram" uuid="3762731a-8f37-412d-af85-62d57e6c4335">
+        <position>0,0</position>
+        <syntaxElement type="sltp.mm.syntax.Graph" uuid="407fd5de-0af2-40e1-af95-b74ee1ff3b60"/>
+        <title>Runnable_10ms</title>
+        <type>graph.Graph</type>
+      </subDiagram>
+    </entities>
+    <syntaxElement type="sltp.mm.syntax.Graph" uuid="fdf388c5-63e5-40e4-b72e-b6eb3d1ba40a"/>
+    <title>Default</title>
+    <type>graph.Graph</type>
+  </diagram.editor.model.Diagram>
+  <sltp.mm.syntax.Context type="sltp.mm.syntax.Context" uuid="f2fa52c2-abcd-4c1b-bf6f-75a44b8ff4d5">
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="1770e884-3dd2-44d4-b4a5-a5aeefcdfc05">
+      <dataName>portCom_CAN_LA_St_DirectionLampL_u8_signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="1daf7bec-9ca6-403e-ac93-acfa3a3d9270">
+      <dataName>portCom_CAN_LA_St_DirectionLampR_u8_signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="78c53d96-feb8-459d-be74-4ee95f78e4af">
+      <dataName>portCountSignal_Left_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="b0a614b0-798b-4a5a-bfc9-1c4e10ec5c21">
+      <dataName>portCountSignal_Right_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="a2e0c280-ee43-45ae-8cd3-2831aba3958c">
+      <dataName>portRunnable_10ms</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="24d2f5c2-5a08-458b-a1c1-4c69902a8a48">
+      <dataName>portTurnLampCtrlCmd_FL_u8_signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="9aadfdaa-7758-4f9d-9594-e0f90866643e">
+      <dataName>portTurnLampCtrlCmd_FR_u8_signa</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="2aefa4ee-8654-4db8-86c3-90c021b361b2">
+      <dataName>portTurnLampCtrlCmd_RL_u8_signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="1fab83b4-9c78-4613-851e-f41dbc8b5707">
+      <dataName>portTurnLampCtrlCmd_RR_u8_signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="849a02ac-dd7f-475f-b66e-505663033b71">
+      <dataName>portTurnLamp_FL_Out_u8_Signal</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="d0ac1661-4461-4d7c-9398-0e4dd05310bf">
+      <dataName>portTurnLamp_RL_Out_u8_Signal</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="a121ec23-a2a9-4a8d-b3ca-787364d5d977">
+      <dataName>portTurnLapm_FR_Out_u8_Signal</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="a803a1a1-8d01-4024-a1ba-47c6670b708a">
+      <dataName>portTurnLapme_RR_Out_u8_Signal</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <rootGraph type="sltp.mm.syntax.Graph" uuid="fdf388c5-63e5-40e4-b72e-b6eb3d1ba40a">
+      <children type="sltp.mm.syntax.Node" uuid="3fe529cc-e2ca-4519-91d2-0216f951bc8d">
+        <priority>-2147483648</priority>
+        <rates type="sltp.mm.syntax.RateData">
+          <color>#e60000</color>
+          <hasBlocks>true</hasBlocks>
+          <rate>0.01</rate>
+          <title>F0</title>
+        </rates>
+        <title>Runnable_10ms</title>
+        <type>aperiodic</type>
+        <diagramElement type="diagram.editor.model.Entity" uuid="aae94436-81c9-466e-a8b6-28ab2f6fcd4d"/>
+        <subgraph type="sltp.mm.syntax.Graph" uuid="407fd5de-0af2-40e1-af95-b74ee1ff3b60">
+          <title>Runnable_10ms</title>
+          <diagramElement type="diagram.editor.model.Diagram" uuid="3762731a-8f37-412d-af85-62d57e6c4335"/>
+        </subgraph>
+      </children>
+      <title>Default</title>
+      <diagramElement type="diagram.editor.model.Diagram" uuid="b718e511-8b02-46cb-9e11-2317ea77aa9d"/>
+    </rootGraph>
+  </sltp.mm.syntax.Context>
+</sltp_editor>

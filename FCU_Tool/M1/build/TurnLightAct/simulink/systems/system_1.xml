@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[30, 30, 1010, 750]</P>
+  <P Name="SystemRect">[0.000000, 0.000000, 0.000000, 0.000000]</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="EventListener" Name="Event Listener" SID="2">
+    <P Name="Position">[235, 25, 255, 45]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="EventName">reset</P>
+  </Block>
+</System>

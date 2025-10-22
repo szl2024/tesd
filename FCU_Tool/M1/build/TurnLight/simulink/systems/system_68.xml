@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, 12, 1904, 1035]</P>
+  <P Name="SIDHighWatermark">122</P>
+  <Block BlockType="Inport" Name="TurnLightFb_FL" SID="68::101">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">81</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightFb_FR" SID="68::102">
+    <P Name="Position">[20, 136, 40, 154]</P>
+    <P Name="ZOrder">82</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightFb_RL" SID="68::103">
+    <P Name="Position">[20, 171, 40, 189]</P>
+    <P Name="ZOrder">83</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightFb_RR" SID="68::104">
+    <P Name="Position">[20, 206, 40, 224]</P>
+    <P Name="ZOrder">84</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightCtrlCmd_FL" SID="68::105">
+    <P Name="Position">[20, 246, 40, 264]</P>
+    <P Name="ZOrder">85</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightCtrlCmd_FR" SID="68::106">
+    <P Name="Position">[20, 281, 40, 299]</P>
+    <P Name="ZOrder">86</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightCtrlCmd_RL" SID="68::107">
+    <P Name="Position">[20, 316, 40, 334]</P>
+    <P Name="ZOrder">87</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightCtrlCmd_RR" SID="68::108">
+    <P Name="Position">[20, 351, 40, 369]</P>
+    <P Name="ZOrder">88</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLight_Decide" SID="68::109">
+    <P Name="Position">[20, 386, 40, 404]</P>
+    <P Name="ZOrder">89</P>
+    <P Name="Port">9</P>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="68::122">
+    <PortCounts in="1" out="8"/>
+    <P Name="Position">[270, 100, 320, 280]</P>
+    <P Name="ZOrder">102</P>
+    <P Name="Outputs">8</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">TurnLight_FLDOUBLE_OPEN</P>
+      </Port>
+      <Port Type="out" Index="2">
+        <P Name="Name">TurnLight_FRDOUBLE_OPEN</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">TurnLight_RLDOUBLE_OPEN</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="Name">TurnLight_RRDOUBLE_OPEN</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="Name">TurnLight_FLOFF_SHORT</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="Name">TurnLight_FROFF_SHORT</P>
+      </Port>
+      <Port Type="out" Index="7">
+        <P Name="Name">TurnLight_RLOFF_SHORT</P>
+      </Port>
+      <Port Type="out" Index="8">
+        <P Name="Name">TurnLight_RROFF_SHORT</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="68::121">
+    <P Name="Tag">Stateflow S-Function 4</P>
+    <PortCounts in="9" out="1"/>
+    <P Name="Position">[180, 100, 230, 300]</P>
+    <P Name="ZOrder">101</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="Parameters">TLCC_ON,TLFB_OFF,TLFB_OPEN,TLFB_SHORT</P>
+    <P Name="PortCounts">[9 1]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">on</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_FLDOUBLE_OPEN()" SID="68::112">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">92</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_FRDOUBLE_OPEN()" SID="68::115">
+    <P Name="Position">[460, 136, 480, 154]</P>
+    <P Name="ZOrder">95</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_RLDOUBLE_OPEN()" SID="68::119">
+    <P Name="Position">[460, 171, 480, 189]</P>
+    <P Name="ZOrder">99</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_RRDOUBLE_OPEN()" SID="68::120">
+    <P Name="Position">[460, 206, 480, 224]</P>
+    <P Name="ZOrder">100</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_FLOFF_SHORT()" SID="68::111">
+    <P Name="Position">[460, 246, 480, 264]</P>
+    <P Name="ZOrder">91</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_FROFF_SHORT()" SID="68::116">
+    <P Name="Position">[460, 281, 480, 299]</P>
+    <P Name="ZOrder">96</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_RLOFF_SHORT()" SID="68::117">
+    <P Name="Position">[460, 316, 480, 334]</P>
+    <P Name="ZOrder">97</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_RROFF_SHORT()" SID="68::118">
+    <P Name="Position">[460, 351, 480, 369]</P>
+    <P Name="ZOrder">98</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">19</P>
+    <P Name="Src">68::101#out:1</P>
+    <P Name="Dst">68::121#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">20</P>
+    <P Name="Src">68::102#out:1</P>
+    <P Name="Dst">68::121#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">68::103#out:1</P>
+    <P Name="Dst">68::121#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">22</P>
+    <P Name="Src">68::104#out:1</P>
+    <P Name="Dst">68::121#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">23</P>
+    <P Name="Src">68::105#out:1</P>
+    <P Name="Dst">68::121#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">24</P>
+    <P Name="Src">68::106#out:1</P>
+    <P Name="Dst">68::121#in:6</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">25</P>
+    <P Name="Src">68::107#out:1</P>
+    <P Name="Dst">68::121#in:7</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">26</P>
+    <P Name="Src">68::108#out:1</P>
+    <P Name="Dst">68::121#in:8</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">27</P>
+    <P Name="Src">68::109#out:1</P>
+    <P Name="Dst">68::121#in:9</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_FLDOUBLE_OPEN</P>
+    <P Name="ZOrder">28</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">68::122#out:1</P>
+    <P Name="Dst">68::112#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_FRDOUBLE_OPEN</P>
+    <P Name="ZOrder">29</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">68::122#out:2</P>
+    <P Name="Dst">68::115#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_RLDOUBLE_OPEN</P>
+    <P Name="ZOrder">30</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">68::122#out:3</P>
+    <P Name="Dst">68::119#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_RRDOUBLE_OPEN</P>
+    <P Name="ZOrder">31</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">68::122#out:4</P>
+    <P Name="Dst">68::120#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_FLOFF_SHORT</P>
+    <P Name="ZOrder">32</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">68::122#out:5</P>
+    <P Name="Dst">68::111#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_FROFF_SHORT</P>
+    <P Name="ZOrder">33</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">68::122#out:6</P>
+    <P Name="Dst">68::116#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_RLOFF_SHORT</P>
+    <P Name="ZOrder">34</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">68::122#out:7</P>
+    <P Name="Dst">68::117#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_RROFF_SHORT</P>
+    <P Name="ZOrder">35</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">68::122#out:8</P>
+    <P Name="Dst">68::118#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">36</P>
+    <P Name="Src">68::121#out:1</P>
+    <P Name="Dst">68::122#in:1</P>
+  </Line>
+</System>

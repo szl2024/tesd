@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chart id="294">
+  <P Name="name">TurnLight_Runnable_10ms_sys/TurnLightDiag</P>
+  <P Name="windowPosition">[-1928 -8 1936 1056]</P>
+  <P Name="viewLimits">[341.12 3638.38 160 1413.047]</P>
+  <P Name="zoomFactor">2.947</P>
+  <P Name="screen">[1 1 3200 1200 1.25]</P>
+  <P Name="viewObj">294</P>
+  <P Name="ssIdHighWaterMark">91</P>
+  <P Name="decomposition">SET_CHART</P>
+  <P Name="chartFileNumber">4</P>
+  <P Name="allowGlobalAccessToExportedFunctions">0</P>
+  <P Name="saturateOnIntegerOverflow">1</P>
+  <P Name="userSpecifiedStateTransitionExecutionOrder">1</P>
+  <P Name="disableImplicitCasting">1</P>
+  <Children>
+    <state SSID="9">
+      <P Name="labelString">FLDIAG</P>
+      <P Name="position">[422 172 1360 473]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">294</P>
+      <P Name="type">AND_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+      <P Name="executionOrder">1</P>
+      <Children>
+        <state SSID="13">
+          <P Name="labelString">SHORT
+en:
+FL_DIAGSt = DiagStType.SHORT;
+TurnLight_FLOFF_SHORT</P>
+          <P Name="position">[1255.2024 241.4469 337.2 144]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <state SSID="11">
+          <P Name="labelString">IDLE
+en:
+FL_DIAGSt = DiagStType.NORMAL;</P>
+          <P Name="position">[481.5524 282.4469 270 308.2]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <state SSID="14">
+          <P Name="labelString">OPEN
+en:
+FL_DIAGSt = DiagStType.OPEN;
+TurnLight_FLDOUBLE_OPEN</P>
+          <P Name="position">[1255.2024 437.1469 337.2 144]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <transition SSID="12">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[543.202 267.447 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="intersection">[0 0 1 0 543.2024 252.4469 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">11</P>
+            <P Name="intersection">[1 0 -1 0.2283 543.2024 282.4469 0 0]</P>
+          </dst>
+          <P Name="midPoint">[543.2024 267.4469]</P>
+          <P Name="dataLimits">[540.802 545.602 252.447 282.447]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="15">
+          <P Name="labelString">[TurnLightFb_FL == TLFB_SHORT...
+&amp;&amp;TurnLightCtrlCmd_FL ==TLCC_ON]</P>
+          <P Name="labelPosition">[888.434 275.049 209.016 30]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">11</P>
+            <P Name="intersection">[2 1 0 0.1006 751.5524 313.4469 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">13</P>
+            <P Name="intersection">[4 -1 -0 0.5 1255.2024 313.4469 0 0]</P>
+          </dst>
+          <P Name="midPoint">[999.3774 313.4469]</P>
+          <P Name="dataLimits">[751.552 1255.202 311.047 315.847]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="24">
+          <P Name="labelString">[TurnLight_Decide == TurnLightDecideStType.ALLOFF]</P>
+          <P Name="labelPosition">[893.796 344.189 296.875 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">13</P>
+            <P Name="intersection">[4 -1 0 0.1439 1255.2024 364.722 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">11</P>
+            <P Name="intersection">[2 1 0 0.267 751.5524 364.722 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1007.3774 364.722]</P>
+          <P Name="dataLimits">[751.552 1255.202 362.322 367.122]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="17">
+          <P Name="labelString">[TurnLightFb_FL == TLFB_OPEN...
+&amp;&amp;TurnLightCtrlCmd_FL ==TLCC_ON]</P>
+          <P Name="labelPosition">[857.603 434.575 209.016 30]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">11</P>
+            <P Name="intersection">[2 1 0 0.6352 751.5524 478.2077 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">14</P>
+            <P Name="intersection">[4 -1 -0 0.7149 1255.2024 478.2077 0 0]</P>
+          </dst>
+          <P Name="midPoint">[999.3774 478.2077]</P>
+          <P Name="dataLimits">[751.552 1255.202 475.808 480.608]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="18">
+          <P Name="labelString">[TurnLightFb_FL == TLFB_OFF]{LeftRetry =1}</P>
+          <P Name="labelPosition">[856.276 502.491 247.188 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">14</P>
+            <P Name="intersection">[4 -1 0 0.3915 1255.2024 524.7766 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">11</P>
+            <P Name="intersection">[2 1 -0 0.7863 751.5524 524.7766 0 0]</P>
+          </dst>
+          <P Name="midPoint">[1007.3774 524.7766]</P>
+          <P Name="dataLimits">[751.552 1255.202 522.377 527.177]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+      </Children>
+    </state>
+    <state SSID="54">
+      <P Name="labelString">FRDIAG</P>
+      <P Name="position">[2204 192.0469 1360 473]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">294</P>
+      <P Name="type">AND_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+      <P Name="executionOrder">2</P>
+      <Children>
+        <state SSID="56">
+          <P Name="labelString">SHORT
+en:
+FR_DIAGSt = DiagStType.SHORT;
+TurnLight_FROFF_SHORT</P>
+          <P Name="position">[3037.2024 261.4938 337.2 144]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <state SSID="57">
+          <P Name="labelString">IDLE
+en:
+FL_DIAGSt = DiagStType.NORMAL;</P>
+          <P Name="position">[2263.5524 302.4938 270 308.2]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <state SSID="58">
+          <P Name="labelString">OPEN
+en:
+FR_DIAGSt = DiagStType.OPEN;
+TurnLight_FRDOUBLE_OPEN</P>
+          <P Name="position">[3037.2024 457.1938 337.2 144]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <transition SSID="59">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[2325.202 287.494 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="intersection">[0 0 1 0 2325.2024 272.4938 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">57</P>
+            <P Name="intersection">[1 0 -1 0.2283 2325.2024 302.4938 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2325.2024 287.4938]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2322.802 2327.602 272.494 302.494]</P>
+          <P Name="subviewer">294</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="60">
+          <P Name="labelString">[TurnLightFb_FR == TLFB_SHORT...
+&amp;&amp;TurnLightCtrlCmd_FR ==TLCC_ON]</P>
+          <P Name="labelPosition">[2670.434 295.096 211.438 30]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">57</P>
+            <P Name="intersection">[2 1 0 0.1006 2533.5524 333.4938 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">56</P>
+            <P Name="intersection">[4 -1 -0 0.5 3037.2024 333.4938 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2781.3774 333.4938]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2533.552 3037.202 331.094 335.894]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="61">
+          <P Name="labelString">[TurnLight_Decide == TurnLightDecideStType.ALLOFF]</P>
+          <P Name="labelPosition">[2675.796 364.236 296.875 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">56</P>
+            <P Name="intersection">[4 -1 0 0.1439 3037.2024 384.7688 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">57</P>
+            <P Name="intersection">[2 1 0 0.267 2533.5524 384.7688 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2789.3774 384.7688]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2533.552 3037.202 382.369 387.169]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="62">
+          <P Name="labelString">[TurnLightFb_FR == TLFB_OPEN...
+&amp;&amp;TurnLightCtrlCmd_FR ==TLCC_ON]</P>
+          <P Name="labelPosition">[2639.603 454.622 211.438 30]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">57</P>
+            <P Name="intersection">[2 1 0 0.6352 2533.5524 498.2546 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">58</P>
+            <P Name="intersection">[4 -1 -0 0.7149 3037.2024 498.2546 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2781.3774 498.2546]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2533.552 3037.202 495.855 500.655]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="55">
+          <P Name="labelString">[TurnLightFb_FR == TLFB_OFF]{RightRetry =1}</P>
+          <P Name="labelPosition">[2638.276 522.538 257.594 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">58</P>
+            <P Name="intersection">[4 -1 0 0.3915 3037.2024 544.8235 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">57</P>
+            <P Name="intersection">[2 1 -0 0.7863 2533.5524 544.8235 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2789.3774 544.8235]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2533.552 3037.202 542.423 547.223]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+      </Children>
+    </state>
+    <state SSID="44">
+      <P Name="labelString">RLDIAG</P>
+      <P Name="position">[394 898.0469 1360 473]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">294</P>
+      <P Name="type">AND_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+      <P Name="executionOrder">3</P>
+      <Children>
+        <state SSID="41">
+          <P Name="labelString">SHORT
+en:
+RL_DIAGSt = DiagStType.SHORT;
+TurnLight_RLOFF_SHORT</P>
+          <P Name="position">[1227.2024 967.4938 337.2 144]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <state SSID="42">
+          <P Name="labelString">IDLE
+en:
+FL_DIAGSt = DiagStType.NORMAL;</P>
+          <P Name="position">[453.5524 1008.4938 270 308.2]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <state SSID="39">
+          <P Name="labelString">OPEN
+en:
+RL_DIAGSt = DiagStType.OPEN;
+TurnLight_RLDOUBLE_OPEN</P>
+          <P Name="position">[1227.2024 1163.1938 337.2 144]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <transition SSID="43">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[515.202 993.494 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="intersection">[0 0 1 0 515.2024 978.4938 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">42</P>
+            <P Name="intersection">[1 0 -1 0.2283 515.2024 1008.4938 0 0]</P>
+          </dst>
+          <P Name="midPoint">[515.2024 993.4938]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[512.802 517.602 978.494 1008.494]</P>
+          <P Name="subviewer">294</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="37">
+          <P Name="labelString">[TurnLightFb_RL == TLFB_SHORT...
+&amp;&amp;TurnLightCtrlCmd_RL ==TLCC_ON]</P>
+          <P Name="labelPosition">[860.434 1001.096 210.344 30]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">42</P>
+            <P Name="intersection">[2 1 0 0.1006 723.5524 1039.4938 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">41</P>
+            <P Name="intersection">[4 -1 -0 0.5 1227.2024 1039.4938 0 0]</P>
+          </dst>
+          <P Name="midPoint">[971.3774 1039.4938]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[723.552 1227.202 1037.094 1041.894]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="38">
+          <P Name="labelString">[TurnLight_Decide == TurnLightDecideStType.ALLOFF]</P>
+          <P Name="labelPosition">[865.796 1070.236 296.875 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">41</P>
+            <P Name="intersection">[4 -1 0 0.1439 1227.2024 1090.7688 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">42</P>
+            <P Name="intersection">[2 1 0 0.267 723.5524 1090.7688 0 0]</P>
+          </dst>
+          <P Name="midPoint">[979.3774 1090.7688]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[723.552 1227.202 1088.369 1093.169]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="40">
+          <P Name="labelString">[TurnLightFb_RL == TLFB_OPEN...
+&amp;&amp;TurnLightCtrlCmd_FL ==TLCC_ON]</P>
+          <P Name="labelPosition">[829.603 1160.622 209.016 30]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">42</P>
+            <P Name="intersection">[2 1 0 0.6352 723.5524 1204.2546 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">39</P>
+            <P Name="intersection">[4 -1 -0 0.7149 1227.2024 1204.2546 0 0]</P>
+          </dst>
+          <P Name="midPoint">[971.3774 1204.2546]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[723.552 1227.202 1201.855 1206.655]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="36">
+          <P Name="labelString">[TurnLightFb_RL == TLFB_OFF]{LeftRetry =1}</P>
+          <P Name="labelPosition">[828.276 1228.538 248.516 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">39</P>
+            <P Name="intersection">[4 -1 0 0.3915 1227.2024 1250.8235 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">42</P>
+            <P Name="intersection">[2 1 -0 0.7863 723.5524 1250.8235 0 0]</P>
+          </dst>
+          <P Name="midPoint">[979.3774 1250.8235]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[723.552 1227.202 1248.423 1253.224]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+      </Children>
+    </state>
+    <state SSID="79">
+      <P Name="labelString">RRDIAG</P>
+      <P Name="position">[2225.5 928.0469 1360 473]</P>
+      <P Name="fontSize">12</P>
+      <P Name="subviewer">294</P>
+      <P Name="type">AND_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+      <P Name="executionOrder">4</P>
+      <Children>
+        <state SSID="74">
+          <P Name="labelString">SHORT
+en:
+FL_DIAGSt = DiagStType.SHORT;
+TurnLight_RROFF_SHORT</P>
+          <P Name="position">[3058.7024 997.4938 337.2 144]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <state SSID="80">
+          <P Name="labelString">IDLE
+en:
+FL_DIAGSt = DiagStType.NORMAL;</P>
+          <P Name="position">[2285.0524 1038.4938 270 308.2]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <state SSID="75">
+          <P Name="labelString">OPEN
+en:
+FL_DIAGSt = DiagStType.OPEN;
+TurnLight_RRDOUBLE_OPEN</P>
+          <P Name="position">[3058.7024 1193.1938 337.2 144]</P>
+          <P Name="fontSize">12</P>
+          <P Name="subviewer">294</P>
+          <P Name="type">OR_STATE</P>
+          <P Name="decomposition">CLUSTER_STATE</P>
+        </state>
+        <transition SSID="76">
+          <P Name="labelString"/>
+          <P Name="labelPosition">[2346.702 1023.494 0 0]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="intersection">[0 0 1 0 2346.7024 1008.4938 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">80</P>
+            <P Name="intersection">[1 0 -1 0.2283 2346.7024 1038.4938 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2346.7024 1023.4938]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2344.302 2349.102 1008.494 1038.494]</P>
+          <P Name="subviewer">294</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="77">
+          <P Name="labelString">[TurnLightFb_FL == TLFB_SHORT...
+&amp;&amp;TurnLightCtrlCmd_FL ==TLCC_ON]</P>
+          <P Name="labelPosition">[2691.934 1031.096 209.016 30]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">80</P>
+            <P Name="intersection">[2 1 0 0.1006 2555.0524 1069.4938 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">74</P>
+            <P Name="intersection">[4 -1 -0 0.5 3058.7024 1069.4938 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2802.8774 1069.4938]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2555.052 3058.702 1067.094 1071.894]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="72">
+          <P Name="labelString">[TurnLight_Decide == TurnLightDecideStType.ALLOFF]</P>
+          <P Name="labelPosition">[2697.296 1100.236 296.875 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">74</P>
+            <P Name="intersection">[4 -1 0 0.1439 3058.7024 1120.7688 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">80</P>
+            <P Name="intersection">[2 1 0 0.267 2555.0524 1120.7688 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2810.8774 1120.7688]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2555.052 3058.702 1118.369 1123.169]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+        <transition SSID="73">
+          <P Name="labelString">[TurnLightFb_FL == TLFB_OPEN...
+&amp;&amp;TurnLightCtrlCmd_FL ==TLCC_ON]</P>
+          <P Name="labelPosition">[2661.103 1190.622 209.016 30]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">80</P>
+            <P Name="intersection">[2 1 0 0.6352 2555.0524 1234.2546 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">75</P>
+            <P Name="intersection">[4 -1 -0 0.7149 3058.7024 1234.2546 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2802.8774 1234.2546]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2555.052 3058.702 1231.855 1236.655]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">2</P>
+        </transition>
+        <transition SSID="78">
+          <P Name="labelString">[TurnLightFb_FL == TLFB_OFF]{RightRetry =1}</P>
+          <P Name="labelPosition">[2659.776 1258.538 255.172 16]</P>
+          <P Name="fontSize">12</P>
+          <src>
+            <P Name="SSID">75</P>
+            <P Name="intersection">[4 -1 0 0.3915 3058.7024 1280.8235 0 0]</P>
+          </src>
+          <dst>
+            <P Name="SSID">80</P>
+            <P Name="intersection">[2 1 -0 0.7863 2555.0524 1280.8235 0 0]</P>
+          </dst>
+          <P Name="midPoint">[2810.8774 1280.8235]</P>
+          <P Name="visible">0</P>
+          <P Name="dataLimits">[2555.052 3058.702 1278.423 1283.224]</P>
+          <P Name="subviewer">294</P>
+          <P Name="drawStyle">SMART</P>
+          <slide>
+            <P Name="sticky">BOTH_STICK</P>
+          </slide>
+          <P Name="executionOrder">1</P>
+        </transition>
+      </Children>
+    </state>
+    <data SSID="1" name="TurnLightFb_FL">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="2" name="TurnLightFb_FR">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="3" name="TurnLightFb_RL">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="4" name="TurnLightFb_RR">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="5" name="TurnLightCtrlCmd_FL">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="6" name="TurnLightCtrlCmd_FR">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="7" name="TurnLightCtrlCmd_RL">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="8" name="TurnLightCtrlCmd_RR">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="19" name="FL_DIAGSt">
+      <P Name="scope">LOCAL_DATA</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="enumType">DiagStType</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="20" name="FR_DIAGSt">
+      <P Name="scope">LOCAL_DATA</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="enumType">DiagStType</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="21" name="RL_DIAGSt">
+      <P Name="scope">LOCAL_DATA</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="enumType">DiagStType</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="22" name="RR_DIAGSt">
+      <P Name="scope">LOCAL_DATA</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="enumType">DiagStType</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="25" name="TurnLight_Decide">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="enumType">TurnLightDecideStType</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">uint8</P>
+    </data>
+    <data SSID="34" name="LeftRetry">
+      <P Name="scope">DATA_STORE_MEMORY_DATA</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="35" name="RightRetry">
+      <P Name="scope">DATA_STORE_MEMORY_DATA</P>
+      <props>
+        <type>
+          <P Name="primitive">SF_UINT8_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="88" name="TLCC_ON">
+      <P Name="scope">PARAMETER_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="89" name="TLFB_OFF">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">1</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="90" name="TLFB_OPEN">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">2</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="91" name="TLFB_SHORT">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">3</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <event SSID="29">
+      <P Name="name">TurnLight_FLDOUBLE_OPEN</P>
+      <P Name="scope">OUTPUT_EVENT</P>
+      <P Name="trigger">FUNCTION_CALL_EVENT</P>
+    </event>
+    <event SSID="82">
+      <P Name="name">TurnLight_FRDOUBLE_OPEN</P>
+      <P Name="scope">OUTPUT_EVENT</P>
+      <P Name="trigger">FUNCTION_CALL_EVENT</P>
+    </event>
+    <event SSID="86">
+      <P Name="name">TurnLight_RLDOUBLE_OPEN</P>
+      <P Name="scope">OUTPUT_EVENT</P>
+      <P Name="trigger">FUNCTION_CALL_EVENT</P>
+    </event>
+    <event SSID="87">
+      <P Name="name">TurnLight_RRDOUBLE_OPEN</P>
+      <P Name="scope">OUTPUT_EVENT</P>
+      <P Name="trigger">FUNCTION_CALL_EVENT</P>
+    </event>
+    <event SSID="28">
+      <P Name="name">TurnLight_FLOFF_SHORT</P>
+      <P Name="scope">OUTPUT_EVENT</P>
+      <P Name="trigger">FUNCTION_CALL_EVENT</P>
+    </event>
+    <event SSID="83">
+      <P Name="name">TurnLight_FROFF_SHORT</P>
+      <P Name="scope">OUTPUT_EVENT</P>
+      <P Name="trigger">FUNCTION_CALL_EVENT</P>
+    </event>
+    <event SSID="84">
+      <P Name="name">TurnLight_RLOFF_SHORT</P>
+      <P Name="scope">OUTPUT_EVENT</P>
+      <P Name="trigger">FUNCTION_CALL_EVENT</P>
+    </event>
+    <event SSID="85">
+      <P Name="name">TurnLight_RROFF_SHORT</P>
+      <P Name="scope">OUTPUT_EVENT</P>
+      <P Name="trigger">FUNCTION_CALL_EVENT</P>
+    </event>
+  </Children>
+</chart>

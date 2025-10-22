@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1928, -8, 8, 1048]</P>
+  <P Name="SystemRect">[0.000000, 0.000000, 0.000000, 0.000000]</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="ZoomFactor">125</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="Inport" Name="TurnLamp_FR_Output" SID="53">
+    <P Name="Position">[-265, 133, -235, 147]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Function-Call&#xA;Subsystem1" SID="111">
+    <P Name="Ports">[1, 0, 0, 1]</P>
+    <P Name="Position">[345, 256, 520, 324]</P>
+    <P Name="ZOrder">45</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_111"/>
+  </Block>
+  <Block BlockType="Reference" Name="TurnLampActuator1" SID="75">
+    <P Name="Ports">[1, 3]</P>
+    <P Name="Position">[-150, -8, 145, 288]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="LibraryVersion">1.13</P>
+    <P Name="SourceBlock">TurnLightActLib/TurnLampActuator1</P>
+    <P Name="SourceType">SubSystem</P>
+    <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Outport" Name="Counter_FR" SID="56">
+    <P Name="Position">[245, 133, 275, 147]</P>
+    <P Name="ZOrder">1</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLampCtrlCmd_FR" SID="55">
+    <P Name="Position">[245, 33, 275, 47]</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">75#out:2</P>
+    <P Name="Dst">56#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">53#out:1</P>
+    <P Name="Dst">75#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">75#out:3</P>
+    <P Name="Points">[280, 0]</P>
+    <P Name="Dst">111#trigger</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">75#out:1</P>
+    <P Name="Points">[80, 0]</P>
+    <Branch>
+      <P Name="ZOrder">23</P>
+      <P Name="Points">[0, -31; 96, 0; 0, 281]</P>
+      <P Name="Dst">111#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">22</P>
+      <P Name="Dst">55#in:1</P>
+    </Branch>
+  </Line>
+</System>
