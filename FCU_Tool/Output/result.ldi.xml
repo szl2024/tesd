@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <ldi>
+      <element name="CL1MGR">
+          <uses provider="CL1CM2" strength="3"></uses>
+          <uses provider="CL1CM1" strength="2"></uses>
+          <property name="coverage.m1">0.0000</property>
+          <property name="coverage.m2">15</property>
+          <property name="coverage.m3">0</property>
+          <property name="coverage.m3demo">5</property>
+          <property name="coverage.m4">0</property>
+          <property name="coverage.m4demo">5</property>
+          <property name="coverage.m5">0</property>
+          <property name="coverage.m5demo">1</property>
+          <property name="coverage.m6">0</property>
+          <property name="coverage.m6demo">5</property>
+      </element>
+      <element name="CL2MGR">
+          <uses provider="CL2CM1" strength="5"></uses>
+          <property name="coverage.m1">0.0000</property>
+          <property name="coverage.m2">8</property>
+          <property name="coverage.m3">0</property>
+          <property name="coverage.m3demo">5</property>
+          <property name="coverage.m4">0</property>
+          <property name="coverage.m4demo">5</property>
+          <property name="coverage.m5">0</property>
+          <property name="coverage.m5demo">1</property>
+          <property name="coverage.m6">0</property>
+          <property name="coverage.m6demo">5</property>
+      </element>
+      <element name="CL1CM1">
+          <uses provider="CL1MGR" strength="1"></uses>
+          <property name="coverage.m1">21.0000</property>
+          <property name="coverage.m2">6</property>
+          <property name="coverage.m3">1</property>
+          <property name="coverage.m3demo">1</property>
+          <property name="coverage.m4">0</property>
+          <property name="coverage.m4demo">1</property>
+          <property name="coverage.m5">1</property>
+          <property name="coverage.m5demo">1</property>
+          <property name="coverage.m6">1</property>
+          <property name="coverage.m6demo">1</property>
+      </element>
+      <element name="CL2CM1">
+          <property name="coverage.m1">0.0000</property>
+          <property name="coverage.m2">9</property>
+          <property name="coverage.m5">0</property>
+          <property name="coverage.m5demo">1</property>
+      </element>
+      <element name="CL1CM1.CL1CM1CLS1">
+          <property name="coverage.m1">9.0000</property>
+      </element>
+      <element name="CL1CM1.CL1CM1CLS2">
+          <property name="coverage.m1">0.0000</property>
+      </element>
+      <element name="CL1CM1.CL1CM1CLS3">
+          <property name="coverage.m1">0.0000</property>
+      </element>
+      <element name="CL1CM2">
+          <property name="coverage.m1">0.0000</property>
+          <property name="coverage.m2">3</property>
+          <property name="coverage.m5">1</property>
+          <property name="coverage.m5demo">1</property>
+      </element>
+  </ldi>

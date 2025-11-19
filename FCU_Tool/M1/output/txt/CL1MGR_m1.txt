@@ -1,0 +1,1 @@
+[L1] Name: CL1MGR	L1Ports(Weighted)=0.0	L2Count=3	L2Ports=17

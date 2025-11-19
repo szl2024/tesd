@@ -7,187 +7,203 @@ import (
 	"path/filepath"
 	"strings"
 
-	"FCU_Tools/M1/M1_Public_Data"
 	"FCU_Tools/M1/Port_Analysis"
-	"FCU_Tools/M1/SubSystem_Analysis"
 )
 
-// ---- 日志开关：置为 true 可查看解析详情；false 静默（仅异常/告警显示） ----
-const verboseSys = false
+// 用来保存 SubSystem 的 Name / SID / Level / BlockType
+type SubSystemInfo struct {
+	Name      string
+	SID       string
+	Level     int
+	BlockType string
+}
 
-func vprintln(a ...any) {
-	if verboseSys {
-		fmt.Println(a...)
+// P 标签
+type xmlP struct {
+	Name  string `xml:"Name,attr"`
+	Value string `xml:",chardata"`
+}
+
+// PortCounts 标签
+type xmlPortCounts struct {
+	In      string `xml:"in,attr"`
+	Out     string `xml:"out,attr"`
+	Trigger string `xml:"trigger,attr"`
+}
+
+// Block
+type xmlBlock struct {
+	BlockType  string         `xml:"BlockType,attr"`
+	Name       string         `xml:"Name,attr"`
+	SID        string         `xml:"SID,attr"`
+	PortCounts *xmlPortCounts `xml:"PortCounts"`
+	Properties []xmlP         `xml:"P"`
+}
+
+type xmlSystem struct {
+	Blocks []xmlBlock `xml:"Block"`
+}
+
+// ======================== 对外入口 ================================
+// fatherName：当前 system_xxx.xml 对应的父节点名称（L1 为空串）
+func AnalyzeSubSystemsInFile(dir, file string, level int, fatherName string) ([]SubSystemInfo, error) {
+	switch level {
+	case 1:
+		return analyzeSubSystemsLevel1(dir, file, level, fatherName)
+	case 2:
+		return analyzeSubSystemsLevel2(dir, file, level, fatherName)
+	case 3:
+		return analyzeSubSystemsLevel3(dir, file, level, fatherName)
+	default:
+		// 第 3 层及以后统一按“非 Inport/Outport Block”处理
+		return analyzeSubSystemsLevel3(dir, file, level, fatherName)
 	}
 }
 
-func vprintf(format string, a ...any) {
-	if verboseSys {
-		fmt.Printf(format, a...)
-	}
+// ======================== 逻辑 1（L1：过滤无效 SubSystem） ================================
+func analyzeSubSystemsLevel1(dir, file string, level int, fatherName string) ([]SubSystemInfo, error) {
+	return analyzeSubSystemsCommon(dir, file, level, true, fatherName)
 }
 
-// ========= 结构 A：<System><Block> =========
-type XMLBlockA struct {
-	BlockType string `xml:"BlockType,attr"`
-	Name      string `xml:"Name,attr"`
-	SID       string `xml:"SID,attr"`
-	InnerXML  string `xml:",innerxml"`
-}
-type XMLRootA struct {
-	Blocks []XMLBlockA `xml:"System>Block"`
+// ======================== 逻辑 2（L2：不过滤 SubSystem） ================================
+func analyzeSubSystemsLevel2(dir, file string, level int, fatherName string) ([]SubSystemInfo, error) {
+	return analyzeSubSystemsCommon(dir, file, level, false, fatherName)
 }
 
-// ========= 结构 B：根直接含 <Block> =========
-type XMLBlockB struct {
-	BlockType string `xml:"BlockType,attr"`
-	Name      string `xml:"Name,attr"`
-	SID       string `xml:"SID,attr"`
-	InnerXML  string `xml:",innerxml"`
-}
-type XMLRootB struct {
-	Blocks []XMLBlockB `xml:"Block"`
+// ======================== 逻辑 3（L3+：非 Inport/Outport Block） =========================
+func analyzeSubSystemsLevel3(dir, file string, level int, fatherName string) ([]SubSystemInfo, error) {
+	return analyzeNonPortBlocks(dir, file, level, fatherName)
 }
 
-// AnalyzeSystems 扫描 BuildDir 下的 system_<fileTag>.xml，构造顶层系统树并集中保存
-func AnalyzeSystems(fileTag string) {
-	rootDir := M1_Public_Data.BuildDir
-	if rootDir == "" {
-		fmt.Println("❌ BuildDir 未设置")
-		return
-	}
+// ======================== 通用 SubSystem 分析（移除递归，由外层控制） ====================
+func analyzeSubSystemsCommon(dir, file string, level int, applyLevel1Filter bool, fatherName string) ([]SubSystemInfo, error) {
 
-	entries, err := os.ReadDir(rootDir)
+	fullPath := filepath.Join(dir, file)
+
+	data, err := os.ReadFile(fullPath)
 	if err != nil {
-		fmt.Println("❌ 无法读取 BuildDir：", err)
-		return
+		return nil, fmt.Errorf("读取 XML 失败 [%s]: %w", fullPath, err)
 	}
 
-	for _, entry := range entries {
-		if !entry.IsDir() {
+	var sys xmlSystem
+	if err := xml.Unmarshal(data, &sys); err != nil {
+		return nil, fmt.Errorf("解析 XML 失败 [%s]: %w", fullPath, err)
+	}
+
+	// 推出模型名：BuildDir/<Model>/simulink/systems → <Model>
+	modelDir := filepath.Dir(filepath.Dir(dir))
+	modelName := filepath.Base(modelDir)
+
+	var result []SubSystemInfo
+	var blockSIDs []string
+
+	for _, b := range sys.Blocks {
+
+		if b.BlockType != "SubSystem" {
 			continue
 		}
 
-		modelName := entry.Name()
-		targetFile := fmt.Sprintf("system_%s.xml", fileTag)
-		xmlPath := filepath.Join(rootDir, modelName, "simulink", "systems", targetFile)
+		// === level=1 时过滤：Ports 为空 / PortCounts 为空的 SubSystem 直接跳过 ===
+		if applyLevel1Filter && level == 1 {
+			invalid := false
 
-		if _, err := os.Stat(xmlPath); os.IsNotExist(err) {
-			fmt.Printf("⚠️ 模型 %s 未找到 %s，跳过\n", modelName, targetFile)
-			continue
-		}
-		vprintln("............................................................")
-		vprintf("🔍 解析模型：%s (%s)\n", modelName, targetFile)
+			// (1) Ports = []
+			for _, p := range b.Properties {
+				if p.Name == "Ports" {
+					v := strings.TrimSpace(p.Value)
+					if v == "[]" || v == "" {
+						invalid = true
+						break
+					}
+				}
+			}
 
-		data, err := os.ReadFile(xmlPath)
-		if err != nil {
-			fmt.Printf("❌ 无法读取 %s：%v\n", xmlPath, err)
-			continue
-		}
+			// (2) PortCounts 标签存在但为空
+			if !invalid && b.PortCounts != nil {
+				if b.PortCounts.In == "" && b.PortCounts.Out == "" && b.PortCounts.Trigger == "" {
+					invalid = true
+				}
+			}
 
-		// 1) 优先按 <System><Block> 结构解析
-		var rootA XMLRootA
-		_ = xml.Unmarshal(data, &rootA)
-
-		blocksFound := false
-		if len(rootA.Blocks) > 0 {
-			blocksFound = true
-			consumeBlocksA(modelName, data, rootA.Blocks)
-		}
-
-		// 2) 回退为根直接 <Block> 结构
-		if !blocksFound {
-			var rootB XMLRootB
-			if err := xml.Unmarshal(data, &rootB); err == nil && len(rootB.Blocks) > 0 {
-				blocksFound = true
-				consumeBlocksB(modelName, data, rootB.Blocks)
+			if invalid {
+				continue
 			}
 		}
 
-		if !blocksFound {
-			fmt.Printf("⚠️ 未在 %s 中找到任何 Block，可能 XML 结构不同，请检查。\n", xmlPath)
+		// 名字做一次规整，去掉换行、多空格
+		rawName := strings.TrimSpace(b.Name)
+		name := strings.Join(strings.Fields(rawName), " ")
+
+		info := SubSystemInfo{
+			Name:      name,
+			SID:       b.SID,
+			Level:     level,
+			BlockType: b.BlockType, // "SubSystem"
+		}
+		result = append(result, info)
+		blockSIDs = append(blockSIDs, b.SID)
+	}
+
+	// 把本层要输出的 BlockSID 列表交给 Port_Analysis，由它按 Block → Port 顺序统一输出
+	if len(blockSIDs) > 0 && modelName != "" {
+		if err := Port_Analysis.AnalyzePortsInFile(dir, file, level, modelName, fatherName, blockSIDs); err != nil {
+			fmt.Printf("⚠️ Port_Analysis 分析失败 [%s]: %v\n", fullPath, err)
 		}
 	}
 
-	vprintf("✅ 所有模型 %s 分析完成。\n", fileTag)
+	return result, nil
 }
 
-func consumeBlocksA(modelName string, data []byte, blocks []XMLBlockA) {
-	ports, _ := Port_Analysis.ParsePortsInXML(string(data))
+// ======================== 非 Inport / Outport Block 分析（第 3 层及以后） ==================
+// 在指定 system_xxx.xml 中，找到所有 BlockType != "Inport" 且 != "Outport" 的 Block，
+// 记录这些 Block 的 Name / BlockType / SID，并交给 Port_Analysis 做统一输出。
+func analyzeNonPortBlocks(dir, file string, level int, fatherName string) ([]SubSystemInfo, error) {
+	fullPath := filepath.Join(dir, file)
 
-	for _, block := range blocks {
-		if block.BlockType != "SubSystem" {
-			continue
-		}
-		if isPseudoSubSystem(block.InnerXML) {
-			continue
-		}
-
-		sys := &M1_Public_Data.SystemInfo{
-			Model: modelName,
-			Name:  block.Name,
-			SID:   block.SID,
-			Port:  ports,
-		}
-
-		vprintf("✅ 检测到有效 SubSystem：Name=%s, SID=%s (Ports=%d)\n",
-			sys.Name, sys.SID, len(sys.Port))
-		for _, p := range sys.Port {
-			vprintf("    ↳ Port: Name=%s, SID=%s, Type=%s, IO=%s\n",
-				p.Name, p.SID, p.Type, p.IO)
-		}
-
-		// 递归分析子系统（结果挂在 sys.SubSystem）
-		vprintf("🚀 开始分析子系统：system_%s.xml\n", sys.SID)
-		SubSystem_Analysis.AnalyzeSubSystems(modelName, sys.SID, sys)
-
-		// 集中保存
-		M1_Public_Data.AddTopSystem(sys)
+	data, err := os.ReadFile(fullPath)
+	if err != nil {
+		return nil, fmt.Errorf("读取 XML 失败 [%s]: %w", fullPath, err)
 	}
-}
 
-func consumeBlocksB(modelName string, data []byte, blocks []XMLBlockB) {
-	ports, _ := Port_Analysis.ParsePortsInXML(string(data))
+	var sys xmlSystem
+	if err := xml.Unmarshal(data, &sys); err != nil {
+		return nil, fmt.Errorf("解析 XML 失败 [%s]: %w", fullPath, err)
+	}
 
-	for _, block := range blocks {
-		if block.BlockType != "SubSystem" {
-			continue
-		}
-		if isPseudoSubSystem(block.InnerXML) {
+	// 推出模型名：BuildDir/<Model>/simulink/systems → <Model>
+	modelDir := filepath.Dir(filepath.Dir(dir))
+	modelName := filepath.Base(modelDir)
+
+	var result []SubSystemInfo
+	var blockSIDs []string
+
+	for _, b := range sys.Blocks {
+
+		// 跳过 Inport 和 Outport
+		if b.BlockType == "Inport" || b.BlockType == "Outport" {
 			continue
 		}
 
-		sys := &M1_Public_Data.SystemInfo{
-			Model: modelName,
-			Name:  block.Name,
-			SID:   block.SID,
-			Port:  ports,
+		rawName := strings.TrimSpace(b.Name)
+		name := strings.Join(strings.Fields(rawName), " ")
+
+		info := SubSystemInfo{
+			Name:      name,
+			SID:       b.SID,
+			Level:     level,
+			BlockType: b.BlockType,
 		}
 
-		vprintf("✅ 检测到有效 SubSystem：Name=%s, SID=%s (Ports=%d)\n",
-			sys.Name, sys.SID, len(sys.Port))
-		for _, p := range sys.Port {
-			vprintf("    ↳ Port: Name=%s, SID=%s, Type=%s, IO=%s\n",
-				p.Name, p.SID, p.Type, p.IO)
+		result = append(result, info)
+		blockSIDs = append(blockSIDs, b.SID)
+	}
+
+	// 交给 Port_Analysis 做 Block + Port 的统一输出
+	if len(blockSIDs) > 0 && modelName != "" {
+		if err := Port_Analysis.AnalyzePortsInFile(dir, file, level, modelName, fatherName, blockSIDs); err != nil {
+			fmt.Printf("⚠️ Port_Analysis 分析失败 [%s]: %v\n", fullPath, err)
 		}
-
-		vprintf("🚀 开始分析子系统：system_%s.xml\n", sys.SID)
-		SubSystem_Analysis.AnalyzeSubSystems(modelName, sys.SID, sys)
-
-		M1_Public_Data.AddTopSystem(sys)
 	}
-}
 
-// 判断“假性子系统”（无端口等）
-func isPseudoSubSystem(inner string) bool {
-	s := strings.ReplaceAll(inner, " ", "")
-	s = strings.ToLower(s)
-
-	if strings.Contains(s, "<portcounts/>") || strings.Contains(s, "<portcounts></portcounts>") {
-		return true
-	}
-	if strings.Contains(s, `<pname="ports">[]</p>`) || strings.Contains(s, `<pname="ports"></p>`) {
-		return true
-	}
-	return false
+	return result, nil
 }

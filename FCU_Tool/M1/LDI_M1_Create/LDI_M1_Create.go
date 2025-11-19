@@ -1,344 +1,177 @@
 package LDI_M1_Create
 
 import (
-	"bufio"
+	"encoding/xml"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"path/filepath"
-	"strconv"
 	"strings"
 
 	"FCU_Tools/M1/M1_Public_Data"
+	"FCU_Tools/Public_data"
 )
 
-// 汇总细分计数，用于打印“统计摘要”
-type metricsSummary struct {
-	L1PortTotal int
-	L1IN        int
-	L1OUT       int
-	L1TypeCS    int
-	L1TypeSR    int
-
-	L2Total     int // == class
-	L2PortTotal int
-	L2IN        int
-	L2OUT       int
-}
-
-// GenerateM1AndLDIFromTxt
-// 读取 Public_data.TxtDir 下的每个 <Model>.txt：
-// 1) 只取“第一棵根系统”计算：
-//    portasr = 根端口计数（S-R=1.0，C-S=1.2）
-//    class   = 根的直系子系统数量（深度=1）
-//    portsim = 所有直系子系统（深度=1）的端口总数
-//    M1 = portasr * class * portsim
-// 2) 把“统计摘要”与“M1 结果”追加写回该 txt 尾部；
-// 3) 在 Public_data.LdiDir 下生成 <Model>.ldi.xml：
-//    <ldi><element name="模型名"><property name="coverage.m1">M1</property></element></ldi>
-func GenerateM1AndLDIFromTxt() error {
-	txtDir := M1_Public_Data.TxtDir
-	ldiDir := M1_Public_Data.LdiDir
-
-	if txtDir == "" {
-		return fmt.Errorf("TxtDir 未设置，请先调用 CreateDirectories 和 ExportTreesToTxt")
+// MergeM1ToMainLDI
+// 将 M1 阶段在 LDIDir 目录下生成的所有 *.ldi.xml 中的 coverage.m1
+// 合并写入到主结果文件 result.ldi.xml 中。
+//
+// 逻辑：
+//   1) 读取主 LDI 文件：Public_data.OutputDir/result.ldi.xml
+//   2) 枚举 M1_Public_Data.LDIDir 目录下所有 *.ldi.xml
+//      逐个解析，收集其中的 coverage.m1 指标，按 element name 建立 m1Map[name] = value
+//      （如有重名，后出现的覆盖前面的值，保持简单策略）
+//   3) 合并到主 LDI：
+//        - 如果主 LDI 中存在同名 element：
+//            - 若该 element 尚不存在 coverage.m1 属性，则追加
+//        - 如果主 LDI 中不存在同名 element：
+//            - 创建新的 element，并写入 coverage.m1 属性
+//   4) 将修改后的主 LDI 覆盖写回 result.ldi.xml
+func MergeM1ToMainLDI() error {
+	// 与 M2 合并逻辑保持一致的局部结构定义
+	type Property struct {
+		XMLName xml.Name `xml:"property"`
+		Name    string   `xml:"name,attr"`
+		Value   string   `xml:",chardata"`
 	}
-	if ldiDir == "" {
-		// 兜底设置
-		if M1_Public_Data.OutputDir != "" {
-			ldiDir = filepath.Join(M1_Public_Data.OutputDir, "LDI")
-			M1_Public_Data.LdiDir = ldiDir
-		} else if M1_Public_Data.Dir != "" {
-			ldiDir = filepath.Join(M1_Public_Data.Dir, "M1", "output", "LDI")
-			M1_Public_Data.LdiDir = ldiDir
-		} else {
-			return fmt.Errorf("无法确定 LdiDir 路径")
-		}
+	type Uses struct {
+		XMLName  xml.Name `xml:"uses"`
+		Provider string   `xml:"provider,attr"`
+		Strength string   `xml:"strength,attr,omitempty"`
 	}
-	if err := os.MkdirAll(ldiDir, 0o755); err != nil {
-		return fmt.Errorf("创建 LdiDir 失败: %w", err)
+	type Element struct {
+		XMLName  xml.Name   `xml:"element"`
+		Name     string     `xml:"name,attr"`
+		Uses     []Uses     `xml:"uses"`
+		Property []Property `xml:"property"`
+	}
+	type Root struct {
+		XMLName xml.Name  `xml:"ldi"`
+		Items   []Element `xml:"element"`
 	}
 
-	ents, err := os.ReadDir(txtDir)
+	// 1) 主结果 LDI 路径
+	mainLDIPath := filepath.Join(Public_data.OutputDir, "result.ldi.xml")
+
+	// 2) M1 LDI 文件所在目录
+	m1LDIDir := M1_Public_Data.LDIDir
+	if m1LDIDir == "" {
+		return fmt.Errorf("M1 LDIDir 为空，请先调用 M1_Public_Data.SetWorkDir 初始化工作空间")
+	}
+
+	// 读取主 LDI
+	mainData, err := ioutil.ReadFile(mainLDIPath)
 	if err != nil {
-		return fmt.Errorf("读取 TxtDir 失败: %w", err)
+		return fmt.Errorf("读取主 LDI 文件失败 [%s]: %v", mainLDIPath, err)
 	}
 
-	for _, e := range ents {
+	var mainRoot Root
+	if err := xml.Unmarshal(mainData, &mainRoot); err != nil {
+		return fmt.Errorf("解析主 LDI XML 失败: %v", err)
+	}
+
+	// 3) 扫描 M1 LDIDir 下所有 *.ldi.xml，构建 m1Map
+	m1Map := make(map[string]string)
+
+	entries, err := os.ReadDir(m1LDIDir)
+	if err != nil {
+		return fmt.Errorf("读取 M1 LDIDir 目录失败 [%s]: %v", m1LDIDir, err)
+	}
+
+	for _, e := range entries {
 		if e.IsDir() {
 			continue
 		}
-		if !strings.HasSuffix(strings.ToLower(e.Name()), ".txt") {
+		name := e.Name()
+		// 只处理 .ldi.xml
+		if !strings.HasSuffix(strings.ToLower(name), ".ldi.xml") {
 			continue
 		}
 
-		txtPath := filepath.Join(txtDir, e.Name())
-		model := strings.TrimSuffix(e.Name(), filepath.Ext(e.Name()))
-
-		portasr, class, portsim, rootModel, summary, err := parseRootAndMetrics(txtPath)
+		ldiPath := filepath.Join(m1LDIDir, name)
+		data, err := ioutil.ReadFile(ldiPath)
 		if err != nil {
-			fmt.Printf("⚠️ 解析失败（%s）：%v\n", txtPath, err)
+			// 不中断，跳过有问题的文件
+			fmt.Printf("⚠️ 读取 M1 LDI 文件失败 [%s]: %v\n", ldiPath, err)
 			continue
 		}
-		if rootModel == "" {
-			rootModel = model
-		}
 
-		m1 := portasr * float64(class) * float64(portsim)
-
-		// 1) 先写“统计摘要”，再写“M1 结果”
-		if err := appendM1ResultToTxt(txtPath, summary, portasr, class, portsim, m1); err != nil {
-			fmt.Printf("⚠️ 写回 M1 结果失败（%s）：%v\n", txtPath, err)
-		}
-
-		// 2) 生成 LDI
-		ldiPath := filepath.Join(ldiDir, sanitizeFilename(rootModel)+".ldi.xml")
-		if err := writeLDI(ldiPath, rootModel, m1); err != nil {
-			fmt.Printf("⚠️ 生成 LDI 失败（%s）：%v\n", ldiPath, err)
+		var m1Root Root
+		if err := xml.Unmarshal(data, &m1Root); err != nil {
+			fmt.Printf("⚠️ 解析 M1 LDI XML 失败 [%s]: %v\n", ldiPath, err)
 			continue
 		}
-	}
-	return nil
-}
 
-// 解析“第一棵根系统”的三个指标：portasr、class、portsim，并返回根的模型名与“统计摘要”
-func parseRootAndMetrics(txtPath string) (portasr float64, class int, portsim int, rootModel string, summary metricsSummary, err error) {
-	f, err := os.Open(txtPath)
-	if err != nil {
-		return 0, 0, 0, "", metricsSummary{}, err
-	}
-	defer f.Close()
-
-	sc := bufio.NewScanner(f)
-
-	inFirstTree := false // 是否已进入第一棵根系统块
-	started := false     // 是否已经遇到第一条 [L1] System:
-
-	for sc.Scan() {
-		line := sc.Text()
-		trim := strings.TrimLeft(line, " \t") // 容忍行首空格与 \t（端口标签前可能多一格）
-
-		tag := detectTag(trim) // "[L1]" | "[L1 Port]" | "[L2]" | "[L2 Port]" | ""
-		switch tag {
-
-		case "[L1]":
-			// 只把带 System: 的 [L1] 行视为根系统起点
-			if hasWordAfterTag(trim, "System:") {
-				if started {
-					goto DONE // 第二棵根系统出现，结束统计
+		for _, el := range m1Root.Items {
+			for _, p := range el.Property {
+				if p.Name == "coverage.m1" {
+					// 简单策略：如同名 element 多个文件都有，后者覆盖前者
+					m1Map[el.Name] = p.Value
 				}
-				started = true
-				inFirstTree = true
-				rootModel = parseModelFromSystemLine(trim) // (Model=...)
-			}
-
-		case "[L1 Port]":
-			if !inFirstTree {
-				continue
-			}
-			// 细分计数
-			summary.L1PortTotal++
-			if parsePortType(trim) == "C-S" {
-				summary.L1TypeCS++
-				portasr += 1.2 // 权重
-			} else {
-				summary.L1TypeSR++
-				portasr += 1.0
-			}
-			switch parsePortIO(trim) {
-			case "IN":
-				summary.L1IN++
-			case "OUT":
-				summary.L1OUT++
-			}
-
-		case "[L2]":
-			if !inFirstTree {
-				continue
-			}
-			// 只统计“系统行”的 [L2]，避免把 [L2 Port] 误算入 class
-			if hasWordAfterTag(trim, "System:") {
-				class++
-				summary.L2Total++
-			}
-
-		case "[L2 Port]":
-			if !inFirstTree {
-				continue
-			}
-			portsim++
-			summary.L2PortTotal++
-			switch parsePortIO(trim) {
-			case "IN":
-				summary.L2IN++
-			case "OUT":
-				summary.L2OUT++
 			}
 		}
 	}
 
-DONE:
-	if err := sc.Err(); err != nil {
-		return portasr, class, portsim, rootModel, summary, err
+	// 如果没有任何 M1 指标，直接返回，不改主文件
+	if len(m1Map) == 0 {
+		fmt.Println("ℹ️ 未在 M1 LDIDir 中找到任何 coverage.m1 指标，主 LDI 不做修改")
+		return nil
 	}
-	return portasr, class, portsim, rootModel, summary, nil
-}
 
-// 检测行首标签（去掉左侧空白后）
-func detectTag(trimmed string) string {
-	switch {
-	case strings.HasPrefix(trimmed, "[L1]"):
-		return "[L1]"
-	case strings.HasPrefix(trimmed, "[L1 Port]"):
-		return "[L1 Port]"
-	case strings.HasPrefix(trimmed, "[L2]"):
-		return "[L2]"
-	case strings.HasPrefix(trimmed, "[L2 Port]"):
-		return "[L2 Port]"
-	default:
-		return ""
+	// 4) 先构建主 LDI 的快速索引：element name -> index
+	mainIndex := make(map[string]int)
+	for i, el := range mainRoot.Items {
+		mainIndex[el.Name] = i
 	}
-}
 
-// 判断在标签之后是否出现了某个词（如 "System:" 或 "Port:"），容忍标签和词之间的任意空格
-func hasWordAfterTag(trimmed, word string) bool {
-	// 找到第一个 ']' 之后的子串
-	i := strings.Index(trimmed, "]")
-	if i < 0 || i+1 >= len(trimmed) {
-		return false
-	}
-	rest := strings.TrimLeft(trimmed[i+1:], " \t")
-	return strings.HasPrefix(rest, word)
-}
+	// 5) 将 m1Map 合并回主 LDI
+	for name, val := range m1Map {
+		if idx, ok := mainIndex[name]; ok {
+			// 主 LDI 已存在同名 element，检查 coverage.m1 是否已经存在
+			el := &mainRoot.Items[idx]
+			alreadyExists := false
+			for _, p := range el.Property {
+				if p.Name == "coverage.m1" {
+					alreadyExists = true
+					break
+				}
+			}
+			if alreadyExists {
+				continue
+			}
 
-// 从端口行中抽取 Type，适配当前导出格式："... Type=C-S"
-func parsePortType(line string) string {
-	const key = "Type="
-	i := strings.Index(line, key)
-	if i == -1 {
-		return ""
-	}
-	rest := strings.TrimSpace(line[i+len(key):])
-	// 取到下一个空白或逗号/右括号为止（通常 Type 在行尾）
-	for idx, r := range rest {
-		if r == ' ' || r == '\t' || r == ',' || r == ')' {
-			return rest[:idx]
+			el.Property = append(el.Property, Property{
+				Name:  "coverage.m1",
+				Value: val,
+			})
+		} else {
+			// 主 LDI 中不存在同名 element，新建一个 element 写入 coverage.m1
+			newEl := Element{
+				Name: name,
+				Property: []Property{
+					{
+						Name:  "coverage.m1",
+						Value: val,
+					},
+				},
+			}
+			mainRoot.Items = append(mainRoot.Items, newEl)
+			// 更新索引，避免后续出现同名覆盖问题
+			mainIndex[name] = len(mainRoot.Items) - 1
 		}
 	}
-	return rest
-}
 
-// 从端口行中抽取 IO，适配格式："..., IO=IN , ..." 或 "..., IO=OUT, ..."
-func parsePortIO(line string) string {
-	const key = "IO="
-	i := strings.Index(line, key)
-	if i == -1 {
-		return ""
-	}
-	rest := strings.TrimSpace(line[i+len(key):])
-	for idx, r := range rest {
-		if r == ' ' || r == '\t' || r == ',' || r == ')' {
-			return rest[:idx]
-		}
-	}
-	return rest
-}
-
-func parseModelFromSystemLine(line string) string {
-	// 形如：System: Runnable_10ms_sys (Model=TurnLightAct, SID=4)
-	open := strings.Index(line, "(Model=")
-	if open < 0 {
-		return ""
-	}
-	rest := line[open+len("(Model="):]
-	end := strings.IndexAny(rest, ",)")
-	if end < 0 {
-		return strings.TrimSpace(rest)
-	}
-	return strings.TrimSpace(rest[:end])
-}
-
-func appendM1ResultToTxt(txtPath string, sum metricsSummary, portasr float64, class, portsim int, m1 float64) error {
-	f, err := os.OpenFile(txtPath, os.O_APPEND|os.O_WRONLY, 0o644)
+	// 6) 写回主 LDI
+	out, err := xml.MarshalIndent(mainRoot, "  ", "    ")
 	if err != nil {
-		return err
+		return fmt.Errorf("主 LDI XML 序列化失败: %v", err)
 	}
-	defer f.Close()
 
-	var sb strings.Builder
-	sb.WriteString("\n")
-	// 先输出统计摘要
-	sb.WriteString("----- 统计摘要 --------------------------------------------------\n")
-	sb.WriteString(fmt.Sprintf("[L1 Port] 总数 = %d（IN=%d, OUT=%d；Type：C-S=%d, S-R=%d）\n",
-		sum.L1PortTotal, sum.L1IN, sum.L1OUT, sum.L1TypeCS, sum.L1TypeSR))
-	sb.WriteString(fmt.Sprintf("[L2]      总数 = %d\n", sum.L2Total))
-	sb.WriteString(fmt.Sprintf("[L2 Port] 总数 = %d（IN=%d, OUT=%d）\n",
-		sum.L2PortTotal, sum.L2IN, sum.L2OUT))
-
-	// 再输出 M1 结果
-	sb.WriteString("----- M1 结果 --------------------------------------------------\n")
-	sb.WriteString("portasr = ")
-	sb.WriteString(fmtFloat(portasr))
-	sb.WriteString(", class = ")
-	sb.WriteString(strconv.Itoa(class))
-	sb.WriteString(", portsim = ")
-	sb.WriteString(strconv.Itoa(portsim))
-	sb.WriteString("\nM1 = portasr * class * portsim = ")
-	sb.WriteString(fmtFloat(m1))
-	sb.WriteString("\n")
-
-	_, err = f.WriteString(sb.String())
-	return err
-}
-
-func writeLDI(ldiPath, model string, m1 float64) error {
-	if err := os.MkdirAll(filepath.Dir(ldiPath), 0o755); err != nil {
-		return err
+	header := []byte(xml.Header)
+	if err := ioutil.WriteFile(mainLDIPath, append(header, out...), 0644); err != nil {
+		return fmt.Errorf("写回主 LDI 文件失败 [%s]: %v", mainLDIPath, err)
 	}
-	content := fmt.Sprintf(
-		"<ldi>\n  <element name=\"%s\">\n    <property name=\"coverage.m1\">%s</property>\n  </element>\n</ldi>\n",
-		escapeXML(model), fmtFloat(m1),
-	)
-	return os.WriteFile(ldiPath, []byte(content), 0o644)
-}
 
-func fmtFloat(v float64) string {
-	s := strconv.FormatFloat(v, 'f', 3, 64)
-	s = strings.TrimRight(s, "0")
-	s = strings.TrimRight(s, ".")
-	if s == "" {
-		return "0"
-	}
-	return s
-}
-
-func sanitizeFilename(name string) string {
-	name = strings.TrimSpace(name)
-	if name == "" {
-		return "unnamed"
-	}
-	illegal := []string{`<`, `>`, `:`, `"`, `/`, `\`, `|`, `?`, `*`}
-	for _, ch := range illegal {
-		name = strings.ReplaceAll(name, ch, "_")
-	}
-	name = strings.Map(func(r rune) rune {
-		if r == '\n' || r == '\r' || r == '\t' {
-			return -1
-		}
-		return r
-	}, name)
-	return name
-}
-
-func escapeXML(s string) string {
-	repl := []struct{ old, new string }{
-		{"&", "&amp;"},
-		{"<", "&lt;"},
-		{">", "&gt;"},
-		{`"`, "&quot;"},
-		{"'", "&apos;"},
-	}
-	for _, r := range repl {
-		s = strings.ReplaceAll(s, r.old, r.new)
-	}
-	return s
+	fmt.Println("✅ M1 指标 coverage.m1 已成功合并到主 LDI（包含新增元素）")
+	return nil
 }

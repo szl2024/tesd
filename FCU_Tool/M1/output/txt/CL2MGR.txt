@@ -1,0 +1,22 @@
+[L1] Name: CL2MGR	BlockType=SubSystem	SID=1
+[L2] Name: CL2MGRCLS1	BlockType=SubSystem 	SID=20        	FatherNode=CL2MGR    
+	[L2 Port] Name:CL2IN1                                  	BlockType=Inport    	SID=7         
+	[L2 Port] Name:CL2STAT                                 	BlockType=Outport   	SID=3         
+	[L2 Port] Name:FCUSTAT                                 	BlockType=Inport    	SID=2         
+[L2] Name: CL2MGRCLS2	BlockType=SubSystem 	SID=24        	FatherNode=CL2MGR    
+	[L2 Port] Name:CL2IN5                                  	BlockType=Inport    	SID=11        
+	[L2 Port] Name:CL2IN2                                  	BlockType=Inport    	SID=8         
+	[L2 Port] Name:CL2IN3                                  	BlockType=Inport    	SID=9         
+	[L2 Port] Name:CL2IN4                                  	BlockType=Inport    	SID=10        
+	[L2 Port] Name:CL2OUT1                                 	BlockType=Outport   	SID=4         
+	[L2 Port] Name:CL2OUT2                                 	BlockType=Outport   	SID=5         
+[L2] Name: CL2MGRCLS3	BlockType=SubSystem 	SID=31        	FatherNode=CL2MGR    
+	[L2 Port] Name:CL2IN8                                  	BlockType=Inport    	SID=14        
+	[L2 Port] Name:CL2IN7                                  	BlockType=Inport    	SID=13        
+	[L2 Port] Name:CL2IN6                                  	BlockType=Inport    	SID=12        
+	[L2 Port] Name:CL2OUT3                                 	BlockType=Outport   	SID=18        
+[L2] Name: CL2MGRCLS4	BlockType=SubSystem 	SID=40        	FatherNode=CL2MGR    
+	[L2 Port] Name:CL2IN9                                  	BlockType=Inport    	SID=15        
+	[L2 Port] Name:CL2IN10                                 	BlockType=Inport    	SID=16        
+	[L2 Port] Name:CL2IN11                                 	BlockType=Inport    	SID=17        
+	[L2 Port] Name:CL2OUT4                                 	BlockType=Outport   	SID=19        

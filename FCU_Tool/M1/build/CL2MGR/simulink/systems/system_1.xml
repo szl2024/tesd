@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1, -8, 2561, 1393]</P>
+  <P Name="SystemRect">[-272.509675, 57.000000, 837.509675, 685.000000]</P>
+  <P Name="ZoomFactor">175</P>
+  <Block BlockType="Inport" Name="FCUSTAT" SID="2">
+    <P Name="Position">[150, 258, 180, 272]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN1" SID="7">
+    <P Name="Position">[150, 303, 180, 317]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN2" SID="8">
+    <P Name="Position">[150, 348, 180, 362]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN3" SID="9">
+    <P Name="Position">[150, 393, 180, 407]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN4" SID="10">
+    <P Name="Position">[150, 438, 180, 452]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN5" SID="11">
+    <P Name="Position">[150, 483, 180, 497]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN6" SID="12">
+    <P Name="Position">[150, 528, 180, 542]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN7" SID="13">
+    <P Name="Position">[150, 573, 180, 587]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN8" SID="14">
+    <P Name="Position">[150, 618, 180, 632]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="Port">9</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN9" SID="15">
+    <P Name="Position">[150, 123, 180, 137]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Port">10</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN10" SID="16">
+    <P Name="Position">[150, 168, 180, 182]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="Port">11</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2IN11" SID="17">
+    <P Name="Position">[150, 213, 180, 227]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="Port">12</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="CL2MGRCLS1" SID="20">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[242, 264, 342, 326]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_20"/>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_20"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="CL2MGRCLS2" SID="24">
+    <PortCounts in="4" out="2"/>
+    <P Name="Position">[242, 371, 342, 489]</P>
+    <P Name="ZOrder">18</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_24"/>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_24"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="CL2MGRCLS3" SID="31">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[242, 528, 342, 632]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_31"/>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_31"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="CL2MGRCLS4" SID="40">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[242, 123, 342, 227]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_40"/>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_40"/>
+  </Block>
+  <Block BlockType="Outport" Name="CL2STAT" SID="3">
+    <P Name="Position">[382, 288, 412, 302]</P>
+    <P Name="ZOrder">-2</P>
+  </Block>
+  <Block BlockType="Outport" Name="CL2OUT1" SID="4">
+    <P Name="Position">[382, 393, 412, 407]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="CL2OUT2" SID="5">
+    <P Name="Position">[382, 453, 412, 467]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="CL2OUT3" SID="18">
+    <P Name="Position">[382, 573, 412, 587]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="CL2OUT4" SID="19">
+    <P Name="Position">[382, 168, 412, 182]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">46</P>
+    <P Name="Src">11#out:1</P>
+    <P Name="Points">[21, 0; 0, -15]</P>
+    <P Name="Dst">24#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">47</P>
+    <P Name="Src">8#out:1</P>
+    <P Name="Points">[25, 0; 0, 30]</P>
+    <P Name="Dst">24#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">48</P>
+    <P Name="Src">9#out:1</P>
+    <P Name="Points">[16, 0; 0, 15]</P>
+    <P Name="Dst">24#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">49</P>
+    <P Name="Src">10#out:1</P>
+    <P Name="Dst">24#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">50</P>
+    <P Name="Src">15#out:1</P>
+    <P Name="Points">[21, 0; 0, 10]</P>
+    <P Name="Dst">40#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">51</P>
+    <P Name="Src">7#out:1</P>
+    <P Name="Dst">20#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">52</P>
+    <P Name="Src">20#out:1</P>
+    <P Name="Dst">3#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">53</P>
+    <P Name="Src">16#out:1</P>
+    <P Name="Dst">40#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">54</P>
+    <P Name="Src">17#out:1</P>
+    <P Name="Points">[21, 0; 0, -10]</P>
+    <P Name="Dst">40#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">55</P>
+    <P Name="Src">2#out:1</P>
+    <P Name="Points">[28, 0; 0, 15]</P>
+    <P Name="Dst">20#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">56</P>
+    <P Name="Src">14#out:1</P>
+    <P Name="Points">[21, 0; 0, -10]</P>
+    <P Name="Dst">31#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">57</P>
+    <P Name="Src">13#out:1</P>
+    <P Name="Dst">31#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">58</P>
+    <P Name="Src">12#out:1</P>
+    <P Name="Points">[21, 0; 0, 10]</P>
+    <P Name="Dst">31#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">59</P>
+    <P Name="Src">40#out:1</P>
+    <P Name="Dst">19#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">60</P>
+    <P Name="Src">24#out:1</P>
+    <P Name="Dst">4#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">61</P>
+    <P Name="Src">24#out:2</P>
+    <P Name="Dst">5#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">62</P>
+    <P Name="Src">31#out:1</P>
+    <P Name="Dst">18#in:1</P>
+  </Line>
+</System>

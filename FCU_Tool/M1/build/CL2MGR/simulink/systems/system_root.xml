@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1, -8, 2561, 1393]</P>
+  <P Name="Open">on</P>
+  <P Name="ZoomFactor">175</P>
+  <P Name="ReportName">simulink-default.rpt</P>
+  <P Name="SIDHighWatermark">45</P>
+  <Block BlockType="SubSystem" Name="CL2MGR" SID="1">
+    <PortCounts in="12" out="5"/>
+    <P Name="Position">[925, 155, 1490, 700]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_1"/>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_1"/>
+  </Block>
+</System>
