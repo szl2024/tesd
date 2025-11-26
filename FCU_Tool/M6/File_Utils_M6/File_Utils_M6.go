@@ -1,18 +1,17 @@
 package File_Utils_M6
 
 import (
-	
+	"encoding/csv"
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
+
 	"FCU_Tools/SWC_Dependence"
-	"github.com/xuri/excelize/v2"
 	"FCU_Tools/Public_data"
 )
-
 
 // PrepareM2OutputDir M6의 출력 디렉터리를 초기화하고 준비한다.
 //
@@ -43,11 +42,12 @@ func PrepareM2OutputDir() error {
 
 	return nil
 }
-// GenerateM6LDIXml component_info.xlsx의 ASIL 등급과 ASW 의존 관계를 읽어
+
+// GenerateM6LDIXml component_info.csv의 ASIL 등급과 ASW 의존 관계를 읽어
 // M6 지표를 계산하고 M6.ldi.xml 및 M6.txt를 생성한다.
 //
 // 계산 로직:
-//   1) component_info.xlsx을 열고 3번째 열(ASIL 등급 A/B/C/D)을 읽어
+//   1) component_info.csv을 열고 3번째 열(ASIL 등급 A/B/C/D)을 읽어
 //      숫자 등급 1~4로 매핑하여 asilLevelMap에 저장한다.  
 //   2) SWC_Dependence.ExtractDependenciesRawFromASW 호출 → 컴포넌트 의존성(from→to, 연결 횟수와 인터페이스 타입 포함) 읽기.  
 //   3) 의존성 순회:  
@@ -75,19 +75,27 @@ func GenerateM6LDIXml() error {
 		Items   []Element `xml:"element"`
 	}
 
-	//  Step 1: component_info.xlsx에서 ASIL 등급(3열) 추출
-	asilFile, err := excelize.OpenFile(Public_data.M3component_infoxlsxPath)
+	//  Step 1: component_info.csv에서 ASIL 등급(3열) 추출
+	//  (변수명은 *.xlsx지만, 실제로는 component_info.csv 경로가 들어 있음: M3/M4/M5와 동일 패턴)
+	asilFile, err := os.Open(Public_data.M3component_infoxlsxPath)
 	if err != nil {
-		return fmt.Errorf("component_info.xlsx 열기 실패: %v", err)
+		return fmt.Errorf("component_info.csv 열기 실패: %v", err)
 	}
-	rows, err := asilFile.GetRows(asilFile.GetSheetName(0))
+	defer asilFile.Close()
+
+	reader := csv.NewReader(asilFile)
+	// 각 행의 컬럼 수가 달라도 읽을 수 있도록 설정
+	reader.FieldsPerRecord = -1
+
+	rows, err := reader.ReadAll()
 	if err != nil {
-		return fmt.Errorf("component_info.xlsx 컨텐츠를 읽지 못했습니다: %v", err)
+		return fmt.Errorf("component_info.csv 컨텐츠를 읽지 못했습니다: %v", err)
 	}
 
 	asilMap := map[string]int{"A": 1, "B": 2, "C": 3, "D": 4}
 	asilLevelMap := make(map[string]int)
 
+	// 첫 행은 헤더라고 가정하고 rows[1:]부터 처리 (기존 xlsx 로직과 동일)
 	for _, row := range rows[1:] {
 		if len(row) < 3 {
 			continue
@@ -120,13 +128,12 @@ func GenerateM6LDIXml() error {
 			toLevel, toOk := asilLevelMap[to]
 
 			sourceCount[from] += count
-			//打印调试信息
-			//fmt.Printf("🔍 CHECK: %s (ASIL %d) → %s (ASIL %d), Count: %d\n", from, fromLevel, to, toLevel, count)
+			// 디버그용 출력은 주석 처리
+			// fmt.Printf("🔍 CHECK: %s (ASIL %d) → %s (ASIL %d), Count: %d\n", from, fromLevel, to, toLevel, count)
 
 			if fromOk && toOk {
 				if fromLevel < toLevel {
-					//打印调试信息（出现违反的情况）
-					//fmt.Printf("🚨 VIOLATION DETECTED: %s → %s\n", from, to)
+					// fmt.Printf("🚨 VIOLATION DETECTED: %s → %s\n", from, to)
 					violationMap[from] += count
 
 					line := fmt.Sprintf("%s (ASIL %d) → %s (ASIL %d)\n", from, fromLevel, to, toLevel)
@@ -136,8 +143,7 @@ func GenerateM6LDIXml() error {
 						f.Close()
 					}
 				} else {
-					//打印调试信息(正确时)
-					//fmt.Printf("✅ OK: No violation\n")
+					// fmt.Printf("✅ OK: No violation\n")
 				}
 			} else {
 				fmt.Printf("⚠️ ASIL level not found for %s or %s\n", from, to)

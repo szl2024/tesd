@@ -1,0 +1,10 @@
+[L1] Name: CL2CM1	BlockType=SubSystem	SID=1
+[L2] Name: CL2CM1CLS1	BlockType=SubSystem 	SID=8         	FatherNode=CL2CM1    
+	[L2 Port] Name:CL2OUT1                                 	BlockType=Inport    	SID=4         
+	[L2 Port] Name:CL2STAT                                 	BlockType=Inport    	SID=2         
+	[L2 Port] Name:CM1CNTL1                                	BlockType=Outport   	SID=3         
+[L2] Name: CL2CM1CLS2	BlockType=SubSystem 	SID=16        	FatherNode=CL2CM1    
+	[L2 Port] Name:CL2STAT                                 	BlockType=Inport    	SID=2         
+	[L2 Port] Name:CL2OUT2                                 	BlockType=Inport    	SID=5         
+	[L2 Port] Name:CM1CNTL3                                	BlockType=Outport   	SID=7         
+	[L2 Port] Name:CM1CNTL2                                	BlockType=Outport   	SID=6         

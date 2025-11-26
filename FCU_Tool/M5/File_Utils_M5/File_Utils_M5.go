@@ -1,17 +1,16 @@
 package File_Utils_M5
 
 import (
-	
+	"encoding/csv"
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
-	"github.com/xuri/excelize/v2"
+
 	"FCU_Tools/Public_data"
 )
-
 
 // PrepareM5OutputDir M5의 출력 디렉터리를 초기화하고 준비한다.
 //
@@ -42,11 +41,12 @@ func PrepareM5OutputDir() error {
 
 	return nil
 }
-// GenerateM5LDIXml component_info.xlsx을 읽어
+
+// GenerateM5LDIXml component_info.csv을 읽어
 // M5.ldi.xml을 생성한다 (m5 및 m5demo 속성 포함).
 //
 // 계산 로직:
-//   1) component_info.xlsx을 열고 첫 번째 시트의 내용을 읽는다.  
+//   1) component_info.csv을 열고 내용을 읽는다.  
 //   2) 두 번째 행부터 읽는다:  
 //        - row[0] = 컴포넌트 이름  
 //        - row[4] = ASIL 분리 여부(Y/N)  
@@ -70,17 +70,26 @@ func GenerateM5LDIXml() error {
 		Items   []Element `xml:"element"`
 	}
 
-	// component_info.xlsx 열기
-	compInfoFile, err := excelize.OpenFile(Public_data.M3component_infoxlsxPath)
+	// component_info.csv 열기
+	// 주의: Public_data.M3component_infoxlsxPath 변수명은 그대로지만,
+	// 실제로는 component_info.csv 경로를 담고 있다(M3/M4와 동일 패턴).
+	compInfoFile, err := os.Open(Public_data.M3component_infoxlsxPath)
 	if err != nil {
-		return fmt.Errorf("component_info.xlsx 열기 실패: %v", err)
+		return fmt.Errorf("component_info.csv 열기 실패: %v", err)
 	}
-	rows, err := compInfoFile.GetRows(compInfoFile.GetSheetName(0))
+	defer compInfoFile.Close()
+
+	reader := csv.NewReader(compInfoFile)
+	// 각 행의 컬럼 수가 달라도 읽을 수 있도록 설정
+	reader.FieldsPerRecord = -1
+
+	rows, err := reader.ReadAll()
 	if err != nil {
-		return fmt.Errorf("component_info.xlsx 컨텐츠를 읽지 못했습니다.: %v", err)
+		return fmt.Errorf("component_info.csv 컨텐츠를 읽지 못했습니다.: %v", err)
 	}
 
 	var result Root
+	// 첫 행은 헤더라고 가정하고 rows[1:]부터 처리 (기존 xlsx 로직과 동일)
 	for _, row := range rows[1:] {
 		if len(row) >= 5 {
 			name := strings.TrimSpace(row[0])

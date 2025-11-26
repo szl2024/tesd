@@ -1,14 +1,15 @@
 package File_Utils_M4
 
 import (
+	"encoding/csv"
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
+
 	"FCU_Tools/SWC_Dependence"
-	"github.com/xuri/excelize/v2"
 	"FCU_Tools/Public_data"
 )
 
@@ -42,12 +43,12 @@ func PrepareM2OutputDir() error {
 	return nil
 }
 
-// GenerateM4LDIXml ASW 연결 의존성과 component_info.xlsx을 읽어
+// GenerateM4LDIXml ASW 연결 의존성과 component_info.csv을 읽어
 // M4 지표를 계산하고 M4.ldi.xml 및 M4.txt를 생성한다.
 //
 // 계산 로직:
 //   1) SWC_Dependence.ExtractDependenciesRawFromASW 호출 → 모든 컴포넌트 연결을 읽는다 (원시 연결 정보 유지).  
-//   2) component_info.xlsx 열기 → 컴포넌트의 Manager 및 Layer 정보를 읽어 compMap에 저장한다.  
+//   2) component_info.csv 열기 → 컴포넌트의 Manager 및 Layer 정보를 읽어 compMap에 저장한다.  
 //   3) 의존성 순회:  
 //        - 각 컴포넌트의 sourceCount(의존 총수)를 갱신한다.  
 //        - 위반 여부 검사:  
@@ -87,14 +88,21 @@ func GenerateM4LDIXml() error {
 	}
 	//fmt.Printf("🔗 총 연결 개수 로드됨: %d\n", totalLinks)
 
-	// 컴포넌트 정보를 로드합니다
-	compInfoFile, err := excelize.OpenFile(Public_data.M3component_infoxlsxPath)
+	// 컴포넌트 정보를 로드합니다 (component_info.csv)
+	// 주의: Public_data.M3component_infoxlsxPath 변수명은 그대로지만, 실제로는 CSV 경로를 담고 있다.
+	compFile, err := os.Open(Public_data.M3component_infoxlsxPath)
 	if err != nil {
-		return fmt.Errorf("component_info.xlsx 열기 실패: %v", err)
+		return fmt.Errorf("component_info.csv 열기 실패: %v", err)
 	}
-	compRows, err := compInfoFile.GetRows(compInfoFile.GetSheetName(0))
+	defer compFile.Close()
+
+	csvReader := csv.NewReader(compFile)
+	// 각 행의 컬럼 수가 달라도 읽을 수 있도록 설정
+	csvReader.FieldsPerRecord = -1
+
+	compRows, err := csvReader.ReadAll()
 	if err != nil {
-		return fmt.Errorf("component_info.xlsx 컨텐츠를 읽지 못했습니다: %v", err)
+		return fmt.Errorf("component_info.csv 컨텐츠를 읽지 못했습니다: %v", err)
 	}
 
 	type CompMeta struct {
@@ -102,6 +110,7 @@ func GenerateM4LDIXml() error {
 		Layer   int
 	}
 	compMap := make(map[string]CompMeta)
+	// 첫 행은 헤더라고 가정하고 compRows[1:]부터 처리
 	for _, row := range compRows[1:] {
 		if len(row) >= 4 {
 			name := strings.TrimSpace(row[0])
@@ -194,6 +203,6 @@ func GenerateM4LDIXml() error {
 	if err := ioutil.WriteFile(outPath, append(header, output...), 0644); err != nil {
 		return fmt.Errorf("M4.ldi.xml 파일을 쓰는 데 실패했습니다: %v", err)
 	}
-	fmt.Println("📄 M4 및 m4demo 지표 계산 완료:",outPath)
+	fmt.Println("📄 M4 및 m4demo 지표 계산 완료:", outPath)
 	return nil
 }

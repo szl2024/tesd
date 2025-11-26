@@ -1,10 +1,12 @@
 package SWC_Dependence
 
 import (
+	"encoding/csv"
 	"fmt"
+	"os"
 	"strings"
+
 	"FCU_Tools/LDI_Create"
-	"github.com/xuri/excelize/v2"
 )
 
 type DependencyInfo struct {
@@ -13,19 +15,30 @@ type DependencyInfo struct {
 	InterfaceType string
 }
 
-//  M3/M6 사용: 각 연결은 독립적으로 유지되며, Count는 고정값 1이다.  
-
-func ExtractDependenciesRawFromASW(filePath string) (map[string][]DependencyInfo, error) {
-	f, err := excelize.OpenFile(filePath)
+// ASW CSV 파일을 읽어 [][]string 형태로 반환
+func loadASWRowsFromCSV(filePath string) ([][]string, error) {
+	f, err := os.Open(filePath)
 	if err != nil {
-		return nil, fmt.Errorf("Excel 파일 열기 실패: %v", err)
+		return nil, fmt.Errorf("CSV 파일 열기 실패: %v", err)
 	}
 	defer f.Close()
 
-	sheetName := f.GetSheetName(0)
-	rows, err := f.GetRows(sheetName)
+	r := csv.NewReader(f)
+	// 각 행마다 컬럼 수가 달라도 읽을 수 있도록 설정
+	r.FieldsPerRecord = -1
+
+	rows, err := r.ReadAll()
 	if err != nil {
-		return nil, fmt.Errorf("행 읽기 실패: %v", err)
+		return nil, fmt.Errorf("CSV 행 읽기 실패: %v", err)
+	}
+	return rows, nil
+}
+
+//  M3/M6 사용: 각 연결은 독립적으로 유지되며, Count는 고정값 1이다.
+func ExtractDependenciesRawFromASW(filePath string) (map[string][]DependencyInfo, error) {
+	rows, err := loadASWRowsFromCSV(filePath)
+	if err != nil {
+		return nil, err
 	}
 
 	type portInfo struct {
@@ -35,6 +48,7 @@ func ExtractDependenciesRawFromASW(filePath string) (map[string][]DependencyInfo
 	}
 	deMap := make(map[string][]portInfo)
 	for i, row := range rows {
+		// i == 0 : 헤더, len(row) < 12 : 필요한 컬럼이 부족한 행은 스킵
 		if i == 0 || len(row) < 12 {
 			continue
 		}
@@ -74,11 +88,11 @@ func ExtractDependenciesRawFromASW(filePath string) (map[string][]DependencyInfo
 	return result, nil
 }
 
-// ExtractDependenciesAggregatedFromASW 는 ASW Excel(filePath)을 읽어 포트 연결 정보를 파싱하고,
+// ExtractDependenciesAggregatedFromASW 는 ASW CSV(filePath)을 읽어 포트 연결 정보를 파싱하고,
 // 동일한 컴포넌트 쌍 사이의 여러 연결을 집계하여 “컴포넌트 → 컴포넌트” 의 의존성 목록을 생성한다.
 //
 // 처리 과정:
-//   1) Excel 파일을 열고 첫 번째 시트의 모든 행을 읽는다.
+//   1) CSV 파일을 읽어 모든 행을 가져온다.
 //   2) 각 행에서 component / portType(P/R) / interfaceType / deOp(연결 식별자)를 추출하여,
 //      임시 테이블 deMap[deOp] = []portInfo 형태로 저장한다.
 //   3) deOp 단위로 그룹화하여 제공자(P) 컴포넌트와 수요자(R) 컴포넌트를 찾는다.
@@ -86,18 +100,10 @@ func ExtractDependenciesRawFromASW(filePath string) (map[string][]DependencyInfo
 //        - 이미 동일한 from→to 관계가 있으면 Count++
 //        - 없으면 새로운 DependencyInfo{To, Count=1, InterfaceType}를 생성한다.
 //   4) 결과를 map[from][]DependencyInfo 형태로 변환하여 반환한다.
-
 func ExtractDependenciesAggregatedFromASW(filePath string) (map[string][]DependencyInfo, error) {
-	f, err := excelize.OpenFile(filePath)
+	rows, err := loadASWRowsFromCSV(filePath)
 	if err != nil {
-		return nil, fmt.Errorf("Excel 파일 열기 실패: %v", err)
-	}
-	defer f.Close()
-
-	sheetName := f.GetSheetName(0)
-	rows, err := f.GetRows(sheetName)
-	if err != nil {
-		return nil, fmt.Errorf("행 읽기 실패: %v", err)
+		return nil, err
 	}
 
 	type portInfo struct {
@@ -160,16 +166,18 @@ func ExtractDependenciesAggregatedFromASW(filePath string) (map[string][]Depende
 	return result, nil
 }
 
-/* AnalyzeSWCDependencies ASW 엑셀(filePath)을 읽어 "컴포넌트 → 컴포넌트" 의존성을 추출합니다.
-결과를 LDI에 필요한 두 매핑(depMap, strengthMap)으로 변환하고, 이를 기반으로 LDI XML 파일을 생성합니다.
+/*
+AnalyzeSWCDependencies 함수는 ASW CSV 파일을 입력으로 받아 SWC 간 의존성을 분석하고,
+LDI XML(ldi.xml)을 생성하는 상위 레벨 진입점이다.
 
-// 프로세스:
-1) ExtractDependenciesAggregatedFromASW를 호출하여 Excel의 포트 연결을 분석/집계합니다.
-map[from][]DependencyInfo(각 DependencyInfo에는 대상 컴포넌트 To, 연결 횟수 Count, 인터페이스 유형 InterfaceType이 포함됨)를 얻습니다.
+프로세스:
+1) ExtractDependenciesAggregatedFromASW를 호출하여 CSV의 포트 연결을 분석/집계합니다.
+   map[from][]DependencyInfo(각 DependencyInfo에는 대상 컴포넌트 To,
+   연결 횟수 Count, 인터페이스 유형 InterfaceType이 포함됨)를 얻습니다.
 2) 집계 결과를 순회하며 구성:
-- depMap       : map[string][]string           // from → 의존하는 목표 컴포넌트 목록
-- strengthMap : map[string]map[string]int     // from → (to → 의존 강도/횟수)
-3) LDI_Create.GenerateLDIXml(depMap, strengthMap)를 호출하여 LDI XML을 생성합니다(출력 파일명/경로는 해당 함수에 의해 결정됨).
+   - depMap       : map[string][]string        // from → 의존하는 목표 컴포넌트 목록
+   - strengthMap  : map[string]map[string]int  // from → (to → 의존 강도/횟수)
+3) LDI_Create.GenerateLDIXml(depMap, strengthMap)를 호출하여 LDI XML을 생성합니다.
 */
 func AnalyzeSWCDependencies(filePath string) error {
 	dependencies, err := ExtractDependenciesAggregatedFromASW(filePath)
@@ -177,14 +185,7 @@ func AnalyzeSWCDependencies(filePath string) error {
 		return err
 	}
 
-	// // 打印调试信息
-	// for from, deps := range dependencies {
-	// 	for _, dep := range deps {
-	// 		fmt.Printf("%s -> %s (%s) x %d\n", from, dep.To, dep.InterfaceType, dep.Count)
-	// 	}
-	// }
-
-	// LDI에 필요한 형식으로 변환  
+	// LDI에 필요한 형식으로 변환
 	depMap := make(map[string][]string)
 	strengthMap := make(map[string]map[string]int)
 
@@ -207,4 +208,3 @@ func AnalyzeSWCDependencies(filePath string) error {
 	fmt.Println("✅ LDI 파일 생성 완료.")
 	return nil
 }
-

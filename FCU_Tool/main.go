@@ -2,42 +2,42 @@ package main
 
 import (
 	
-	// "path/filepath"
-	// "FCU_Tools/SWC_Dependence"
-	// "FCU_Tools/M2"
-	// "FCU_Tools/M3"
-	// "FCU_Tools/M4"
-	// "FCU_Tools/M5"
-	// "FCU_Tools/M6"
+	"path/filepath"
+	"FCU_Tools/SWC_Dependence"
+	"FCU_Tools/M2"
+	"FCU_Tools/M3"
+	"FCU_Tools/M4"
+	"FCU_Tools/M5"
+	"FCU_Tools/M6"
 	"fmt"
 	"FCU_Tools/Public_data"
 	"FCU_Tools/M1"
 )
 
 func main() {
-	// /***************SWC 의존 관계***************/
-	// // 분석 결과는 Main 프로잭트 디렉토리의 Output폴더에 생성함. Output풀더를 초기화(이미 있으면 삭제, 없으면 생성)
+	/***************SWC 의존 관계***************/
+	// 분석 결과는 Main 프로잭트 디렉토리의 Output폴더에 생성함. Output풀더를 초기화(이미 있으면 삭제, 없으면 생성)
 	if err := Public_data.InitOutputDirectory(); err != nil {
 		fmt.Println("출력 디렉토리 초기화 실패: ", err)
 		return
 	}
 
-	// asw.xlsw는 각 컴포넌트의 연결 정보를 저장하니까 asw.xlsw를 저장하는 디렉토리를 입력함.
-	// var dir string
-	// fmt.Print("asw.xlsx를 저장할 폴더 경로를 입력하십시오: ")
-	// fmt.Scanln(&dir)
+	// asw.csv는 각 컴포넌트의 연결 정보를 저장하니까 asw.csv를 저장하는 디렉토리를 입력함.
+	var dir string
+	fmt.Print("asw.csv를 저장할 폴더 경로를 입력하십시오: ")
+	fmt.Scanln(&dir)
 
-	// // asw.xlsw의 경로를 Public_data.go 파일에 저장합니다.
-	// excelPath := filepath.Join(dir, "asw.xlsx")
-	// Public_data.SetConnectorFilePath(excelPath)
+	// asw.csv의 경로를 Public_data.go 파일에 저장합니다.
+	excelPath := filepath.Join(dir, "asw.csv")
+	Public_data.SetConnectorFilePath(excelPath)
 
-	// // asw.xlsw 파일 내용에 따라 각 컴포넌트 간의 의존 관계를 분석합니다. 구체적으로 컴포넌트 간 의존 강도 분석(ldi.xml에서 <uses provider="CL1MGR" strength="1"/>의 strength 값)
-	// err := SWC_Dependence.AnalyzeSWCDependencies(excelPath)
-	// if err != nil {
-	// 	fmt.Println("의존관계 분석 실패: ", err)
-	// } else {
-	// 	fmt.Println("의존관계 분석 완료.")
-	// }
+	// asw.csv 파일 내용에 따라 각 컴포넌트 간의 의존 관계를 분석합니다. 구체적으로 컴포넌트 간 의존 강도 분석(ldi.xml에서 <uses provider="CL1MGR" strength="1"/>의 strength 값)
+	err := SWC_Dependence.AnalyzeSWCDependencies(excelPath)
+	if err != nil {
+		fmt.Println("의존관계 분석 실패: ", err)
+	} else {
+		fmt.Println("의존관계 분석 완료.")
+	}
 	
 	/*
 	* 다음은 6가지 지표를 분석하는 코드의 호출 함수입니다.
@@ -51,13 +51,13 @@ func main() {
 	/***************M1지표***************/
 	M1main.M1_main()
 	/***************M2지표***************/
-	// M2main.M2_main()
-	// /***************M3지표***************/
-	// M3main.M3_main()
-	// /***************M4지표***************/
-	// M4main.M4_main()
-	// /***************M5지표***************/
-	// M5main.M5_main()
-	// /***************M6지표***************/
-	// M6main.M6_main()
+	M2main.M2_main()
+	/***************M3지표***************/
+	M3main.M3_main()
+	/***************M4지표***************/
+	M4main.M4_main()
+	/***************M5지표***************/
+	M5main.M5_main()
+	/***************M6지표***************/
+	M6main.M6_main()
 }

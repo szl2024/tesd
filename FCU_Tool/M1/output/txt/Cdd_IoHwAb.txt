@@ -1,6 +1,0 @@
-[L1] Name: IoHwAbRunnable_sys	BlockType=SubSystem	SID=4
-	[L1 Port] Name: IoHwAbRunnable                          	BlockType=Inport    	SID=3         	PortType=S-R       
-	[L1 Port] Name: IoHwAb_TurnLightCtrlCmd_FL_Operation    	BlockType=Outport   	SID=unknow    	PortType=C-S       
-	[L1 Port] Name: IoHwAb_TurnLightCtrlCmd_FR_Operation    	BlockType=Outport   	SID=unknow    	PortType=C-S       
-	[L1 Port] Name: IoHwAb_TurnLightCtrlCmd_RL_Operation    	BlockType=Outport   	SID=unknow    	PortType=C-S       
-	[L1 Port] Name: IoHwAb_TurnLightCtrlCmd_RR_Operation    	BlockType=Outport   	SID=unknow    	PortType=C-S       

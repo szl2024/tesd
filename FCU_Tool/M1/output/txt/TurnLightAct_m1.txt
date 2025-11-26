@@ -1,5 +1,0 @@
-[L1] Name: Runnable_10ms_sys	L1Ports(Weighted)=17.8	L2Count=4	L2Ports=14
-[L2] Name: FL_TurnLightActuator	L2Ports=4	L3Count=2	L3Ports=8
-[L2] Name: FR_TurnLightActuator	L2Ports=3	L3Count=2	L3Ports=7
-[L2] Name: RL_TurnLightActuator	L2Ports=4	L3Count=2	L3Ports=8
-[L2] Name: RR_TurnLightActuator	L2Ports=3	L3Count=2	L3Ports=7

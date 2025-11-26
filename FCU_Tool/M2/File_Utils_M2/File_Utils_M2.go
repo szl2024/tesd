@@ -1,6 +1,7 @@
 package File_Utils_M2
 
 import (
+	"encoding/csv"
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
@@ -9,35 +10,36 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
-	"github.com/xuri/excelize/v2"
+
 	"FCU_Tools/Public_data"
 )
 
 // CheckAndSetM2InputPath 检查指定目录下是否包含 M2 所需的输入文件
-// （complexity.json 与 rq_versus_component.xlsx），并在 Public_data 中保存其路径。
-// 
+// （complexity.json 与 rq_versus_component.csv），并在 Public_data 中保存其路径。
+//
 // 流程：
-//   1) 拼接 dir/complexity.json 与 dir/rq_versus_component.xlsx。
+//   1) 拼接 dir/complexity.json 与 dir/rq_versus_component.csv。
 //   2) 调用 os.Stat 确认文件存在；缺失则返回错误。
 //   3) 将路径分别存入 Public_data.M2ComplexityJsonPath、Public_data.M2RqExcelPath。
 func CheckAndSetM2InputPath(dir string) error {
 	complexity := filepath.Join(dir, "complexity.json")
-	rqExcel := filepath.Join(dir, "rq_versus_component.xlsx")
+	rqCsv := filepath.Join(dir, "rq_versus_component.csv")
 
 	if _, err := os.Stat(complexity); os.IsNotExist(err) {
 		return fmt.Errorf("complexity.json을 찾을 수 없습니다: %s", complexity)
 	}
-	if _, err := os.Stat(rqExcel); os.IsNotExist(err) {
-		return fmt.Errorf("rq_versus_component.xlsx을 찾을 수 없습니다: %s", rqExcel)
+	if _, err := os.Stat(rqCsv); os.IsNotExist(err) {
+		return fmt.Errorf("rq_versus_component.csv을 찾을 수 없습니다: %s", rqCsv)
 	}
 
 	Public_data.M2ComplexityJsonPath = complexity
-	Public_data.M2RqExcelPath = rqExcel
+	// 변수명은 기존 그대로 사용하지만, 이제 CSV 경로를 담는다.
+	Public_data.M2RqExcelPath = rqCsv
 	return nil
 }
 
 // PrepareM2OutputDir 准备 M2 的输出目录。
-// 
+//
 // 流程：
 //   1) 获取当前工作目录。
 //   2) 拼接 <工作目录>/M2/output 路径。
@@ -66,15 +68,14 @@ func PrepareM2OutputDir() error {
 	return nil
 }
 
-// GenerateM2LDIXml complexity.json과 rq_versus_component.xlsx를 읽어 M2.ldi.xml을 생성한다.
+// GenerateM2LDIXml complexity.json과 rq_versus_component.csv를 읽어 M2.ldi.xml을 생성한다.
 //
 // 프로세스:
 //   1) complexity.json을 읽어 map[string]float64로 파싱 (모듈명 → 복잡도 값).
-//   2) rq_versus_component.xlsx를 열고 Sheet1을 읽어 Req 이름을 컴포넌트명에 매핑.
+//   2) rq_versus_component.csv를 열고 모든 행을 읽어 Req 이름을 컴포넌트명에 매핑.
 //   3) 정규식을 이용해 JSON key의 접두어([REQ] 형태)를 매칭하고,
 //      excelMap을 활용해 컴포넌트명으로 매핑.
 //
-
 func GenerateM2LDIXml() error {
 	// complexity.json 읽기
 	data, err := ioutil.ReadFile(Public_data.M2ComplexityJsonPath)
@@ -87,17 +88,23 @@ func GenerateM2LDIXml() error {
 		return fmt.Errorf("complexity.json 살펴보기 실패: %v", err)
 	}
 
-	// Excel 파일 열기
-	excelFile, err := excelize.OpenFile(Public_data.M2RqExcelPath)
+	// CSV 파일 열기 (rq_versus_component.csv)
+	f, err := os.Open(Public_data.M2RqExcelPath)
 	if err != nil {
-		return fmt.Errorf("Excel 열기 실패: %v", err)
+		return fmt.Errorf("CSV 열기 실패: %v", err)
+	}
+	defer f.Close()
+
+	r := csv.NewReader(f)
+	// 각 행의 컬럼 수가 달라도 읽을 수 있도록 설정
+	r.FieldsPerRecord = -1
+
+	excelRows, err := r.ReadAll()
+	if err != nil {
+		return fmt.Errorf("CSV 행 읽기 실패: %v", err)
 	}
 
 	excelMap := make(map[string]string)
-	excelRows, err := excelFile.GetRows("Sheet1")
-	if err != nil {
-		return fmt.Errorf("Excel 행 읽기 실패: %v", err)
-	}
 	for _, row := range excelRows {
 		if len(row) >= 2 {
 			excelMap[strings.TrimSpace(row[0])] = row[1]
