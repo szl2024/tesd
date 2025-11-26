@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ldi>
+  <element name="Runnable_10ms_sys">
+    <property name="coverage.m1">996.8000</property>
+  </element>
+  <element name="Runnable_10ms_sys.FL_TurnLightActuator">
+    <property name="coverage.m1">64.0000</property>
+  </element>
+  <element name="Runnable_10ms_sys.FR_TurnLightActuator">
+    <property name="coverage.m1">42.0000</property>
+  </element>
+  <element name="Runnable_10ms_sys.RL_TurnLightActuator">
+    <property name="coverage.m1">64.0000</property>
+  </element>
+  <element name="Runnable_10ms_sys.RR_TurnLightActuator">
+    <property name="coverage.m1">42.0000</property>
+  </element>
+</ldi>

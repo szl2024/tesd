@@ -1,0 +1,74 @@
+[L1] Name: Runnable_10ms_sys	BlockType=SubSystem	SID=4
+	[L1 Port] Name: TurnLamp_FL_Out_u8_Signal               	BlockType=Inport    	SID=6         	PortType=S-R       
+	[L1 Port] Name: TurnLamp_RL_Out_u8_Signal               	BlockType=Inport    	SID=8         	PortType=S-R       
+	[L1 Port] Name: TurnLapm_FR_Out_u8_Signal               	BlockType=Inport    	SID=10        	PortType=S-R       
+	[L1 Port] Name: TurnLapme_RR_Out_u8_Signal              	BlockType=Inport    	SID=12        	PortType=S-R       
+	[L1 Port] Name: CountSignal_Left_u8_Signal              	BlockType=Outport   	SID=14        	PortType=S-R       
+	[L1 Port] Name: CountSignal_Right_u8_Signal             	BlockType=Outport   	SID=16        	PortType=S-R       
+	[L1 Port] Name: TurnLampCtrlCmd_FL_u8_signal            	BlockType=Outport   	SID=18        	PortType=S-R       
+	[L1 Port] Name: TurnLampCtrlCmd_FR_u8_signa             	BlockType=Outport   	SID=20        	PortType=S-R       
+	[L1 Port] Name: TurnLampCtrlCmd_RL_u8_signal            	BlockType=Outport   	SID=22        	PortType=S-R       
+	[L1 Port] Name: TurnLampCtrlCmd_RR_u8_signal            	BlockType=Outport   	SID=24        	PortType=S-R       
+	[L1 Port] Name: Runnable_10ms                           	BlockType=Inport    	SID=3         	PortType=S-R       
+	[L1 Port] Name: Com_CAN_LA_St_DirectionLampL_u8_signal  	BlockType=Outport   	SID=36        	PortType=S-R       
+	[L1 Port] Name: Com_CAN_LA_St_DirectionLampR_u8_signal  	BlockType=Outport   	SID=38        	PortType=S-R       
+	[L1 Port] Name: IoHwAb_TurnLightCtrlCmd_FL_Operation    	BlockType=Inport    	SID=unknow    	PortType=C-S       
+	[L1 Port] Name: IoHwAb_TurnLightCtrlCmd_FR_Operation    	BlockType=Inport    	SID=unknow    	PortType=C-S       
+	[L1 Port] Name: IoHwAb_TurnLightCtrlCmd_RL_Operation    	BlockType=Inport    	SID=unknow    	PortType=C-S       
+	[L1 Port] Name: IoHwAb_TurnLightCtrlCmd_RR_Operation    	BlockType=Inport    	SID=unknow    	PortType=C-S       
+[L2] Name: FL_TurnLightActuator	BlockType=SubSystem 	SID=46        	FatherNode=Runnable_10ms_sys
+	[L2 Port] Name:TurnLamp_FL_Out_u8_Signal_read          	BlockType=Inport    	SID=7         
+	[L2 Port] Name:CountSignal_Left_u8_Signal_write        	BlockType=Outport   	SID=15        
+	[L2 Port] Name:TurnLampCtrlCmd_FL_u8_signal_write      	BlockType=Outport   	SID=19        
+	[L2 Port] Name:Com_CAN_LA_St_DirectionLampL_u8_signal_write	BlockType=Outport   	SID=37        
+[L2] Name: FR_TurnLightActuator	BlockType=SubSystem 	SID=52        	FatherNode=Runnable_10ms_sys
+	[L2 Port] Name:TurnLapm_FR_Out_u8_Signal_read          	BlockType=Inport    	SID=11        
+	[L2 Port] Name:TurnLampCtrlCmd_FR_u8_signa_write       	BlockType=Outport   	SID=21        
+	[L2 virtual Port] Name:FR_TurnLightActuator->Terminator        	BlockType=Outport   	SID=52->140   
+[L2] Name: RL_TurnLightActuator	BlockType=SubSystem 	SID=58        	FatherNode=Runnable_10ms_sys
+	[L2 Port] Name:TurnLamp_RL_Out_u8_Signal_read          	BlockType=Inport    	SID=9         
+	[L2 Port] Name:CountSignal_Right_u8_Signal_write       	BlockType=Outport   	SID=17        
+	[L2 Port] Name:TurnLampCtrlCmd_RL_u8_signal_write      	BlockType=Outport   	SID=23        
+	[L2 Port] Name:Com_CAN_LA_St_DirectionLampR_u8_signal_write	BlockType=Outport   	SID=39        
+[L2] Name: RR_TurnLightActuator	BlockType=SubSystem 	SID=64        	FatherNode=Runnable_10ms_sys
+	[L2 Port] Name:TurnLapme_RR_Out_u8_Signal_read         	BlockType=Inport    	SID=13        
+	[L2 Port] Name:TurnLampCtrlCmd_RR_u8_signal_write      	BlockType=Outport   	SID=25        
+	[L2 virtual Port] Name:RR_TurnLightActuator->Terminator1       	BlockType=Outport   	SID=64->78    
+[L3] Name: Function-Call Subsystem	BlockType=SubSystem 	SID=106       	FatherNode=FL_TurnLightActuator
+	[L3 virtual Port] Name:TurnLampActuator->Function-Call Subsystem_1	BlockType=Inport    	SID=73->106   
+	[L3 virtual Port] Name:TurnLampActuator->Function-Call Subsystem_2	BlockType=Inport    	SID=73->106   
+[L3] Name: TurnLampActuator	BlockType=Reference 	SID=73        	FatherNode=FL_TurnLightActuator
+	[L3 Port] Name:TurnLamp_FL_Output                      	BlockType=Inport    	SID=47        
+	[L3 Port] Name:Counter_FL                              	BlockType=Outport   	SID=49        
+	[L3 Port] Name:Com_CAN_LA_St_DirectionLampL            	BlockType=Outport   	SID=51        
+	[L3 virtual Port] Name:TurnLampActuator->Function-Call Subsystem_1	BlockType=Outport   	SID=73->106   
+	[L3 virtual Port] Name:TurnLampActuator->Function-Call Subsystem_2	BlockType=Outport   	SID=73->106   
+	[L3 Port] Name:TurnLampCtrlCmd_FL                      	BlockType=Outport   	SID=48        
+[L3] Name: Function-Call Subsystem1	BlockType=SubSystem 	SID=111       	FatherNode=FR_TurnLightActuator
+	[L3 virtual Port] Name:TurnLampActuator1->Function-Call Subsystem1_1	BlockType=Inport    	SID=75->111   
+	[L3 virtual Port] Name:TurnLampActuator1->Function-Call Subsystem1_2	BlockType=Inport    	SID=75->111   
+[L3] Name: TurnLampActuator1	BlockType=Reference 	SID=75        	FatherNode=FR_TurnLightActuator
+	[L3 Port] Name:Counter_FR                              	BlockType=Outport   	SID=56        
+	[L3 Port] Name:TurnLamp_FR_Output                      	BlockType=Inport    	SID=53        
+	[L3 virtual Port] Name:TurnLampActuator1->Function-Call Subsystem1_1	BlockType=Outport   	SID=75->111   
+	[L3 virtual Port] Name:TurnLampActuator1->Function-Call Subsystem1_2	BlockType=Outport   	SID=75->111   
+	[L3 Port] Name:TurnLampCtrlCmd_FR                      	BlockType=Outport   	SID=55        
+[L3] Name: Function-Call Subsystem2	BlockType=SubSystem 	SID=115       	FatherNode=RL_TurnLightActuator
+	[L3 virtual Port] Name:TurnLampActuator->Function-Call Subsystem2_1	BlockType=Inport    	SID=74->115   
+	[L3 virtual Port] Name:TurnLampActuator->Function-Call Subsystem2_2	BlockType=Inport    	SID=74->115   
+[L3] Name: TurnLampActuator	BlockType=Reference 	SID=74        	FatherNode=RL_TurnLightActuator
+	[L3 Port] Name:TurnLamp_RL_Output                      	BlockType=Inport    	SID=59        
+	[L3 virtual Port] Name:TurnLampActuator->Function-Call Subsystem2_1	BlockType=Outport   	SID=74->115   
+	[L3 Port] Name:TurnLampCtrlCmd_RL                      	BlockType=Outport   	SID=61        
+	[L3 Port] Name:Counter_RL                              	BlockType=Outport   	SID=62        
+	[L3 Port] Name:Com_CAN_LA_St_DirectionLampR            	BlockType=Outport   	SID=63        
+	[L3 virtual Port] Name:TurnLampActuator->Function-Call Subsystem2_2	BlockType=Outport   	SID=74->115   
+[L3] Name: Function-Call Subsystem3	BlockType=SubSystem 	SID=119       	FatherNode=RR_TurnLightActuator
+	[L3 virtual Port] Name:TurnLampActuator1->Function-Call Subsystem3_1	BlockType=Inport    	SID=76->119   
+	[L3 virtual Port] Name:TurnLampActuator1->Function-Call Subsystem3_2	BlockType=Inport    	SID=76->119   
+[L3] Name: TurnLampActuator1	BlockType=Reference 	SID=76        	FatherNode=RR_TurnLightActuator
+	[L3 Port] Name:Counter_RR                              	BlockType=Outport   	SID=68        
+	[L3 Port] Name:TurnLamp_RR_Output                      	BlockType=Inport    	SID=65        
+	[L3 virtual Port] Name:TurnLampActuator1->Function-Call Subsystem3_1	BlockType=Outport   	SID=76->119   
+	[L3 virtual Port] Name:TurnLampActuator1->Function-Call Subsystem3_2	BlockType=Outport   	SID=76->119   
+	[L3 Port] Name:TurnLampCtrlCmd_RR                      	BlockType=Outport   	SID=67        

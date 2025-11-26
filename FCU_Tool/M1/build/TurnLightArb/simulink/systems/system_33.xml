@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-8, -8, 1928, 1048]</P>
+  <P Name="SystemRect">[0.000000, 0.000000, 0.000000, 0.000000]</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="SIDHighWatermark">114</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="Inport" Name="NewPriority" SID="33::103">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">83</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightPosition" SID="33::104">
+    <P Name="Position">[20, 136, 40, 154]</P>
+    <P Name="ZOrder">84</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightOnOff" SID="33::105">
+    <P Name="Position">[20, 171, 40, 189]</P>
+    <P Name="ZOrder">85</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightDutyCycle" SID="33::106">
+    <P Name="Position">[20, 206, 40, 224]</P>
+    <P Name="ZOrder">86</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightCycle" SID="33::107">
+    <P Name="Position">[20, 246, 40, 264]</P>
+    <P Name="ZOrder">87</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightTime" SID="33::108">
+    <P Name="Position">[20, 281, 40, 299]</P>
+    <P Name="ZOrder">88</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Inport" Name="TurnLightNumber" SID="33::109">
+    <P Name="Position">[20, 316, 40, 334]</P>
+    <P Name="ZOrder">89</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="33::98">
+    <P Name="Ports">[1, 1]</P>
+    <P Name="Position">[270, 280, 320, 320]</P>
+    <P Name="ZOrder">78</P>
+    <P Name="Outputs">1</P>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="33::97">
+    <P Name="Tag">Stateflow S-Function 3</P>
+    <P Name="Ports">[7, 5]</P>
+    <P Name="Position">[180, 110, 230, 270]</P>
+    <P Name="ZOrder">77</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="PortCounts">[7 5]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">on</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+    <Port>
+      <P Name="PortNumber">2</P>
+      <P Name="Name">TurnLight_FL_Out</P>
+    </Port>
+    <Port>
+      <P Name="PortNumber">3</P>
+      <P Name="Name">TurnLight_FR_Out</P>
+    </Port>
+    <Port>
+      <P Name="PortNumber">4</P>
+      <P Name="Name">TurnLight_RL_Out</P>
+    </Port>
+    <Port>
+      <P Name="PortNumber">5</P>
+      <P Name="Name">TurnLight_RR_Out</P>
+    </Port>
+  </Block>
+  <Block BlockType="Terminator" Name=" Terminator " SID="33::99">
+    <P Name="Position">[460, 291, 480, 309]</P>
+    <P Name="ZOrder">79</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_FL_Out" SID="33::111">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">91</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_FR_Out" SID="33::112">
+    <P Name="Position">[460, 136, 480, 154]</P>
+    <P Name="ZOrder">92</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_RL_Out" SID="33::113">
+    <P Name="Position">[460, 171, 480, 189]</P>
+    <P Name="ZOrder">93</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLight_RR_Out" SID="33::114">
+    <P Name="Position">[460, 206, 480, 224]</P>
+    <P Name="ZOrder">94</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">172</P>
+    <P Name="Src">33::103#out:1</P>
+    <P Name="Dst">33::97#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">173</P>
+    <P Name="Src">33::104#out:1</P>
+    <P Name="Dst">33::97#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">174</P>
+    <P Name="Src">33::105#out:1</P>
+    <P Name="Dst">33::97#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">175</P>
+    <P Name="Src">33::106#out:1</P>
+    <P Name="Dst">33::97#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">176</P>
+    <P Name="Src">33::107#out:1</P>
+    <P Name="Dst">33::97#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">177</P>
+    <P Name="Src">33::108#out:1</P>
+    <P Name="Dst">33::97#in:6</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">178</P>
+    <P Name="Src">33::109#out:1</P>
+    <P Name="Dst">33::97#in:7</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_FL_Out</P>
+    <P Name="ZOrder">179</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">33::97#out:2</P>
+    <P Name="Dst">33::111#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_FR_Out</P>
+    <P Name="ZOrder">180</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">33::97#out:3</P>
+    <P Name="Dst">33::112#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_RL_Out</P>
+    <P Name="ZOrder">181</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">33::97#out:4</P>
+    <P Name="Dst">33::113#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">TurnLight_RR_Out</P>
+    <P Name="ZOrder">182</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">33::97#out:5</P>
+    <P Name="Dst">33::114#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">183</P>
+    <P Name="Src">33::98#out:1</P>
+    <P Name="Dst">33::99#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">184</P>
+    <P Name="Src">33::97#out:1</P>
+    <P Name="Dst">33::98#in:1</P>
+  </Line>
+</System>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-8, -8, 1928, 1048]</P>
+  <P Name="SystemRect">[0.000000, 0.000000, 0.000000, 0.000000]</P>
+  <P Name="Open">on</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="ZoomFactor">80</P>
+  <P Name="ReportName">simulink-default.rpt</P>
+  <P Name="SIDHighWatermark">41</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="Inport" Name="Runnable_10ms" SID="3">
+    <P Name="Position">[530, 443, 560, 457]</P>
+    <P Name="ZOrder">2</P>
+    <Object Reference="true" PropName="Mappings" ObjectID="/simulink/blockdiagram.xml:14"/>
+    <P Name="OutputFunctionCall">on</P>
+    <P Name="SampleTime">0.01</P>
+  </Block>
+  <Block BlockType="DataStoreMemory" Name="Data Store&#xA;Memory" SID="23">
+    <P Name="Position">[1205, 485, 1327, 530]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="DataStoreName">TurnLightCtrlCmd</P>
+    <P Name="ReadBeforeWriteMsg">warning</P>
+    <P Name="WriteAfterWriteMsg">warning</P>
+    <P Name="WriteAfterReadMsg">warning</P>
+    <P Name="ShowAdditionalParam">off</P>
+    <P Name="OutDataTypeStr">Bus: TurnLightService</P>
+    <P Name="SignalType">real</P>
+  </Block>
+  <Block BlockType="DataStoreMemory" Name="Data Store&#xA;Memory1" SID="26">
+    <P Name="Position">[1205, 580, 1327, 625]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="DataStoreName">IsFunctionCall</P>
+    <P Name="ReadBeforeWriteMsg">warning</P>
+    <P Name="WriteAfterWriteMsg">warning</P>
+    <P Name="WriteAfterReadMsg">warning</P>
+    <P Name="ShowAdditionalParam">off</P>
+    <P Name="OutDataTypeStr">boolean</P>
+    <P Name="SignalType">real</P>
+  </Block>
+  <Block BlockType="DataStoreMemory" Name="Data Store&#xA;Memory2" SID="29">
+    <P Name="Position">[1205, 680, 1327, 725]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="DataStoreName">CurrentPriority</P>
+    <P Name="ReadBeforeWriteMsg">warning</P>
+    <P Name="WriteAfterWriteMsg">warning</P>
+    <P Name="WriteAfterReadMsg">warning</P>
+    <P Name="ShowAdditionalParam">off</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <P Name="SignalType">real</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Runnable_10ms_sys" SID="4">
+    <P Name="Ports">[0, 4, 0, 1]</P>
+    <P Name="Position">[500, 502, 700, 708]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_4"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="TurnLightArb_Init" SID="1">
+    <P Name="Ports">[]</P>
+    <P Name="Position">[500, 280, 700, 380]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_1"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="TurnLightService" SID="14">
+    <P Name="Ports">[]</P>
+    <P Name="Position">[500, 828, 700, 928]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_14"/>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLamp_FL_Out_u8_Signal" SID="6">
+    <P Name="Position">[765, 523, 795, 537]</P>
+    <P Name="ZOrder">4</P>
+    <Object Reference="true" PropName="Mappings" ObjectID="/simulink/blockdiagram.xml:6"/>
+    <P Name="OutDataTypeStr">uint8</P>
+    <P Name="PortDimensions">1</P>
+    <P Name="SignalType">real</P>
+    <P Name="SamplingMode">Sample based</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLamp_RL_Out_u8_Signal" SID="8">
+    <P Name="Position">[765, 573, 795, 587]</P>
+    <P Name="ZOrder">5</P>
+    <Object Reference="true" PropName="Mappings" ObjectID="/simulink/blockdiagram.xml:8"/>
+    <P Name="Port">2</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <P Name="PortDimensions">1</P>
+    <P Name="SignalType">real</P>
+    <P Name="SamplingMode">Sample based</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLapm_FR_Out_u8_Signal" SID="10">
+    <P Name="Position">[765, 623, 795, 637]</P>
+    <P Name="ZOrder">6</P>
+    <Object Reference="true" PropName="Mappings" ObjectID="/simulink/blockdiagram.xml:10"/>
+    <P Name="Port">3</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <P Name="PortDimensions">1</P>
+    <P Name="SignalType">real</P>
+    <P Name="SamplingMode">Sample based</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLapme_RR_Out_u8_Signal" SID="12">
+    <P Name="Position">[765, 673, 795, 687]</P>
+    <P Name="ZOrder">7</P>
+    <Object Reference="true" PropName="Mappings" ObjectID="/simulink/blockdiagram.xml:12"/>
+    <P Name="Port">4</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <P Name="PortDimensions">1</P>
+    <P Name="SignalType">real</P>
+    <P Name="SamplingMode">Sample based</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">4#out:1</P>
+    <P Name="Dst">6#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">4#out:2</P>
+    <P Name="Dst">8#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">4#out:3</P>
+    <P Name="Dst">10#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">4#out:4</P>
+    <P Name="Dst">12#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">3#out:1</P>
+    <P Name="Points">[35, 0]</P>
+    <P Name="Dst">4#trigger</P>
+  </Line>
+</System>

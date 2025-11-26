@@ -1,7 +1,0 @@
-{
-    "GraphicalInterface":{
-        "PreCompExecutionDomainType":"Unset",
-        "SimulinkSubDomainType":"Simulink",
-        "SolverName":"VariableStepAuto"
-    }
-}

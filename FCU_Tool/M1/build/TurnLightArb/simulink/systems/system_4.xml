@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1928, -8, 8, 1048]</P>
+  <P Name="SystemRect">[0.000000, 0.000000, 0.000000, 0.000000]</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="ZoomFactor">60</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="TriggerPort" Name="function" SID="5">
+    <P Name="Ports">[]</P>
+    <P Name="Position">[335, 10, 345, 20]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="TriggerType">function-call</P>
+    <P Name="VariantControl">(inherit)</P>
+    <P Name="StatesWhenEnabling">held</P>
+    <P Name="SampleTimeType">periodic</P>
+    <P Name="SampleTime">-1</P>
+  </Block>
+  <Block BlockType="BusSelector" Name="Bus&#xA;Selector" SID="32">
+    <P Name="Ports">[1, 7]</P>
+    <P Name="Position">[-245, 229, -240, 861]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="OutputSignals">TurnLightPosition,TurnLightOnOff,TurnLightDutyCycle,TurnLightCycle,TurnLightTimes,TurnLightNumber,TurnLightPriority</P>
+    <Port>
+      <P Name="PortNumber">1</P>
+      <P Name="Name">&lt;TurnLightPosition&gt;</P>
+    </Port>
+    <Port>
+      <P Name="PortNumber">2</P>
+      <P Name="Name">&lt;TurnLightOnOff&gt;</P>
+    </Port>
+    <Port>
+      <P Name="PortNumber">3</P>
+      <P Name="Name">&lt;TurnLightDutyCycle&gt;</P>
+    </Port>
+    <Port>
+      <P Name="PortNumber">4</P>
+      <P Name="Name">&lt;TurnLightCycle&gt;</P>
+    </Port>
+    <Port>
+      <P Name="PortNumber">5</P>
+      <P Name="Name">&lt;TurnLightTimes&gt;</P>
+    </Port>
+    <Port>
+      <P Name="PortNumber">6</P>
+      <P Name="Name">&lt;TurnLightNumber&gt;</P>
+    </Port>
+    <Port>
+      <P Name="PortNumber">7</P>
+      <P Name="Name">&lt;TurnLightPriority&gt;</P>
+    </Port>
+  </Block>
+  <Block BlockType="DataStoreRead" Name="Data Store&#xA;Read" SID="24">
+    <P Name="Ports">[0, 1]</P>
+    <P Name="Position">[-520, 530, -385, 560]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="DataStoreName">TurnLightCtrlCmd</P>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="Data Type Conversion" SID="39">
+    <P Name="Position">[80, 258, 155, 292]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <P Name="RndMeth">Floor</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="Data Type Conversion1" SID="40">
+    <P Name="Position">[80, 353, 155, 387]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="OutDataTypeStr">uint8</P>
+    <P Name="RndMeth">Floor</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="From" Name="From" SID="36">
+    <P Name="Position">[10, 167, 145, 193]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="GotoTag">TurnLightPriority</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto" SID="35">
+    <P Name="Position">[-100, 802, 10, 828]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="GotoTag">TurnLightPriority</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="TurnLightOutArb" SID="33">
+    <P Name="Ports">[7, 4]</P>
+    <P Name="Position">[210, 135, 720, 795]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="ErrorFcn">Stateflow.Translate.translate</P>
+    <P Name="PermitHierarchicalResolution">ExplicitOnly</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="SFBlockType">Chart</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_33"/>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLamp_FL_Out_u8_Signal_write" SID="7">
+    <P Name="Position">[805, 213, 835, 227]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="EnsureOutportIsVirtual">on</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLamp_RL_Out_u8_Signal_write" SID="9">
+    <P Name="Position">[805, 543, 835, 557]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">2</P>
+    <P Name="EnsureOutportIsVirtual">on</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLapm_FR_Out_u8_Signal_write" SID="11">
+    <P Name="Position">[805, 378, 835, 392]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">3</P>
+    <P Name="EnsureOutportIsVirtual">on</P>
+  </Block>
+  <Block BlockType="Outport" Name="TurnLapme_RR_Out_u8_Signal_write" SID="13">
+    <P Name="Position">[805, 708, 835, 722]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">4</P>
+    <P Name="EnsureOutportIsVirtual">on</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">33#out:1</P>
+    <P Name="Dst">7#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">33#out:3</P>
+    <P Name="Dst">9#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">18</P>
+    <P Name="Src">33#out:2</P>
+    <P Name="Dst">11#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">19</P>
+    <P Name="Src">33#out:4</P>
+    <P Name="Dst">13#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">24#out:1</P>
+    <P Name="Dst">32#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;TurnLightPriority&gt;</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">32#out:7</P>
+    <P Name="Dst">35#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">36#out:1</P>
+    <P Name="Dst">33#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;TurnLightDutyCycle&gt;</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">32#out:3</P>
+    <P Name="Points">[246, 0; 0, 10]</P>
+    <P Name="Dst">33#in:4</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;TurnLightCycle&gt;</P>
+    <P Name="ZOrder">13</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">32#out:4</P>
+    <P Name="Points">[184, 0; 0, 15]</P>
+    <P Name="Dst">33#in:5</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;TurnLightTimes&gt;</P>
+    <P Name="ZOrder">14</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">32#out:5</P>
+    <P Name="Points">[123, 0; 0, 20]</P>
+    <P Name="Dst">33#in:6</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;TurnLightNumber&gt;</P>
+    <P Name="ZOrder">15</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">32#out:6</P>
+    <P Name="Points">[61, 0; 0, 25]</P>
+    <P Name="Dst">33#in:7</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;TurnLightPosition&gt;</P>
+    <P Name="ZOrder">29</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">32#out:1</P>
+    <P Name="Dst">39#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">30</P>
+    <P Name="Src">39#out:1</P>
+    <P Name="Dst">33#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;TurnLightOnOff&gt;</P>
+    <P Name="ZOrder">31</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">32#out:2</P>
+    <P Name="Points">[150, 0; 0, 5]</P>
+    <P Name="Dst">40#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">32</P>
+    <P Name="Src">40#out:1</P>
+    <P Name="Dst">33#in:3</P>
+  </Line>
+</System>

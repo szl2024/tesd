@@ -1,0 +1,37 @@
+[L1] Name: Runnable_10ms_sys	BlockType=SubSystem	SID=4
+	[L1 Port] Name: TurnLamp_FL_Out_u8_Signal               	BlockType=Outport   	SID=6         	PortType=S-R       
+	[L1 Port] Name: TurnLamp_RL_Out_u8_Signal               	BlockType=Outport   	SID=8         	PortType=S-R       
+	[L1 Port] Name: TurnLapm_FR_Out_u8_Signal               	BlockType=Outport   	SID=10        	PortType=S-R       
+	[L1 Port] Name: TurnLapme_RR_Out_u8_Signal              	BlockType=Outport   	SID=12        	PortType=S-R       
+	[L1 Port] Name: Runnable_10ms                           	BlockType=Inport    	SID=3         	PortType=S-R       
+	[L1 Port] Name: TurnLightService_TurnLightControl_Operation	BlockType=Outport   	SID=unknow    	PortType=C-S       
+[L2] Name: TurnLightOutArb	BlockType=SubSystem 	SID=33        	FatherNode=Runnable_10ms_sys
+	[L2 Port] Name:TurnLamp_FL_Out_u8_Signal_write         	BlockType=Outport   	SID=7         
+	[L2 Port] Name:TurnLamp_RL_Out_u8_Signal_write         	BlockType=Outport   	SID=9         
+	[L2 Port] Name:TurnLapm_FR_Out_u8_Signal_write         	BlockType=Outport   	SID=11        
+	[L2 Port] Name:TurnLapme_RR_Out_u8_Signal_write        	BlockType=Outport   	SID=13        
+	[L2 virtual Port] Name:From->TurnLightOutArb                   	BlockType=Inport    	SID=36->33    
+	[L2 virtual Port] Name:Bus Selector->TurnLightOutArb_1         	BlockType=Inport    	SID=32->33    
+	[L2 virtual Port] Name:Bus Selector->TurnLightOutArb_2         	BlockType=Inport    	SID=32->33    
+	[L2 virtual Port] Name:Bus Selector->TurnLightOutArb_3         	BlockType=Inport    	SID=32->33    
+	[L2 virtual Port] Name:Bus Selector->TurnLightOutArb_4         	BlockType=Inport    	SID=32->33    
+	[L2 virtual Port] Name:Data Type Conversion->TurnLightOutArb   	BlockType=Inport    	SID=39->33    
+	[L2 virtual Port] Name:Data Type Conversion1->TurnLightOutArb  	BlockType=Inport    	SID=40->33    
+[L3] Name: Demux     	BlockType=Demux     	SID=33::98    	FatherNode=TurnLightOutArb
+	[L3 virtual Port] Name:Demux->Terminator                       	BlockType=Outport   	SID=33::98->33::99
+	[L3 virtual Port] Name:SFunction->Demux                        	BlockType=Inport    	SID=33::97->33::98
+[L3] Name: SFunction 	BlockType=S-Function	SID=33::97    	FatherNode=TurnLightOutArb
+	[L3 Port] Name:NewPriority                             	BlockType=Inport    	SID=33::103   
+	[L3 Port] Name:TurnLightPosition                       	BlockType=Inport    	SID=33::104   
+	[L3 Port] Name:TurnLightOnOff                          	BlockType=Inport    	SID=33::105   
+	[L3 Port] Name:TurnLightDutyCycle                      	BlockType=Inport    	SID=33::106   
+	[L3 Port] Name:TurnLightCycle                          	BlockType=Inport    	SID=33::107   
+	[L3 Port] Name:TurnLightTime                           	BlockType=Inport    	SID=33::108   
+	[L3 Port] Name:TurnLightNumber                         	BlockType=Inport    	SID=33::109   
+	[L3 Port] Name:TurnLight_FL_Out                        	BlockType=Outport   	SID=33::111   
+	[L3 Port] Name:TurnLight_FR_Out                        	BlockType=Outport   	SID=33::112   
+	[L3 Port] Name:TurnLight_RL_Out                        	BlockType=Outport   	SID=33::113   
+	[L3 Port] Name:TurnLight_RR_Out                        	BlockType=Outport   	SID=33::114   
+	[L3 virtual Port] Name:SFunction->Demux                        	BlockType=Outport   	SID=33::97->33::98
+[L3] Name: Terminator	BlockType=Terminator	SID=33::99    	FatherNode=TurnLightOutArb
+	[L3 virtual Port] Name:Demux->Terminator                       	BlockType=Inport    	SID=33::98->33::99

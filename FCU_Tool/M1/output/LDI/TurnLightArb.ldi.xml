@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ldi>
+  <element name="Runnable_10ms_sys">
+    <property name="coverage.m1">68.2000</property>
+  </element>
+  <element name="Runnable_10ms_sys.TurnLightOutArb">
+    <property name="coverage.m1">495.0000</property>
+  </element>
+</ldi>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1928, -8, 8, 1048]</P>
+  <P Name="SystemRect">[0.000000, 0.000000, 0.000000, 0.000000]</P>
+  <P Name="SetExecutionDomain">off</P>
+  <P Name="ExecutionDomainType">Deduce</P>
+  <P Name="ZoomFactor">175</P>
+  <P Name="SimulinkSubDomain">Simulink</P>
+  <Block BlockType="SubSystem" Name="TurnLightService_TurnLightControl_Operation_sys" SID="15">
+    <P Name="Ports">[0, 0, 0, 1]</P>
+    <P Name="Position">[300, 150, 672, 250]</P>
+    <P Name="ZOrder">1</P>
+    <Object Reference="true" PropName="Mappings" ObjectID="/simulink/blockdiagram.xml:16"/>
+    <P Name="RequestExecContextInheritance">off</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_15"/>
+  </Block>
+</System>

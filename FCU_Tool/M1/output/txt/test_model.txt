@@ -1,0 +1,27 @@
+[L1] Name: lv1	BlockType=SubSystem	SID=1
+[L2] Name: lv2-1     	BlockType=SubSystem 	SID=8         	FatherNode=lv1       
+	[L2 Port] Name:In1                                     	BlockType=Inport    	SID=2         
+	[L2 Port] Name:In2                                     	BlockType=Inport    	SID=4         
+	[L2 Port] Name:test                                    	BlockType=Outport   	SID=3         
+[L2] Name: lv2-2     	BlockType=SubSystem 	SID=23        	FatherNode=lv1       
+	[L2 Port] Name:In3                                     	BlockType=Inport    	SID=45        
+	[L2 Port] Name:In4                                     	BlockType=Inport    	SID=46        
+	[L2 virtual Port] Name:lv2-2->Relational Operator              	BlockType=Outport   	SID=23->49    
+	[L2 virtual Port] Name:lv2-2->lv2-3                            	BlockType=Outport   	SID=23->34    
+[L2] Name: lv2-3     	BlockType=SubSystem 	SID=34        	FatherNode=lv1       
+	[L2 Port] Name:In3                                     	BlockType=Inport    	SID=45        
+	[L2 Port] Name:In4                                     	BlockType=Inport    	SID=46        
+	[L2 virtual Port] Name:lv2-3->Relational Operator              	BlockType=Outport   	SID=34->49    
+	[L2 virtual Port] Name:lv2-2->lv2-3                            	BlockType=Inport    	SID=23->34    
+[L3] Name: lv3-1     	BlockType=SubSystem 	SID=15        	FatherNode=lv2-1     
+	[L3 Port] Name:In1                                     	BlockType=Inport    	SID=9         
+	[L3 Port] Name:In2                                     	BlockType=Inport    	SID=14        
+	[L3 Port] Name:Out1                                    	BlockType=Outport   	SID=10        
+[L3] Name: lv3-2     	BlockType=SubSystem 	SID=26        	FatherNode=lv2-2     
+	[L3 Port] Name:In1                                     	BlockType=Inport    	SID=24        
+	[L3 Port] Name:In2                                     	BlockType=Inport    	SID=25        
+	[L3 Port] Name:dadad                                   	BlockType=Outport   	SID=33        
+[L3] Name: lv3-3     	BlockType=SubSystem 	SID=37        	FatherNode=lv2-3     
+	[L3 Port] Name:In1                                     	BlockType=Inport    	SID=35        
+	[L3 Port] Name:In2                                     	BlockType=Inport    	SID=36        
+	[L3 Port] Name:Out1                                    	BlockType=Outport   	SID=44        

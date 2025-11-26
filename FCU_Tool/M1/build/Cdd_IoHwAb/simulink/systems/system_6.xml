@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, 0, 0, 0]</P>
+  <Block BlockType="SubSystem" Name="IoHwAb_TurnLightCtrlCmd_FL_Operation_sys" SID="7">
+    <PortCounts/>
+    <P Name="Position">[300, 150, 570, 250]</P>
+    <P Name="ZOrder">1</P>
+    <Object Reference="true" PropName="Mappings" ObjectID="/simulink/blockdiagram.xml:7"/>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_7"/>
+  </Block>
+</System>

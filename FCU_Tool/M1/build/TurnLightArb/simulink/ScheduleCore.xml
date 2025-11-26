@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2020b_202003251737">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="3bd4b767-5432-4447-874e-d4fbd4d76a7c">
+    <globalData type="sltp.mm.core.GlobalData" uuid="2db84b7b-e494-4905-babe-977a1049f0c1">
+      <dataName>portRunnable_10ms</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="0b962fa8-ab6c-48db-92c7-da2312c95f59">
+      <dataName>portTurnLamp_FL_Out_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="6e50646b-b810-43b7-a671-067db7f02b07">
+      <dataName>portTurnLamp_RL_Out_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="ced40885-a551-4762-afda-a6634afb2462">
+      <dataName>portTurnLapm_FR_Out_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="41b705bc-3e61-44cd-8782-6b76f12544c2">
+      <dataName>portTurnLapme_RR_Out_u8_Signal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <priorityDirection>HighNumberLast</priorityDirection>
+    <editorState type="sltp.mm.core.EditorState" uuid="83226a55-bf67-415c-85a6-10a850e9f11a">
+      <isSynchronized>true</isSynchronized>
+    </editorState>
+    <rootTask type="sltp.mm.core.Task" uuid="bac005cf-3013-4c3b-8633-67ed70c58aec">
+      <context type="sltp.mm.core.Context" uuid="3bd4b767-5432-4447-874e-d4fbd4d76a7c"/>
+      <explicit>false</explicit>
+      <name>Default</name>
+      <priority>-2147483648</priority>
+      <subgraph type="sltp.mm.core.Graph" uuid="b6d2574e-6b11-4fc5-8632-a3de5652dd8b">
+        <connections type="sltp.mm.core.Connection" uuid="2017423d-7571-4423-9486-a868b13d46ce">
+          <dst type="sltp.mm.core.Task" uuid="2d7a1ff3-8a9d-46f8-96e1-7d79d961d911"/>
+          <src type="sltp.mm.core.Task" uuid="484e6c7c-b75b-4ece-99ac-d875e0b323bf"/>
+        </connections>
+        <tasks type="sltp.mm.core.Task" uuid="484e6c7c-b75b-4ece-99ac-d875e0b323bf">
+          <context type="sltp.mm.core.Context" uuid="3bd4b767-5432-4447-874e-d4fbd4d76a7c"/>
+          <id>2</id>
+          <isSimulinkFunction>true</isSimulinkFunction>
+          <name>TurnLightService_TurnLightControl_Operation</name>
+          <outConnections type="sltp.mm.core.Connection" uuid="2017423d-7571-4423-9486-a868b13d46ce"/>
+          <priority>-2147483648</priority>
+          <rates type="sltp.mm.core.Rate" uuid="79dc1ac9-ab70-4439-8687-c6ba93394e52">
+            <annotation>F1</annotation>
+            <color>341921535</color>
+            <hasBlocks>true</hasBlocks>
+            <rateSpec type="sltp.mm.core.RateSpec">
+              <offset>-2.0</offset>
+            </rateSpec>
+            <sti>2</sti>
+          </rates>
+          <sourceBlocks>15</sourceBlocks>
+        </tasks>
+        <tasks type="sltp.mm.core.Task" uuid="2d7a1ff3-8a9d-46f8-96e1-7d79d961d911">
+          <context type="sltp.mm.core.Context" uuid="3bd4b767-5432-4447-874e-d4fbd4d76a7c"/>
+          <id>1</id>
+          <inConnections type="sltp.mm.core.Connection" uuid="2017423d-7571-4423-9486-a868b13d46ce"/>
+          <isTimed>true</isTimed>
+          <name>Runnable_10ms</name>
+          <priority>-2147483648</priority>
+          <rates type="sltp.mm.core.Rate" uuid="91fbd423-3936-4788-bdb6-7cefad344256">
+            <annotation>F0</annotation>
+            <color>-436207361</color>
+            <hasBlocks>true</hasBlocks>
+            <rateSpec type="sltp.mm.core.RateSpec">
+              <period>.01</period>
+            </rateSpec>
+            <sti>1</sti>
+          </rates>
+          <sourceBlocks>3</sourceBlocks>
+        </tasks>
+      </subgraph>
+    </rootTask>
+  </sltp.mm.core.Context>
+</sltp_graph>
