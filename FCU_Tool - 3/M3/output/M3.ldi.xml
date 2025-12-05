@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <ldi>
+      <element name="CL2MGR">
+          <property name="coverage.m3">0</property>
+          <property name="coverage.m3demo">5</property>
+      </element>
+      <element name="CL1CM1">
+          <property name="coverage.m3">1</property>
+          <property name="coverage.m3demo">1</property>
+      </element>
+      <element name="CL1MGR">
+          <property name="coverage.m3">0</property>
+          <property name="coverage.m3demo">5</property>
+      </element>
+  </ldi>

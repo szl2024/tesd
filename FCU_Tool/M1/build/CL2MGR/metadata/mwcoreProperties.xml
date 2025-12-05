@@ -2,5 +2,5 @@
 <mwcoreProperties xmlns="http://schemas.mathworks.com/package/2012/coreProperties">
   <contentType>application/vnd.mathworks.simulink.model</contentType>
   <contentTypeFriendlyName>Simulink Model</contentTypeFriendlyName>
-  <matlabRelease>R2024b</matlabRelease>
+  <matlabRelease>R2024a</matlabRelease>
 </mwcoreProperties>

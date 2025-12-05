@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ConfigSet>
-  <Object Version="24.1.0" ClassName="Simulink.ConfigSet">
+  <Object Version="24.0.0" ClassName="Simulink.ConfigSet">
     <P Name="DisabledProps" Class="double">[]</P>
     <P Name="Description"/>
     <Array PropName="Components" Type="Handle" Dimension="1*9">
-      <Object ObjectID="2" Version="24.1.0" ClassName="Simulink.SolverCC">
+      <Object ObjectID="2" Version="24.0.0" ClassName="Simulink.SolverCC">
         <P Name="DisabledProps" Class="double">[]</P>
         <P Name="Description"/>
         <P Name="Components" Class="double">[]</P>
@@ -49,7 +49,7 @@
         <P Name="MaxZcPerStep">2</P>
         <P Name="MaxZcBracketingIterations">10</P>
       </Object>
-      <Object ObjectID="3" Version="24.1.0" ClassName="Simulink.DataIOCC">
+      <Object ObjectID="3" Version="24.0.0" ClassName="Simulink.DataIOCC">
         <P Name="DisabledProps" Class="double">[]</P>
         <P Name="Description"/>
         <P Name="Components" Class="double">[]</P>
@@ -90,7 +90,7 @@
         <P Name="LoggingFileName">out.mat</P>
         <P Name="LoggingIntervals">[-inf, inf]</P>
       </Object>
-      <Object ObjectID="4" Version="24.1.0" ClassName="Simulink.OptimizationCC">
+      <Object ObjectID="4" Version="24.0.0" ClassName="Simulink.OptimizationCC">
         <Array PropName="DisabledProps" Type="Cell" Dimension="1*10">
           <Cell Class="char">BooleansAsBitfields</Cell>
           <Cell Class="char">PassReuseOutputArgsAs</Cell>
@@ -165,7 +165,7 @@
         <P Name="DenormalBehavior">GradualUnderflow</P>
         <P Name="EfficientTunableParamExpr">off</P>
       </Object>
-      <Object ObjectID="5" Version="24.1.0" ClassName="Simulink.DebuggingCC">
+      <Object ObjectID="5" Version="24.0.0" ClassName="Simulink.DebuggingCC">
         <Array PropName="DisabledProps" Type="Cell" Dimension="1*1">
           <Cell Class="char">UseOnlyExistingSharedCode</Cell>
         </Array>
@@ -286,7 +286,7 @@
         <P Name="VariantConfigNotUsedByTopModel">warning</P>
         <P Name="ParamWriterValidationControl">UseLocalSettings</P>
       </Object>
-      <Object ObjectID="6" Version="24.1.0" ClassName="Simulink.HardwareCC">
+      <Object ObjectID="6" Version="24.0.0" ClassName="Simulink.HardwareCC">
         <P Name="DisabledProps" Class="double">[]</P>
         <P Name="Description"/>
         <P Name="Components" Class="double">[]</P>
@@ -334,7 +334,7 @@
         <P Name="UseSimulinkCoderFeatures">on</P>
         <P Name="HardwareBoardFeatureSet">EmbeddedCoderHSP</P>
       </Object>
-      <Object ObjectID="7" Version="24.1.0" ClassName="Simulink.ModelReferenceCC">
+      <Object ObjectID="7" Version="24.0.0" ClassName="Simulink.ModelReferenceCC">
         <P Name="DisabledProps" Class="double">[]</P>
         <P Name="Description"/>
         <P Name="Components" Class="double">[]</P>
@@ -353,7 +353,7 @@
         <P Name="SupportModelReferenceSimTargetCustomCode">off</P>
         <P Name="UseModelRefSolver">off</P>
       </Object>
-      <Object ObjectID="8" Version="24.1.0" ClassName="Simulink.SFSimCC">
+      <Object ObjectID="8" Version="24.0.0" ClassName="Simulink.SFSimCC">
         <P Name="DisabledProps" Class="double">[]</P>
         <P Name="Description"/>
         <P Name="Components" Class="double">[]</P>
@@ -382,7 +382,6 @@
         <P Name="EnableImplicitExpansion">on</P>
         <P Name="MATLABDynamicMemAlloc">on</P>
         <P Name="MATLABDynamicMemAllocThreshold">65536</P>
-        <P Name="UsePrecompiledLibraries">Prefer</P>
         <P Name="LegacyBehaviorForPersistentVarInContinuousTime">off</P>
         <P Name="CustomCodeFunctionArrayLayout" Class="double">[]</P>
         <P Name="DefaultCustomCodeFunctionArrayLayout">NotSpecified</P>
@@ -401,7 +400,7 @@
         <P Name="SimDLTargetLibrary">mkl-dnn</P>
         <P Name="SimDLAutoTuning">on</P>
       </Object>
-      <Object BackupClass="Simulink.RTWCC" ObjectID="9" Version="24.1.0" ClassName="Simulink.RTWCC">
+      <Object BackupClass="Simulink.RTWCC" ObjectID="9" Version="24.0.0" ClassName="Simulink.RTWCC">
         <Array PropName="DisabledProps" Type="Cell" Dimension="1*18">
           <Cell Class="char">DataTypeReplacement</Cell>
           <Cell Class="char">IncludeHyperlinkInReport</Cell>
@@ -516,8 +515,8 @@
         <P Name="LargeConstantGeneration">KeepInSourceFiles</P>
         <P Name="LargeConstantThreshold">131072</P>
         <Array PropName="Components" Type="Handle" Dimension="1*2">
-          <Object ObjectID="10" Version="24.1.0" ClassName="Simulink.CodeAppCC">
-            <Array PropName="DisabledProps" Type="Cell" Dimension="1*29">
+          <Object ObjectID="10" Version="24.0.0" ClassName="Simulink.CodeAppCC">
+            <Array PropName="DisabledProps" Type="Cell" Dimension="1*28">
               <Cell Class="char">IgnoreCustomStorageClasses</Cell>
               <Cell Class="char">IgnoreTestpoints</Cell>
               <Cell Class="char">BlockCommentType</Cell>
@@ -546,7 +545,6 @@
               <Cell Class="char">CustomSymbolStrEmxFcn</Cell>
               <Cell Class="char">CustomUserTokenString</Cell>
               <Cell Class="char">ReqsInCode</Cell>
-              <Cell Class="char">AnnotationsInComments</Cell>
             </Array>
             <P Name="Description"/>
             <P Name="Components" Class="double">[]</P>
@@ -587,7 +585,6 @@
             <P Name="SignalNamingRule">None</P>
             <P Name="SignalNamingFcn"/>
             <P Name="InsertBlockDesc">off</P>
-            <P Name="AnnotationsInComments">off</P>
             <P Name="InsertPolySpaceComments">off</P>
             <P Name="SimulinkBlockComments">on</P>
             <P Name="BlockCommentType">BlockPathComment</P>
@@ -602,7 +599,7 @@
             <P Name="ReservedNameArray" Class="double">[]</P>
             <P Name="EnumMemberNameClash">error</P>
           </Object>
-          <Object BackupClass="Simulink.TargetCC" ObjectID="11" Version="24.1.0" ClassName="Simulink.GRTTargetCC">
+          <Object BackupClass="Simulink.TargetCC" ObjectID="11" Version="24.0.0" ClassName="Simulink.GRTTargetCC">
             <Array PropName="DisabledProps" Type="Cell" Dimension="1*19">
               <Cell Class="char">IncludeMdlTerminateFcn</Cell>
               <Cell Class="char">SuppressErrorStatus</Cell>
@@ -712,7 +709,7 @@
           </Object>
         </Array>
       </Object>
-      <Object ObjectID="12" Version="24.1.0" ClassName="SlCovCC.ConfigComp">
+      <Object ObjectID="12" Version="24.0.0" ClassName="SlCovCC.ConfigComp">
         <P Name="DisabledProps" Class="double">[]</P>
         <P Name="Description">Simulink Coverage Configuration Component</P>
         <P Name="Components" Class="double">[]</P>

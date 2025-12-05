@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Version information for MathWorks R2024b Release -->
+<!-- Version information for MathWorks R2024a Release -->
 <MathWorks_version_info>
-  <version>24.2.0.2740171</version>
-  <release>R2024b</release>
-  <description>Update 1</description>
-  <date>Sep 20 2024</date>
-  <checksum>4024810896</checksum>
+  <version>24.1.0.2537033</version>
+  <release>R2024a</release>
+  <description></description>
+  <date>Feb 21 2024</date>
+  <checksum>1243000788</checksum>
 </MathWorks_version_info>
