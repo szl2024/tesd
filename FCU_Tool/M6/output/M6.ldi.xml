@@ -2,14 +2,14 @@
   <ldi>
       <element name="CL1MGR">
           <property name="coverage.m6">0</property>
-          <property name="coverage.m6demo">5</property>
+          <property name="coverage.m6demo">6</property>
       </element>
       <element name="CL2MGR">
           <property name="coverage.m6">0</property>
           <property name="coverage.m6demo">5</property>
       </element>
       <element name="CL1CM1">
-          <property name="coverage.m6">1</property>
-          <property name="coverage.m6demo">1</property>
+          <property name="coverage.m6">2</property>
+          <property name="coverage.m6demo">2</property>
       </element>
   </ldi>

@@ -46,6 +46,7 @@ func ExtractDependenciesRawFromASW(filePath string) (map[string][]DependencyInfo
 		portType      string
 		interfaceType string
 	}
+
 	deMap := make(map[string][]portInfo)
 	for i, row := range rows {
 		// i == 0 : 헤더, len(row) < 12 : 필요한 컬럼이 부족한 행은 스킵
@@ -61,27 +62,74 @@ func ExtractDependenciesRawFromASW(filePath string) (map[string][]DependencyInfo
 			continue
 		}
 
-		deMap[deOp] = append(deMap[deOp], portInfo{component, portType, interfaceType})
+		deMap[deOp] = append(deMap[deOp], portInfo{
+			component:     component,
+			portType:      portType,
+			interfaceType: interfaceType,
+		})
 	}
 
 	result := make(map[string][]DependencyInfo)
 
+	// deOp 단위로 1→N 또는 N→1 관계 처리
 	for _, ports := range deMap {
-		var pComp, rComp, interfaceType string
+		var providers []portInfo
+		var receivers []portInfo
+
+		// P / R 분류
 		for _, p := range ports {
-			if p.portType == "P" {
-				pComp = p.component
-				interfaceType = p.interfaceType
-			} else if p.portType == "R" {
-				rComp = p.component
+			switch p.portType {
+			case "P":
+				providers = append(providers, p)
+			case "R":
+				receivers = append(receivers, p)
 			}
 		}
-		if pComp != "" && rComp != "" && pComp != rComp {
-			result[pComp] = append(result[pComp], DependencyInfo{
-				To:            rComp,
-				Count:         1,
-				InterfaceType: interfaceType,
-			})
+
+		// P 또는 R이 하나도 없으면 스킵
+		if len(providers) == 0 || len(receivers) == 0 {
+			continue
+		}
+
+		switch {
+		// 1 P, N R (1→N)
+		case len(providers) == 1 && len(receivers) >= 1:
+			p := providers[0]
+			for _, r := range receivers {
+				if p.component == "" || r.component == "" {
+					continue
+				}
+				if p.component == r.component {
+					// 자기 자신 의존은 스킵
+					continue
+				}
+				result[p.component] = append(result[p.component], DependencyInfo{
+					To:            r.component,
+					Count:         1,
+					InterfaceType: p.interfaceType, // P 쪽 인터페이스 타입 사용
+				})
+			}
+
+		// N P, 1 R (N→1)
+		case len(receivers) == 1 && len(providers) >= 1:
+			r := receivers[0]
+			for _, p := range providers {
+				if p.component == "" || r.component == "" {
+					continue
+				}
+				if p.component == r.component {
+					continue
+				}
+				result[p.component] = append(result[p.component], DependencyInfo{
+					To:            r.component,
+					Count:         1,
+					InterfaceType: p.interfaceType,
+				})
+			}
+
+		// 이론상 N P, M R (N>1,M>1)는 없다고 가정하지만, 방어적으로 스킵
+		default:
+			continue
 		}
 	}
 
@@ -96,7 +144,8 @@ func ExtractDependenciesRawFromASW(filePath string) (map[string][]DependencyInfo
 //   2) 각 행에서 component / portType(P/R) / interfaceType / deOp(연결 식별자)를 추출하여,
 //      임시 테이블 deMap[deOp] = []portInfo 형태로 저장한다.
 //   3) deOp 단위로 그룹화하여 제공자(P) 컴포넌트와 수요자(R) 컴포넌트를 찾는다.
-//      pComp 와 rComp 가 모두 존재하고 서로 다르면 의존성을 카운트한다:
+//      (1P 다수 R 또는 다수 P 1R 조합)
+//      각 P–R 쌍에 대해 의존성을 카운트한다:
 //        - 이미 동일한 from→to 관계가 있으면 Count++
 //        - 없으면 새로운 DependencyInfo{To, Count=1, InterfaceType}를 생성한다.
 //   4) 결과를 map[from][]DependencyInfo 형태로 변환하여 반환한다.
@@ -111,6 +160,7 @@ func ExtractDependenciesAggregatedFromASW(filePath string) (map[string][]Depende
 		portType      string
 		interfaceType string
 	}
+
 	deMap := make(map[string][]portInfo)
 	for i, row := range rows {
 		if i == 0 || len(row) < 12 {
@@ -125,34 +175,92 @@ func ExtractDependenciesAggregatedFromASW(filePath string) (map[string][]Depende
 			continue
 		}
 
-		deMap[deOp] = append(deMap[deOp], portInfo{component, portType, interfaceType})
+		deMap[deOp] = append(deMap[deOp], portInfo{
+			component:     component,
+			portType:      portType,
+			interfaceType: interfaceType,
+		})
 	}
 
 	countMap := make(map[string]map[string]*DependencyInfo)
 
+	// deOp 단위 집계
 	for _, ports := range deMap {
-		var pComp, rComp, interfaceType string
+		var providers []portInfo
+		var receivers []portInfo
+
 		for _, p := range ports {
-			if p.portType == "P" {
-				pComp = p.component
-				interfaceType = p.interfaceType
-			} else if p.portType == "R" {
-				rComp = p.component
+			switch p.portType {
+			case "P":
+				providers = append(providers, p)
+			case "R":
+				receivers = append(receivers, p)
 			}
 		}
-		if pComp != "" && rComp != "" && pComp != rComp {
-			if _, ok := countMap[pComp]; !ok {
-				countMap[pComp] = make(map[string]*DependencyInfo)
-			}
-			if existing, ok := countMap[pComp][rComp]; ok {
-				existing.Count++
-			} else {
-				countMap[pComp][rComp] = &DependencyInfo{
-					To:            rComp,
-					Count:         1,
-					InterfaceType: interfaceType,
+
+		if len(providers) == 0 || len(receivers) == 0 {
+			continue
+		}
+
+		switch {
+		// 1 P, N R
+		case len(providers) == 1 && len(receivers) >= 1:
+			p := providers[0]
+			for _, r := range receivers {
+				if p.component == "" || r.component == "" {
+					continue
+				}
+				if p.component == r.component {
+					continue
+				}
+
+				from := p.component
+				to := r.component
+
+				if _, ok := countMap[from]; !ok {
+					countMap[from] = make(map[string]*DependencyInfo)
+				}
+				if existing, ok := countMap[from][to]; ok {
+					existing.Count++
+				} else {
+					countMap[from][to] = &DependencyInfo{
+						To:            to,
+						Count:         1,
+						InterfaceType: p.interfaceType,
+					}
 				}
 			}
+
+		// N P, 1 R
+		case len(receivers) == 1 && len(providers) >= 1:
+			r := receivers[0]
+			for _, p := range providers {
+				if p.component == "" || r.component == "" {
+					continue
+				}
+				if p.component == r.component {
+					continue
+				}
+
+				from := p.component
+				to := r.component
+
+				if _, ok := countMap[from]; !ok {
+					countMap[from] = make(map[string]*DependencyInfo)
+				}
+				if existing, ok := countMap[from][to]; ok {
+					existing.Count++
+				} else {
+					countMap[from][to] = &DependencyInfo{
+						To:            to,
+						Count:         1,
+						InterfaceType: p.interfaceType,
+					}
+				}
+			}
+
+		default:
+			continue
 		}
 	}
 
