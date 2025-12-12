@@ -1,0 +1,49 @@
+@APIMetric(
+    id = "coverage.m3_percent",
+    name = "M3(Proportion of violations)",
+    lowerIsBetter = "false",       
+    precision = "percent",
+    aggregate = "none"
+)
+@Description("M3 coverage indicator from LDI import")
+@Definition([
+    "heatmap=true",
+    "warning=1000",
+    "error=1500"
+])
+@Group("coverage_metrics")
+def m3PercentMetric(Partition src, Partition target) {
+    def model = getModel();
+
+    try {
+        def m3Metric = model.getMetricDefinition("partition.metric.custom.coverage.m3");
+        def m3DemoMetric = model.getMetricDefinition("partition.metric.custom.coverage.m3demo");
+
+        if (!m3Metric || !m3DemoMetric) {
+            out.println("M3 or M3 Demo metric not found in the model.");
+            return 0;
+        }
+
+        def m3MetricValue = model.getMetricValue(src, m3Metric);
+        def m3DemoMetricValue = model.getMetricValue(src, m3DemoMetric);
+
+        out.println("M3 Metric: " + m3MetricValue);
+        out.println("M3 Demo Metric: " + m3DemoMetricValue);
+
+        if (m3DemoMetricValue != 0){
+            return (m3MetricValue / m3DemoMetricValue);
+        }
+    
+    } catch (Exception e) {
+        e.printStackTrace();
+        out.println("Error calculating M3 metric: " + e.getMessage());
+    }
+    return 0;
+}
+
+
+@Localize("en")
+def en = [
+   "M3Percent": "M3 Percent Coverage",
+   "M3 coverage indicator from LDI import": "Coverage M3 value (from LDI import)"
+]
