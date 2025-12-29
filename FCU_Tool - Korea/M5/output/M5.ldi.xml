@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <ldi>
+      <element name="CL1CM1">
+          <property name="coverage.m5">1</property>
+          <property name="coverage.m5demo">1</property>
+      </element>
+      <element name="CL1CM2">
+          <property name="coverage.m5">1</property>
+          <property name="coverage.m5demo">1</property>
+      </element>
+      <element name="CL1MGR">
+          <property name="coverage.m5">0</property>
+          <property name="coverage.m5demo">1</property>
+      </element>
+      <element name="CL2CM1">
+          <property name="coverage.m5">0</property>
+          <property name="coverage.m5demo">1</property>
+      </element>
+      <element name="CL2MGR">
+          <property name="coverage.m5">0</property>
+          <property name="coverage.m5demo">1</property>
+      </element>
+  </ldi>

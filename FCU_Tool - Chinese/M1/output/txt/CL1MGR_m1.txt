@@ -1,0 +1,1 @@
+[L1] Name: RCL1Mgr_Te10	L1Ports(Weighted)=1.0	L2Count=3	L2Ports=17

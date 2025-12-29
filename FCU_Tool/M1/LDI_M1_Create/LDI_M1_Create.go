@@ -91,7 +91,7 @@ func buildRunnableToModelMap() (map[string]string, error) {
 }
 
 // mapM1ElementName
-// 把 M1 LDI 中的 element.Name 从 runnable 名映射为模型名。
+// 把 M1 LDI 中的 element.Name / uses.Provider 从 runnable 名映射为模型名。
 // 规则：
 //   - 从名字中取前缀：runnablePart = name 的第一个 '.' 之前部分（或者整个 name，如果没有 '.'）
 //   - 若 runnablePart 在 runnable→model 映射中存在：
@@ -120,13 +120,94 @@ func mapM1ElementName(name string, runnableToModel map[string]string) string {
 	return name
 }
 
+// RewriteM1LDIFilesRename
+// 直接修改 M1_Public_Data.LDIDir 下所有 *.ldi.xml：
+//   - <element name="..."> 里的 name
+//   - <uses provider="..."> 里的 provider
+// 按 asw.csv 的 runnable→模型名 映射进行就地替换并写回原文件。
+func RewriteM1LDIFilesRename(runnableToModel map[string]string) error {
+	if len(runnableToModel) == 0 {
+		// 没有映射就不改任何文件
+		return nil
+	}
+
+	m1Dir := M1_Public_Data.LDIDir
+	if m1Dir == "" {
+		return fmt.Errorf("M1_Public_Data.LDIDir 未设置，无法找到 M1 的 LDI 文件目录")
+	}
+
+	entries, err := os.ReadDir(m1Dir)
+	if err != nil {
+		return fmt.Errorf("读取 M1 LDI 目录失败 [%s]: %v", m1Dir, err)
+	}
+
+	for _, e := range entries {
+		if e.IsDir() {
+			continue
+		}
+		if !strings.HasSuffix(strings.ToLower(e.Name()), ".ldi.xml") {
+			continue
+		}
+
+		path := filepath.Join(m1Dir, e.Name())
+		data, err := ioutil.ReadFile(path)
+		if err != nil {
+			return fmt.Errorf("读取 M1 LDI 文件失败 [%s]: %v", path, err)
+		}
+
+		var root Root
+		if err := xml.Unmarshal(data, &root); err != nil {
+			return fmt.Errorf("解析 M1 LDI XML 失败 [%s]: %v", path, err)
+		}
+
+		changed := false
+
+		for i := range root.Items {
+			// element name
+			oldName := root.Items[i].Name
+			newName := mapM1ElementName(oldName, runnableToModel)
+			if newName != oldName {
+				root.Items[i].Name = newName
+				changed = true
+			}
+
+			// uses provider
+			for j := range root.Items[i].Uses {
+				oldProv := root.Items[i].Uses[j].Provider
+				newProv := mapM1ElementName(oldProv, runnableToModel)
+				if newProv != oldProv {
+					root.Items[i].Uses[j].Provider = newProv
+					changed = true
+				}
+			}
+		}
+
+		if !changed {
+			continue
+		}
+
+		out, err := xml.MarshalIndent(root, "  ", "    ")
+		if err != nil {
+			return fmt.Errorf("序列化 M1 LDI XML 失败 [%s]: %v", path, err)
+		}
+
+		header := []byte(xml.Header)
+		if err := ioutil.WriteFile(path, append(header, out...), 0644); err != nil {
+			return fmt.Errorf("写回 M1 LDI 文件失败 [%s]: %v", path, err)
+		}
+	}
+
+	return nil
+}
+
 // MergeM1ToMainLDI
 // 将 M1 阶段在 LDIDir 目录下生成的所有 *.ldi.xml 中的 coverage.m1
 // 合并到主 LDI (Output/result.ldi.xml) 中。
 //
-// 这里做了一个额外的步骤：
-//   - 利用 asw.csv (Public_data.ConnectorFilePath) 中的 runnable → 模型名映射
-//   - 将 M1 LDI 中 element 的 runnable 名转换为模型名，再与主 LDI 合并
+// 额外步骤：
+//   1) 利用 asw.csv (Public_data.ConnectorFilePath) 中的 runnable → 模型名映射
+//   2) 先就地修改 M1 的 *.ldi.xml（element name / uses provider）为“模型名”
+//   3) 再把 M1 LDI 中的 coverage.m1 合并到主 LDI
 func MergeM1ToMainLDI() error {
 	// 1) 确定主 LDI 路径
 	if Public_data.OutputDir == "" {
@@ -139,6 +220,11 @@ func MergeM1ToMainLDI() error {
 	if err != nil {
 		// 构建失败时给出提示，但为了不完全阻塞，也可以选择直接返回错误
 		return fmt.Errorf("构建 runnable → 模型名 映射失败: %v", err)
+	}
+
+	// 2.1) 先把 M1 的 *.ldi.xml 直接改名（写回文件）
+	if err := RewriteM1LDIFilesRename(runnableToModel); err != nil {
+		return err
 	}
 
 	// 3) 读取主 LDI
@@ -189,7 +275,7 @@ func MergeM1ToMainLDI() error {
 		for _, el := range m1Root.Items {
 			for _, p := range el.Property {
 				if p.Name == "coverage.m1" {
-					// 关键：把 runnable 名映射为模型名（支持前缀替换）
+					// 兼容：即使前面没成功写回，这里仍然再映射一次
 					mappedName := mapM1ElementName(el.Name, runnableToModel)
 					m1Map[mappedName] = p.Value
 				}

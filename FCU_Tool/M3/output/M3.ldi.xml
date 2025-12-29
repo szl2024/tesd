@@ -4,12 +4,12 @@
           <property name="coverage.m3">0</property>
           <property name="coverage.m3demo">5</property>
       </element>
-      <element name="CL1CM1">
-          <property name="coverage.m3">2</property>
-          <property name="coverage.m3demo">2</property>
-      </element>
       <element name="CL1MGR">
           <property name="coverage.m3">0</property>
           <property name="coverage.m3demo">6</property>
+      </element>
+      <element name="CL1CM1">
+          <property name="coverage.m3">2</property>
+          <property name="coverage.m3demo">2</property>
       </element>
   </ldi>

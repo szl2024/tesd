@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[1431, 237, 2413, 989]</P>
+  <P Name="Open">on</P>
+  <P Name="ReportName">simulink-default.rpt</P>
+  <P Name="SIDHighWatermark">22</P>
+  <Block BlockType="Inport" Name="CL2OUT1" SID="21">
+    <P Name="Position">[310, 398, 340, 412]</P>
+    <P Name="ZOrder">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="CL2OUT2" SID="22">
+    <P Name="Position">[310, 498, 340, 512]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="RCL2Cm1_Te10" SID="1">
+    <PortCounts in="3" out="3"/>
+    <P Name="Position">[410, 256, 880, 554]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_1"/>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">21#out:1</P>
+    <P Name="Dst">1#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">22#out:1</P>
+    <P Name="Dst">1#in:3</P>
+  </Line>
+</System>

@@ -235,7 +235,7 @@ type ldiElement struct {
 }
 
 type ldiRoot struct {
-	XMLName xml.Name    `xml:"ldi"`
+	XMLName xml.Name     `xml:"ldi"`
 	Items   []ldiElement `xml:"element"`
 }
 
@@ -288,9 +288,9 @@ func GenerateM1LDIFromTxt() {
 
 		computeM1ForNodes(nodes)
 
-		// 生成 ldi.xml
+		// 生成 ldi.xml（这里把 txt 文件名传进去，用于替换 element name 前缀）
 		ldiPath := filepath.Join(ldiRoot, modelName+".ldi.xml")
-		if err := writeM1LDI(ldiPath, nodes); err != nil {
+		if err := writeM1LDI(ldiPath, modelName, nodes); err != nil {
 			fmt.Printf("写入 LDI 失败 [%s]: %v\n", ldiPath, err)
 			// 不中断，继续生成 m1.txt
 		} else {
@@ -581,9 +581,24 @@ func buildHierNameForNode(n *m1Node, all []*m1Node) string {
 	return strings.Join(names, ".")
 }
 
+// 把 element name 的“第一个段名”替换为 txt 文件名（modelName）
+// - "RUNNABLE" -> "CL1CM1"
+// - "RUNNABLE.DATA" -> "CL1CM1.DATA"
+// - "RUNNABLE.DATA.X" -> "CL1CM1.DATA.X"
+func replaceElementPrefixWithTxtName(elementName, modelName string) string {
+	modelName = strings.TrimSpace(modelName)
+	if modelName == "" {
+		return elementName
+	}
+	if idx := strings.Index(elementName, "."); idx >= 0 {
+		return modelName + elementName[idx:]
+	}
+	return modelName
+}
+
 // 把 nodes 写成一个 ldi.xml 文件
 // 注意：只输出 1..maxLevel-1 层的节点，最底层 Level=maxLevel 的节点完全不写入
-func writeM1LDI(ldiPath string, nodes []*m1Node) error {
+func writeM1LDI(ldiPath string, modelName string, nodes []*m1Node) error {
 	var root ldiRoot
 
 	// 计算全局最大层级
@@ -617,7 +632,8 @@ func writeM1LDI(ldiPath string, nodes []*m1Node) error {
 
 	for _, nn := range list {
 		n := nn.Node
-		name := nn.Path
+		// ✅ 在生成 ldi.xml 时，把 name 的第一段替换成 txt 文件名
+		name := replaceElementPrefixWithTxtName(nn.Path, modelName)
 
 		el := ldiElement{
 			Name: name,

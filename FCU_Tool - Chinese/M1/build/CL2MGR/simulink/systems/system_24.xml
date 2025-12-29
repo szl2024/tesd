@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1, -8, 2561, 1393]</P>
+  <Block BlockType="Inport" Name="IN1" SID="25">
+    <P Name="Position">[110, 103, 140, 117]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Inport" Name="IN2" SID="26">
+    <P Name="Position">[110, 178, 140, 192]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="IN3" SID="28">
+    <P Name="Position">[110, 253, 140, 267]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="IN4" SID="29">
+    <P Name="Position">[110, 328, 140, 342]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="OUT1" SID="27">
+    <P Name="Position">[360, 103, 390, 117]</P>
+    <P Name="ZOrder">-2</P>
+  </Block>
+  <Block BlockType="Outport" Name="OUT2" SID="30">
+    <P Name="Position">[360, 178, 390, 192]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">2</P>
+  </Block>
+</System>
