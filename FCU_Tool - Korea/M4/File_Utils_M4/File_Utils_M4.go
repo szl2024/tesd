@@ -13,14 +13,14 @@ import (
 	"FCU_Tools/Public_data"
 )
 
-// PrepareM2OutputDir M4의 출력 디렉터리를 초기화하고 준비한다.
+// PrepareM4OutputDir M4의 출력 디렉터리를 초기화하고 준비한다.
 //
 // 프로세스:
 //   1) 현재 작업 디렉터리 basePath를 가져온다.  
 //   2) <basePath>/M4/output 경로를 생성한다.  
 //   3) output 디렉터리가 이미 존재하면 삭제 후 새로 만든다.  
 //   4) 경로를 Public_data.M4OutputlPath에 저장하여 이후 모듈에서 사용한다.  
-func PrepareM2OutputDir() error {
+func PrepareM4OutputDir() error {
 	basePath, err := os.Getwd()
 	if err != nil {
 		return fmt.Errorf("작업 디렉토리를 가져오지 못했습니다: %v", err)

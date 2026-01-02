@@ -13,14 +13,14 @@ import (
 	"FCU_Tools/Public_data"
 )
 
-// PrepareM2OutputDir M6의 출력 디렉터리를 초기화하고 준비한다.
+// PrepareM6OutputDir M6의 출력 디렉터리를 초기화하고 준비한다.
 //
 // 프로세스:
 //   1) 현재 작업 디렉터리 basePath를 가져온다.  
 //   2) <basePath>/M6/output 경로를 생성한다.  
 //   3) output 디렉터리가 이미 존재하면 삭제 후 새로 만든다.  
 //   4) 경로를 Public_data.M6OutputlPath에 저장한다.  
-func PrepareM2OutputDir() error {
+func PrepareM6OutputDir() error {
 	basePath, err := os.Getwd()
 	if err != nil {
 		return fmt.Errorf("작업 디렉토리를 가져오지 못했습니다: %v", err)

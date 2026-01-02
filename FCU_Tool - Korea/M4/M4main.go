@@ -8,8 +8,8 @@ import (
 // M4_main 은 M4 지표 계산과 병합의 총 진입점이다.  
 func M4_main() {
 
-	//   1) File_Utils_M4.PrepareM2OutputDir를 호출하여 출력 디렉터리를 초기화한다.  
- 	if err := File_Utils_M4.PrepareM2OutputDir(); err != nil {
+	//   1) File_Utils_M4.PrepareM4OutputDir를 호출하여 출력 디렉터리를 초기화한다.  
+ 	if err := File_Utils_M4.PrepareM4OutputDir(); err != nil {
 		fmt.Println("M4 출력 디렉토리 준비 실패：", err)
 		return
 	}

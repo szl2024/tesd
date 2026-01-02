@@ -9,8 +9,8 @@ import (
 // M6 LDI 파일을 생성한 후 주 LDI에 병합한다.  
 
 func M6_main() {
-	//   1) File_Utils_M6.PrepareM2OutputDir를 호출하여 출력 디렉터리를 초기화한다.  
-	if err := File_Utils_M6.PrepareM2OutputDir(); err != nil {
+	//   1) File_Utils_M6.PrepareM6OutputDir를 호출하여 출력 디렉터리를 초기화한다.  
+	if err := File_Utils_M6.PrepareM6OutputDir(); err != nil {
 		fmt.Println("6 출력 디렉토리 준비 실패: ", err)
 		return
 	}
