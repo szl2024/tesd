@@ -64,53 +64,57 @@
   </Block>
   <Block BlockType="SubSystem" Name="CL2MGRCLS1" SID="20">
     <PortCounts in="2" out="1"/>
-    <P Name="Position">[240, 264, 340, 326]</P>
+    <P Name="Position">[242, 264, 342, 326]</P>
     <P Name="ZOrder">17</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_20"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_20"/>
   </Block>
   <Block BlockType="SubSystem" Name="CL2MGRCLS2" SID="24">
     <PortCounts in="4" out="2"/>
-    <P Name="Position">[240, 371, 340, 489]</P>
+    <P Name="Position">[242, 371, 342, 489]</P>
     <P Name="ZOrder">18</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_24"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_24"/>
   </Block>
   <Block BlockType="SubSystem" Name="CL2MGRCLS3" SID="31">
     <PortCounts in="3" out="1"/>
-    <P Name="Position">[240, 528, 340, 632]</P>
+    <P Name="Position">[242, 528, 342, 632]</P>
     <P Name="ZOrder">19</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_31"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_31"/>
   </Block>
   <Block BlockType="SubSystem" Name="CL2MGRCLS4" SID="40">
     <PortCounts in="3" out="1"/>
-    <P Name="Position">[240, 123, 340, 227]</P>
+    <P Name="Position">[242, 123, 342, 227]</P>
     <P Name="ZOrder">20</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_40"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_40"/>
   </Block>
   <Block BlockType="Outport" Name="CL2STAT" SID="3">
-    <P Name="Position">[380, 288, 410, 302]</P>
+    <P Name="Position">[382, 288, 412, 302]</P>
     <P Name="ZOrder">-2</P>
   </Block>
   <Block BlockType="Outport" Name="CL2OUT1" SID="4">
-    <P Name="Position">[380, 393, 410, 407]</P>
+    <P Name="Position">[382, 393, 412, 407]</P>
     <P Name="ZOrder">1</P>
     <P Name="Port">2</P>
   </Block>
   <Block BlockType="Outport" Name="CL2OUT2" SID="5">
-    <P Name="Position">[380, 453, 410, 467]</P>
+    <P Name="Position">[382, 453, 412, 467]</P>
     <P Name="ZOrder">2</P>
     <P Name="Port">3</P>
   </Block>
   <Block BlockType="Outport" Name="CL2OUT3" SID="18">
-    <P Name="Position">[380, 573, 410, 587]</P>
+    <P Name="Position">[382, 573, 412, 587]</P>
     <P Name="ZOrder">15</P>
     <P Name="Port">4</P>
   </Block>
   <Block BlockType="Outport" Name="CL2OUT4" SID="19">
-    <P Name="Position">[380, 168, 410, 182]</P>
+    <P Name="Position">[382, 168, 412, 182]</P>
     <P Name="ZOrder">16</P>
     <P Name="Port">5</P>
   </Block>

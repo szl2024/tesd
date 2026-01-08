@@ -1,17 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[-1, -8, 2561, 1393]</P>
-  <Block BlockType="Inport" Name="CL1STAT" SID="13">
-    <P Name="Position">[110, 103, 140, 117]</P>
-    <P Name="ZOrder">-1</P>
+  <P Name="Location">[110, 274, 2672, 1727]</P>
+  <Block BlockType="Inport" Name="In1" SID="62">
+    <P Name="Position">[565, 463, 595, 477]</P>
+    <P Name="ZOrder">19</P>
   </Block>
-  <Block BlockType="Inport" Name="IN" SID="14">
-    <P Name="Position">[110, 158, 140, 172]</P>
-    <P Name="ZOrder">1</P>
+  <Block BlockType="Inport" Name="CL1STAT" SID="31">
+    <P Name="Position">[470, 263, 500, 277]</P>
+    <P Name="ZOrder">12</P>
     <P Name="Port">2</P>
   </Block>
-  <Block BlockType="Outport" Name="CM2CNTL2" SID="15">
-    <P Name="Position">[360, 103, 390, 117]</P>
-    <P Name="ZOrder">-2</P>
+  <Block BlockType="Inport" Name="IN" SID="32">
+    <P Name="Position">[470, 318, 500, 332]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="Port">3</P>
   </Block>
+  <Block BlockType="SubSystem" Name="CL1CM2CLS1_2" SID="33">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[555, 259, 665, 301]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_33"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="CL1CM2CLS1_22" SID="57">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[650, 459, 760, 501]</P>
+    <P Name="ZOrder">18</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_57"/>
+  </Block>
+  <Block BlockType="Outport" Name="CM2CNTL1" SID="37">
+    <P Name="Position">[720, 263, 750, 277]</P>
+    <P Name="ZOrder">11</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">31#out:1</P>
+    <P Name="Dst">33#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">33#out:1</P>
+    <P Name="Points">[23, 0; 0, -10]</P>
+    <P Name="Dst">37#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">32#out:1</P>
+    <P Name="Points">[24, 0; 0, -35]</P>
+    <P Name="Dst">33#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">62#out:1</P>
+    <P Name="Dst">57#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">57#out:1</P>
+    <P Name="Points">[23, 0; 0, -10; 27, 0]</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Points">[595, 525; 29, 0; 0, -35]</P>
+    <P Name="Dst">57#in:2</P>
+  </Line>
 </System>

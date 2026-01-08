@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2023a_202209151115">
+<sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2024b_202402211119">
   <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="f3a3e347-f9dd-47fc-bbfe-c3f6d1a5f407">
     <defaultEventBehavior type="sltp.mm.core.EventBehavior" uuid="606ee574-a425-485a-938c-ff5668e4b156"/>
     <editorState type="sltp.mm.core.EditorState" uuid="2105c6b9-c87e-44e1-a5fe-5c4463f04393">

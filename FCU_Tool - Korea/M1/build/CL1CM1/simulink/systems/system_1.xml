@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[-1, -8, 2561, 1393]</P>
-  <P Name="SystemRect">[36.000000, 43.000000, 497.500000, 354.000000]</P>
-  <P Name="ZoomFactor">150</P>
+  <P Name="Location">[91, 96, 1655, 1033]</P>
+  <P Name="SystemRect">[36.000000, -59.000000, 569.500000, 354.000000]</P>
+  <P Name="Open">on</P>
+  <P Name="ZoomFactor">200</P>
   <Block BlockType="Inport" Name="CL1STAT" SID="2">
     <P Name="Position">[135, 113, 165, 127]</P>
     <P Name="ZOrder">-1</P>
@@ -21,6 +22,7 @@
     <PortCounts in="2" out="1"/>
     <P Name="Position">[215, 109, 325, 151]</P>
     <P Name="ZOrder">5</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_8"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_8"/>
   </Block>
@@ -28,15 +30,25 @@
     <PortCounts in="2" out="1"/>
     <P Name="Position">[215, 259, 325, 301]</P>
     <P Name="ZOrder">6</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_12"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_12"/>
   </Block>
   <Block BlockType="SubSystem" Name="CL1CM1CLS3" SID="16">
     <PortCounts in="2" out="1"/>
-    <P Name="Position">[215, 184, 325, 226]</P>
+    <P Name="Position">[285, 194, 395, 236]</P>
     <P Name="ZOrder">7</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_16"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_16"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="Subsystem" SID="20">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[240, 7, 285, 63]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_20"/>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_20"/>
   </Block>
   <Block BlockType="Outport" Name="CM1CNTL1" SID="3">
     <P Name="Position">[365, 123, 395, 137]</P>
@@ -48,7 +60,7 @@
     <P Name="Port">2</P>
   </Block>
   <Block BlockType="Outport" Name="CM1CNTL3" SID="7">
-    <P Name="Position">[365, 198, 395, 212]</P>
+    <P Name="Position">[435, 208, 465, 222]</P>
     <P Name="ZOrder">4</P>
     <P Name="Port">3</P>
   </Block>
@@ -58,14 +70,14 @@
     <P Name="Points">[13, 0]</P>
     <Branch>
       <P Name="ZOrder">28</P>
-      <P Name="Points">[0, 75]</P>
+      <P Name="Points">[0, 85]</P>
       <Branch>
         <P Name="ZOrder">19</P>
         <P Name="Dst">16#in:1</P>
       </Branch>
       <Branch>
         <P Name="ZOrder">18</P>
-        <P Name="Points">[0, 75]</P>
+        <P Name="Points">[0, 65]</P>
         <P Name="Dst">12#in:1</P>
       </Branch>
     </Branch>
@@ -98,10 +110,10 @@
   <Line>
     <P Name="ZOrder">24</P>
     <P Name="Src">5#out:1</P>
-    <P Name="Points">[27, 0]</P>
+    <P Name="Points">[27, 0; 0, 10]</P>
     <Branch>
       <P Name="ZOrder">26</P>
-      <P Name="Points">[0, 75]</P>
+      <P Name="Points">[0, 65]</P>
       <P Name="Dst">12#in:2</P>
     </Branch>
     <Branch>

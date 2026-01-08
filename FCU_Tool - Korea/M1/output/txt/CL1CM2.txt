@@ -1,12 +1,27 @@
-[L1] Name: RCL1Cm2_Te10	BlockType=SubSystem	SID=1
-	[L1 Port] Name: CL1STAT                                 	BlockType=Inport    	SID=20        	PortType=S-R       
-[L2] Name: CL1CM2CLS1	BlockType=SubSystem 	SID=8         	FatherNode=RCL1Cm2_Te10
+[L1] Name: CL1CM2	BlockType=SubSystem	SID=1
+[L2] Name: CL1CM2CLS1	BlockType=SubSystem 	SID=8         	FatherNode=CL1CM2    
 	[L2 Port] Name:CL1STAT                                 	BlockType=Inport    	SID=2         
 	[L2 Port] Name:CL1OUT3                                 	BlockType=Inport    	SID=4         
 	[L2 Port] Name:CM2CNTL1                                	BlockType=Outport   	SID=3         
-[L2] Name: CL1CM2CLS2	BlockType=SubSystem 	SID=12        	FatherNode=RCL1Cm2_Te10
+[L2] Name: CL1CM2CLS2	BlockType=SubSystem 	SID=12        	FatherNode=CL1CM2    
 	[L2 Port] Name:CM2CNTL2                                	BlockType=Outport   	SID=6         
+	[L2 virtual Port] Name:Sum->CL1CM2CLS2                         	BlockType=Inport    	SID=40->12    
+[L2] Name: CL1CM2CLS3	BlockType=SubSystem 	SID=16        	FatherNode=CL1CM2    
 	[L2 Port] Name:CL1OUT4                                 	BlockType=Inport    	SID=5         
-[L2] Name: CL1CM2CLS3	BlockType=SubSystem 	SID=16        	FatherNode=RCL1Cm2_Te10
 	[L2 Port] Name:CM2CNTL3                                	BlockType=Outport   	SID=7         
-	[L2 Port] Name:CL1OUT4                                 	BlockType=Inport    	SID=5         
+[L3] Name: CL1CM2CLS1_1	BlockType=SubSystem 	SID=20        	FatherNode=CL1CM2CLS1
+	[L3 Port] Name:CL1STAT                                 	BlockType=Inport    	SID=9         
+	[L3 Port] Name:IN                                      	BlockType=Inport    	SID=11        
+	[L3 Port] Name:CM2CNTL1                                	BlockType=Outport   	SID=10        
+[L3] Name: CL1CM2CLS1_11	BlockType=SubSystem 	SID=43        	FatherNode=CL1CM2CLS1
+[L3] Name: CL1CM2CLS1_2	BlockType=SubSystem 	SID=33        	FatherNode=CL1CM2CLS2
+	[L3 Port] Name:CL1STAT                                 	BlockType=Inport    	SID=31        
+	[L3 Port] Name:CM2CNTL1                                	BlockType=Outport   	SID=37        
+	[L3 Port] Name:IN                                      	BlockType=Inport    	SID=32        
+[L3] Name: CL1CM2CLS1_22	BlockType=SubSystem 	SID=57        	FatherNode=CL1CM2CLS2
+	[L3 Port] Name:In1                                     	BlockType=Inport    	SID=62        
+[L3] Name: CL1CM2CLS1_3	BlockType=SubSystem 	SID=26        	FatherNode=CL1CM2CLS3
+	[L3 Port] Name:CM2CNTL1                                	BlockType=Outport   	SID=30        
+	[L3 Port] Name:CL1STAT                                 	BlockType=Inport    	SID=24        
+	[L3 Port] Name:IN                                      	BlockType=Inport    	SID=25        
+[L3] Name: CL1CM2CLS1_33	BlockType=SubSystem 	SID=50        	FatherNode=CL1CM2CLS3

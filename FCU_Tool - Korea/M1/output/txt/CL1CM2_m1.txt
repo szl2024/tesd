@@ -1,1 +1,4 @@
-[L1] Name: RCL1Cm2_Te10	L1Ports(Weighted)=1.0	L2Count=3	L2Ports=7
+[L1] Name: CL1CM2	L1Ports(Weighted)=0.0	L2Count=3	L2Ports=7
+[L2] Name: CL1CM2CLS1	L2Ports=3	L3Count=2	L3Ports=3
+[L2] Name: CL1CM2CLS2	L2Ports=2	L3Count=2	L3Ports=4
+[L2] Name: CL1CM2CLS3	L2Ports=2	L3Count=2	L3Ports=3

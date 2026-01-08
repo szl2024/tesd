@@ -65,6 +65,7 @@
     <PortCounts in="2" out="1"/>
     <P Name="Position">[245, 119, 345, 181]</P>
     <P Name="ZOrder">17</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_14"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_14"/>
   </Block>
@@ -72,6 +73,7 @@
     <PortCounts in="4" out="2"/>
     <P Name="Position">[245, 496, 345, 614]</P>
     <P Name="ZOrder">18</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_18"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_18"/>
   </Block>
@@ -79,6 +81,7 @@
     <PortCounts in="6" out="2"/>
     <P Name="Position">[245, 233, 345, 427]</P>
     <P Name="ZOrder">19</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_25"/>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_25"/>
   </Block>

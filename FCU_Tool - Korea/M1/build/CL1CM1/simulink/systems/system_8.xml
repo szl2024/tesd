@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[-1, -8, 2561, 1393]</P>
-  <P Name="ZoomFactor">150</P>
+  <P Name="Location">[8, 8, 2570, 1409]</P>
   <Block BlockType="Inport" Name="CL1STAT" SID="9">
     <P Name="Position">[110, 103, 140, 117]</P>
     <P Name="ZOrder">-1</P>
@@ -11,12 +10,13 @@
     <P Name="ZOrder">1</P>
     <P Name="Port">2</P>
   </Block>
-  <Block BlockType="SubSystem" Name="test" SID="21">
+  <Block BlockType="SubSystem" Name="Subsystem" SID="23">
     <PortCounts in="2" out="1"/>
-    <P Name="Position">[195, 99, 305, 141]</P>
-    <P Name="ZOrder">6</P>
+    <P Name="Position">[210, 22, 360, 73]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_23"/>
     <P Name="ContentPreviewEnabled">on</P>
-    <System Ref="system_21"/>
+    <System Ref="system_23"/>
   </Block>
   <Block BlockType="Outport" Name="CM1CNTL1" SID="10">
     <P Name="Position">[360, 103, 390, 117]</P>
@@ -25,18 +25,19 @@
   <Line>
     <P Name="ZOrder">1</P>
     <P Name="Src">9#out:1</P>
-    <P Name="Dst">21#in:1</P>
+    <P Name="Points">[30, 0; 0, -75]</P>
+    <P Name="Dst">23#in:1</P>
   </Line>
   <Line>
     <P Name="ZOrder">2</P>
     <P Name="Src">11#out:1</P>
-    <P Name="Points">[24, 0; 0, -35]</P>
-    <P Name="Dst">21#in:2</P>
+    <P Name="Points">[48, 0; 0, -105]</P>
+    <P Name="Dst">23#in:2</P>
   </Line>
   <Line>
     <P Name="ZOrder">3</P>
-    <P Name="Src">21#out:1</P>
-    <P Name="Points">[23, 0; 0, -10]</P>
+    <P Name="Src">23#out:1</P>
+    <P Name="Points">[19, 0; 0, 38; -48, 0; 0, 22]</P>
     <P Name="Dst">10#in:1</P>
   </Line>
 </System>

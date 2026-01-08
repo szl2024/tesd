@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[1276, 287, 2258, 1039]</P>
-  <P Name="Open">on</P>
+  <P Name="Location">[8, 8, 2570, 1409]</P>
   <P Name="ReportName">simulink-default.rpt</P>
-  <P Name="SIDHighWatermark">20</P>
-  <Block BlockType="Inport" Name="CL1STAT" SID="20">
-    <P Name="Position">[330, 298, 360, 312]</P>
-    <P Name="ZOrder">2</P>
-  </Block>
-  <Block BlockType="SubSystem" Name="RCL1Cm2_Te10" SID="1">
-    <PortCounts in="3" out="3"/>
-    <P Name="Position">[410, 256, 880, 554]</P>
+  <P Name="SIDHighWatermark">62</P>
+  <Block BlockType="SubSystem" Name="CL1CM2" SID="1">
+    <PortCounts in="4" out="3"/>
+    <P Name="Position">[410, 258, 880, 557]</P>
     <P Name="ZOrder">1</P>
     <P Name="ContentPreviewEnabled">on</P>
     <System Ref="system_1"/>
   </Block>
-  <Line>
-    <P Name="ZOrder">1</P>
-    <P Name="Src">20#out:1</P>
-    <P Name="Dst">1#in:1</P>
-  </Line>
 </System>
